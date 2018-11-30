@@ -23,7 +23,7 @@
 					<div class="input" >
 						<input class="caja-input" type="text" id="email" name="email" autocomplete="new-password" placeholder="Email"  required>
 						<span class="icono">
-							<i class="fa fa-user-circle" aria-hidden="true"></i>
+						<i class="fas fa-envelope"></i>
 						</span>
 					</div>
 					<div class="input" >
@@ -44,7 +44,7 @@
 			
 				?>
 					<div class="text-center">
-						<a class="txt5" href="recuperar-password/">
+						<a class="txt5" href="password/">
 						 Recuperar contraseña  <i class="fa fa-key" aria-hidden="true"></i>
 						  </a><br>
 						  <a class="txt4" href="registro/">

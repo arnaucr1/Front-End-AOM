@@ -7,7 +7,7 @@
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="../favicon.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../assets/css/registro/style.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/password/style.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 <!--===============================================================================================-->
@@ -17,51 +17,22 @@
 		<div class="todo">
 			<div class="caja">	
 			<form class="formulario" action="" method="post" >
-					<span class="titulo">Registro</span> 
-					<span class="sub-titulo">AOM Subscription Manager</span>
+					<span class="titulo">Recupera Contraseña</span> 
+					<span class="sub-titulo">Introduce tu correo electrónico para que podamos enviarte un codigo de recuperación.</span>
 				 <span class="sub-titulo"></span>
 				 <div class="input" >
-						<input class="caja-input" type="text" id="nombre" name="nombre" autocomplete="new-password" placeholder="Nombre"  required>
-						<span class="icono">
-							<i class="fa fa-user-circle" aria-hidden="true"></i>
-						</span>
-					</div>
-					<div class="input" >
-						<input class="caja-input" type="text" id="apellidos" name="apellidos" autocomplete="new-password" placeholder="Apellidos"  required>
-						<span class="icono">
-							<i class="fa fa-user-circle" aria-hidden="true"></i>
-						</span>
-					</div>
-					<div class="input" >
-						<input class="caja-input" type="date" id="edad" name="edad" autocomplete="new-password" placeholder="Fecha nacimiento"  required>
-						<span class="icono">
-						<i class="fas fa-birthday-cake"></i>
-						</span>
-					</div>
-					
-					<div class="input" >
-						<input class="caja-input" type="text" id="email" name="email" autocomplete="new-password" placeholder="Email"  required>
+						<input class="caja-input" type="text" id="email" name="email" autocomplete="new-password" placeholder="Tu email"  required>
 						<span class="icono">
 						<i class="fas fa-envelope"></i>
 						</span>
 					</div>
-					<div class="input" >
-						<input class="caja-input" type="password" id="password" name="password" autocomplete="new-password" placeholder="Contraseña" required>						
-						<span class="icono">
-						<i class="fas fa-lock-open"></i>
-						</span>
-					</div>
-					<div class="input" >
-						<input class="caja-input" type="password" id="password2" name="password2" autocomplete="new-password" placeholder="Repite la contraseña" required>						
-						<span class="icono">
-						<i class="fas fa-lock-open"></i>
-						</span>
-					</div>
+				
+			
 
 					<div class="input" >
 					<div class="todo-form-btn">
 						<button type="submit" class="caja-titulo-btn">
-				Completar
+				ENVIAR
 						</button>
 					</div><br>
 				
