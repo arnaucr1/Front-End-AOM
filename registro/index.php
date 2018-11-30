@@ -58,9 +58,9 @@
                             </span>
                         </div>
                          <div class="input" >
-                            <input class="caja-input" type="password" id="lenguaje" name="lenguaje" autocomplete="new-password" placeholder="Lenguaje" required>						
+                            <input class="caja-input" type="text" id="lenguaje" name="lenguaje" autocomplete="new-password" placeholder="Lenguaje" required>						
                             <span class="icono">
-                                <i class="fas fa-lock-open"></i>
+                                <i class="fas fa-globe-americas"></i>
                             </span>
                         </div>
 
