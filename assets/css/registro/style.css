@@ -574,7 +574,7 @@ input[type="checkbox"]:checked + label:hover span:before {
   line-height: 1.5;
   color: white;
   text-decoration:none;
-top:50px;
+top:20px;
   position:relative;
   background-color: #757575;
   padding: 7px 17px;
