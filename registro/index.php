@@ -97,11 +97,11 @@
             $apellidos = filter_input(INPUT_POST, "apellidos", FILTER_SANITIZE_STRING);
             $edad = filter_input(INPUT_POST, "edad", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
-            $password = filter_input(INPUT_GET, "password", FILTER_SANITIZE_STRING);
-            $password2 = filter_input(INPUT_GET, "password2", FILTER_SANITIZE_STRING);
-            $lenguaje = filter_input(INPUT_GET, "lenguaje", FILTER_SANITIZE_STRING);
+            $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
+            $password2 = filter_input(INPUT_POST, "password2", FILTER_SANITIZE_STRING);
+            $lenguaje = filter_input(INPUT_POST, "lenguaje", FILTER_SANITIZE_STRING);
             $usuario = new user($nombre, $apellidos, $edad, $email, $password, $password2, $lenguaje);
-            $usuario = insert(['firstName' => $nombre, 'lastName' => $apellidos, 'birthDate' => $edad, 'email' => $email, 'pass' => $password, 'interfaceLanguage' => $lenguaje, 'userType' => 1])
+            $usuario->insert(['firstName' => $nombre, 'lastName' => $apellidos, 'birthDate' => $edad, 'email' => $email, 'pass' => $password, 'interfaceLanguage' => $lenguaje, 'userType' => 1])
             ?>
     </body>
 </html>
