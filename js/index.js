@@ -1,6 +1,4 @@
-/* Before Concord can Depart you have to initialize it by adding <main class="concord" id="concord-cards">
-Keep checking back for updates. I'm going to make the concords self generating so when JSON updates the cards will generate
-*/
+
 (function($) {
   var $concord = $('#concord-cards'),
     $card = $concord.find('.card'),
@@ -80,6 +78,11 @@ Keep checking back for updates. I'm going to make the concords self generating s
     };
     viewport.right = viewport.left + win.width();
     viewport.bottom = viewport.top + win.height();
+
+ 
+
+  
+    var plantilla_2 = this.offset();
 
     var bounds = this.offset();
     bounds.right = bounds.left + this.outerWidth();
