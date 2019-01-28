@@ -1,16 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {Routes,RouterModule} from '@angular/router';
+
+import { IniciarSesionComponent } from "./iniciar/iniciar.component";
+import { FootercolorComponent } from './footer-color/footer-color.component';
+import { RegistroComponent } from './registro/registro.component';
+
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IniciarSesionComponent,
+    FootercolorComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
