@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+//import { Routes, RouterModule } from '@angular/router';
 import { RegistroComponent } from './registro/registro.component';
 import { IniciarSesionComponent } from './iniciar/iniciar.component';
+import { EditarSubscripcionComponent } from './editar-subscripcion/editar-subscripcion.component';
+import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
-const routes: Routes = [
-  {path:'',component: IniciarSesionComponent}, 
-  { path: 'registro', redirectTo: 'registro',component:RegistroComponent},
-];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    CommonModule
+  ],
+  exports: [ RouterModule ],
+  declarations: []
 })
 export class AppRoutingModule { }
