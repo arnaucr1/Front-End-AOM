@@ -6,12 +6,15 @@ import { NgModule } from '@angular/core';
 
 import { IniciarSesionComponent } from './iniciar/iniciar.component';
 import { RegistroComponent } from './registro/registro.component';
+import { editarPerfilComponent } from './editarperfil/editarperfil.component';
 
 //creem la constant appRoutes del tipus Routes amb totes les rutes de la App
 const appRoutes:Routes=[ 
     {path:'',component:IniciarSesionComponent}, //pagina inicial
     {path:'registro',component:RegistroComponent},
+    {path: 'editarperfil', component: editarPerfilComponent },
     {path: '**', component: IniciarSesionComponent } // ** indica el path quan en un error
+  
     ];
 
 

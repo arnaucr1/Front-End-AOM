@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IniciarSesionComponent } from "./iniciar/iniciar.component";
 import { FootercolorComponent } from './footer-color/footer-color.component';
 import { RegistroComponent } from './registro/registro.component';
+import { editarPerfilComponent } from './editarperfil/editarperfil.component';
 
 
 import { FormsModule } from '@angular/forms';
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     IniciarSesionComponent,
     FootercolorComponent,
-    RegistroComponent
+    RegistroComponent,
+    editarPerfilComponent
   ],
   imports: [
     BrowserModule,
