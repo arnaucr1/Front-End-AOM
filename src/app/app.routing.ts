@@ -19,7 +19,7 @@ const appRoutes:Routes=[
     {path: 'inicio', component:IniciarSesionComponent},
     {path: 'registro',component:RegistroComponent},
     {path: 'editarsubscripcion', component: EditarSubscripcionComponent},
-    {path: 'editar-perfil', component: EditarPerfilComponent},
+    {path: 'editarperfil', component: EditarPerfilComponent},
     {path: '**', redirectTo: 'inicio', pathMatch: 'full' } //Redireccion a inicio
     ];
 
