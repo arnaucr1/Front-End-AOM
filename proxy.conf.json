@@ -1,6 +1,6 @@
 {
 	"/apiAOM.php/*": {
-	"target": "http://localhost/WebServicesTest1/php",
+	"target": "http://localhost/AOMFrontEnd/php",
 	"secure": false,
 	"logLevel": "debug",
 	"changeOrigin": true
