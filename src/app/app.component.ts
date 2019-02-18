@@ -101,7 +101,7 @@ export class AppComponent implements OnInit {
   //constructor(private subscriptionService:SubscriptionService) {}
   constructor(private userService:UserService) {}
   ngOnInit(): void {
-    this.userService.delUser(5).subscribe(
+    this.userService.getUser(9).subscribe(
       (result) => {
         console.log(result);
 
