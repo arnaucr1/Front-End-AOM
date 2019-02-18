@@ -11,6 +11,8 @@ import { RegistroComponent } from './registro/registro.component';
 
 import { EditarSubscripcionComponent } from './editar-subscripcion/editar-subscripcion.component';
 
+import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
+
 
 import { FormsModule } from '@angular/forms';
 
@@ -21,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     IniciarSesionComponent,
     FootercolorComponent,
     RegistroComponent,
-    EditarSubscripcionComponent
+    EditarSubscripcionComponent,
+    EditarPerfilComponent
   ],
   imports: [
     BrowserModule,

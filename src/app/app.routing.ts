@@ -9,13 +9,18 @@ import { RegistroComponent } from './registro/registro.component';
 
 import { EditarSubscripcionComponent } from './editar-subscripcion/editar-subscripcion.component';
 
+import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
+
+
+
 //creem la constant appRoutes del tipus Routes amb totes les rutes de la App
 const appRoutes:Routes=[ 
     {path: '', redirectTo: 'inicio', pathMatch: 'full' }, //pagina inicial
     {path: 'inicio', component:IniciarSesionComponent},
     {path: 'registro',component:RegistroComponent},
     {path: 'editarsubscripcion', component: EditarSubscripcionComponent},
-    {path: '**', redirectTo: 'inicio', pathMatch: 'full' }, //Redireccion a inicio
+    {path: 'editarperfil', component: EditarPerfilComponent},
+    {path: '**', redirectTo: 'inicio', pathMatch: 'full' } //Redireccion a inicio
     ];
 
 
