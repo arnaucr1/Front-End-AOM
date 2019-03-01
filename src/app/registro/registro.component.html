@@ -8,32 +8,37 @@
                     <span class="titulo">AOM</span> 
                     <span class="sub-titulo">Registro</span>
                     <span class="sub-titulo"></span>
+
                     <div class="input" >
-                        <input class="caja-input" type="text" id="nombre" name="nombre" autocomplete="new-password" placeholder="Nombre"  required>
+                        <input class="caja-input" type="text" id="firstName" name="firstName" autocomplete="new-password" placeholder="Nombre" [(ngModel)]="newUser.firstName"  required>
                         <span class="icono">
                             <i class="fa fa-user-circle" aria-hidden="true"></i>
                         </span>
                     </div>
+
                     <div class="input" >
-                        <input class="caja-input" type="password" id="password" name="apellidos" autocomplete="new-password" placeholder="Apellidos" required>						
+                        <input class="caja-input" type="text" id="lastName" name="lastName" autocomplete="new-password" placeholder="Apellidos" [(ngModel)]="newUser.lastName" required>						
                         <span class="icono">
                             <i class="fas fa-lock-open"></i>
                         </span>
                     </div>
+
                     <div class="input" >
-                        <input class="caja-input" type="text" id="edad" name="edad" autocomplete="new-password" placeholder="Fecha nacimiento"  required>
+                        <input class="caja-input" type="date" id="birthDate" name="birthDate" autocomplete="new-password" placeholder="Fecha nacimiento"  [(ngModel)]="newUser.birthDate" required>
                         <span class="icono">
                             <i class="fa fa-user-circle" aria-hidden="true"></i>
                         </span>
                     </div>
+
                     <div class="input" >
-                        <input class="caja-input" type="text" id="email" name="email" autocomplete="new-password" placeholder="Email"  required>
+                        <input class="caja-input" type="email" id="email" name="email" autocomplete="new-password" placeholder="Email"  [(ngModel)]="newUser.email" required>
                         <span class="icono">
                             <i class="fa fa-user-circle" aria-hidden="true"></i>
                         </span>
                     </div>
+
                     <div class="input" >
-                        <input class="caja-input" type="password" id="password" name="password" autocomplete="new-password" placeholder="Contraseña" required>						
+                        <input class="caja-input" type="password" id="password" name="password" autocomplete="new-password" placeholder="Contraseña" [(ngModel)]="newUser.pass" required>						
                         <span class="icono">
                             <i class="fas fa-lock-open"></i>
                         </span>
@@ -45,9 +50,21 @@
                             <i class="fas fa-lock-open"></i>
                         </span>
                     </div>
+
+                    <div class="input" >
+                        <input class="caja-input" type="text" id="language" name="language" autocomplete="new-password" placeholder="Lenguaje de la aplicación" [(ngModel)]="newUser.interfaceLanguage" required>						
+                        <span class="icono">
+                            <i class="fas fa-lock-open"></i>
+                        </span>
+                    </div>
+
+                    <div class="input" >
+                        <input class="caja-input" type="hidden" id="userType" name="userType" autocomplete="new-password" value="1" [(ngModel)]="newUser.userType" required>
+                    </div>
+
                     <div class="input" >
                         <div class="todo-form-btn">
-                            <button type="submit" class="caja-titulo-btn">
+                            <button type="submit" (click)="addUser()" class="caja-titulo-btn">
                                 Registrar
                             </button>
                         </div><br>
@@ -55,4 +72,5 @@
                             <a class="txt2" routerLink="/" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
                         </div>
                     </div>
+                    
                     <footer-color-tag></footer-color-tag>

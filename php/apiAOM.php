@@ -39,8 +39,9 @@ switch ($verbo) {
         //Si nos mandan la acción buscar realizamos la búsqueda
         //Si nos hacen una petición GET podemos tener dos casos, que nos pidan un id concreto o no
         //En el primer caso buscamos ese registro concreto, en el segundo caso devolvemos todo
-        if ($accion == "buscar") {
-            $datos = $objeto->getAll($datos);
+        if ($accion == "usersubscriptions") {
+            $objeto = $objeto->loadUserSubscriptions($id);
+            //$datos = $objeto-> ($datos);
             $http->setHttpHeaders(200, new Response("Lista $controller", $datos));
         } elseif (empty($id)) {
             //Necesitamos crear la función loadAll en la clase o bien usar el getALL
