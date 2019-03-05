@@ -62,6 +62,7 @@ switch ($verbo) {
         }
         //Y lo guardamos
         $objeto->save();
+        echo '{"status":"ok"}';
 
         break;
     case 'PUT':
