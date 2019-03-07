@@ -10,8 +10,8 @@ export class SubscriptionService {
 
     constructor(private http:HttpClient) { }
 
-    getSubscriptions() {
-        let url = "/apiAOM.php/?controller=subscriptionclass";
+    getSubscriptions(userID:number) {
+        let url = "/apiAOM.php/?controller=subscriptionclass&userID="+userID;
         return this.http.get(url,
             { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
             );
@@ -24,11 +24,24 @@ export class SubscriptionService {
             );
     }
 
+    addSubscription(subscription:Subscription) {
+        let url = "/apiAOM.php/?controller=subscriptionclass";
+        return this.http.post(url, subscription, 
+            { headers:new HttpHeaders({'Content-Type':'application/json'}) }
+            );
+    }
+
+    modifySubscription(numSubscription:number, subscription:Subscription) {
+        let url = "/apiAOM.php/?controller=subscriptionclass&id="+numSubscription;
+        return this.http.put(url, subscription, 
+            { headers:new HttpHeaders({'Content-Type':'application/json'}) }
+            );
+    }
+
     delSubscription(numSubscription:number) {
         let url = "/apiAOM.php/?controller=subscriptionclass&id="+numSubscription;
         return this.http.delete(url,
             { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
             );
     }
-
 }

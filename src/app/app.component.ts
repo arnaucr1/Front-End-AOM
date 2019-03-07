@@ -84,31 +84,32 @@ import {
             })
           ),
         {optional:true}),
-      ])
-    
-    
-    
+      ])    
     ]),
       ], // register the animations
   providers: [SubscriptionService, UserService]
 })
 export class AppComponent implements OnInit {
+  subscription:Subscription = new Subscription(0, "", "", 0, null, 0, 0, 0);
+  subscriptions = [this.subscription];
 
   title = 'webServicesTest1';
-  //newSubscription:Subscription = new Subscription(0, "", "", 0, null, 0, 0, 0);
-  newUser:User = new User(0, "", "", null, "", "", 0, 0);
+  newSubscription:Subscription = new Subscription(0, "", "", 0, null, 0, 0, 0);
+  //newUser:User = new User(0, "", "", null, "", "", 0, 0);
   errorMessage = "";
-  //constructor(private subscriptionService:SubscriptionService) {}
-  constructor(private userService:UserService) {}
+  constructor(private subscriptionService:SubscriptionService) {}
+  //constructor(private userService:UserService, private subscriptionService:SubscriptionService) {}
   ngOnInit(): void {
-    this.userService.getUser(9).subscribe(
+  }
+
+  showSubscription(userID:number) {
+    this.subscriptionService.getSubscriptions(userID).subscribe(
       (result) => {
         console.log(result);
-
       }, (error) => {
         console.log(error);
-
       }
-    );
+    )
   }
+
 }

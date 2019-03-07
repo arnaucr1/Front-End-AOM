@@ -126,6 +126,23 @@ class subscriptionClass extends Tabla {
         }
     }
 
+    function loadUserSubscriptions($id) {
+        $user = $this->getById($id);
+
+        if (!empty($user)) {
+            $this->subscriptionID = $user['userID'];
+            $this->subscriptionName = $user['subscriptionName'];
+            $this->description = $user['description'];
+            $this->cycle = $user['cycle'];
+            $this->firstBill = $user['firstBill'];
+            $this->remainMe = $user['remainMe'];
+            $this->price = $user['price'];
+            $this->userID = $id;
+        } else {
+            throw new Exception("No existe ese registro");
+        }
+    }
+
     function delete() {
         if (!empty($this->subscriptionID)) {
             $this->deleteById($this->subscriptionID);
