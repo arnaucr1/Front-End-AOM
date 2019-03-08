@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  //apiHost:'35.205.36.243/',
+  //apiHost:'35.187.191.2',
+  //loginHost:'35.195.16.97'
 };
 
 /*

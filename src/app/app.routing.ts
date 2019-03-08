@@ -2,6 +2,7 @@ import {ModuleWithProviders} from '@angular/core';
 import {Routes,RouterModule} from '@angular/router';
 
 import { NgModule } from '@angular/core';
+//import { AuthService } from './auth.service';
 
 
 import { IniciarSesionComponent } from './iniciar/iniciar.component';
@@ -18,8 +19,8 @@ const appRoutes:Routes=[
     {path: '', redirectTo: 'inicio', pathMatch: 'full' }, //pagina inicial
     {path: 'inicio', component:IniciarSesionComponent},
     {path: 'registro',component:RegistroComponent},
-    {path: 'editarsubscripcion', component: EditarSubscripcionComponent},
-    {path: 'editarperfil', component: EditarPerfilComponent},
+    {path: 'editarsubscripcion', component: EditarSubscripcionComponent,/*canActivate:[AuthService]*/},
+    {path: 'editarperfil', component: EditarPerfilComponent,/*canActivate:[AuthService]*/},
     {path: '**', redirectTo: 'inicio', pathMatch: 'full' } //Redireccion a inicio
     ];
 
