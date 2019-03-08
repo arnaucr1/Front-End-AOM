@@ -10,9 +10,9 @@ import { HttpClient } from '@angular/common/http';
     providers: [SubscriptionService]
   })
 
-  export class EditarPerfilComponent implements OnInit {
+  export class RegistroSubscripcionComponent implements OnInit {
     constructor(private subscriptionService:SubscriptionService) {}
-    newSubscription:Subscription = new Subscription(0, "", "", 0, null, 0, 0, 0);
+    newSubscription:Subscription = new Subscription(0, "", "", 0, null, 0, 0, null);
   ngOnInit() {
     
   }

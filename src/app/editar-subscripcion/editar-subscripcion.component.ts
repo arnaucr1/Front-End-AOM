@@ -12,8 +12,31 @@ import { HttpClient } from '@angular/common/http';
 export class EditarSubscripcionComponent implements OnInit {
 
   constructor(private subscriptionService:SubscriptionService) {}
-
+  editSubscription:Subscription = new Subscription(0, "", "", 0, null, 0, 0, null);
   ngOnInit() {
+    this.getSubscription(1);
   }
 
+  getSubscription(subscriptionID:number) {
+    this.subscriptionService.getSubscription(subscriptionID).subscribe(
+      (result) => {
+      this.editSubscription = result["data"];
+      console.log(result["data"]);
+      },
+      (error) => {
+         console.log(error);
+      }
+    )
+  }
+
+  modifySubscription(subscriptionID:number) {
+    this.subscriptionService.modifySubscription(subscriptionID, this.editSubscription).subscribe(
+      (result) => {
+        console.log(result);
+      }, 
+      (error) => {
+        console.log(error);
+      }
+    )
+  }
 }

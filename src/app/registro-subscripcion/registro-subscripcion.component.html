@@ -52,19 +52,12 @@
                     </div>
 
                     <div class="input" >
-                        <input class="caja-input" type="text" id="language" name="language" autocomplete="new-password" placeholder="Lenguaje de la aplicación" [(ngModel)]="newUser.interfaceLanguage" required>						
-                        <span class="icono">
-                            <i class="fas fa-lock-open"></i>
-                        </span>
-                    </div>
-
-                    <div class="input" >
-                        <input class="caja-input" type="hidden" id="userType" name="userType" autocomplete="new-password" value="1" [(ngModel)]="newUser.userType" required>
+                        <input class="caja-input" type="hidden" id="userID" name="userID" autocomplete="new-password" value="1" [(ngModel)]="newSubscription.userID" required>
                     </div>
 
                     <div class="input" >
                         <div class="todo-form-btn">
-                            <button type="submit" (click)="addUser()" class="caja-titulo-btn">
+                            <button type="submit" (click)="addSubscription()" class="caja-titulo-btn">
                                 Registrar
                             </button>
                         </div><br>
