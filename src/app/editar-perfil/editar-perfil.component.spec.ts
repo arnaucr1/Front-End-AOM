@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditarPerfilComponent } from './editar-perfil.component';
 
-describe('EditarPerfilComponent', () => {
+describe('EditarUsuarioComponent', () => {
   let component: EditarPerfilComponent;
   let fixture: ComponentFixture<EditarPerfilComponent>;
 

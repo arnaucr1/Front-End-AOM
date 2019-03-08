@@ -1,56 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">@</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-      </div>
+<title>Iniciar Sesión</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<form class="formulario" action="" method="post" >    
+    <div class="limitador">
+        <div class="todo">
+            <div class="caja">
+                
+                <form class="formulario" action="" method="post" >
+                    <span class="titulo">AOM</span> 
+                    <span class="sub-titulo">Editar datos de perfil</span>
+                    <span class="sub-titulo"></span>
+                    <div class="input" >
+                        <input class="caja-input" type="text" id="firstName" name="firstName" autocomplete="new-password" placeholder="Nombre" value="{{usuario.firstName}}" [(ngModel)]="usuario.firstName"  required>
+                        <span class="icono">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        </span>
+                    </div>
 
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">@</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-      </div>
+                    <div class="input" >
+                        <input class="caja-input" type="text" id="lastName" name="lastName" autocomplete="new-password" placeholder="Apellidos" value="{{usuario.lastName}}" [(ngModel)]="usuario.lastName" required>						
+                        <span class="icono">
+                            <i class="fas fa-lock-open"></i>
+                        </span>
+                    </div>
 
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">@</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-      </div>
+                    <div class="input" >
+                        <input class="caja-input" type="date" id="birthDate" name="birthDate" autocomplete="new-password" placeholder="Fecha nacimiento" value="{{usuario.birthDate}}" [(ngModel)]="usuario.birthDate" required>
+                        <span class="icono">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        </span>
+                    </div>
 
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">@</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-      </div>
+                    <div class="input" >
+                        <input class="caja-input" type="email" id="email" name="email" autocomplete="new-password" placeholder="Email" value="{{usuario.email}}" [(ngModel)]="usuario.email" required>
+                        <span class="icono">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        </span>
+                    </div>
 
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">@</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-      </div>
+                    <div class="input" >
+                        <input class="caja-input" type="text" id="language" name="language" autocomplete="new-password" placeholder="Lenguaje de la aplicación" value="{{usuario.interfaceLanguage}}" [(ngModel)]="usuario.interfaceLanguage" required>						
+                        <span class="icono">
+                            <i class="fas fa-lock-open"></i>
+                        </span>
+                    </div>
 
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">@</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-      </div>
-</body>
-</html>
+                    <div class="input" >
+                        <div class="todo-form-btn">
+                            <button type="submit" (click)="modifyUser(1)" class="caja-titulo-btn">
+                                Actualizar
+                            </button>
+                        </div><br>
+                        <div class="text-center">
+                            <a class="txt2" routerLink="/" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
+                        </div>
+                    </div>
+                    </form>
+                    </div>
+                    </div>
+                    </div>
+                    </form>
+                    
+                    <footer-color-tag></footer-color-tag>

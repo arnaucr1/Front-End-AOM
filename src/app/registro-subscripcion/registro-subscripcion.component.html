@@ -1,0 +1,76 @@
+<title>Iniciar Sesión</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<form class="formulario" action="" method="post" >    
+    <div class="limitador">
+        <div class="todo">
+            <div class="caja">	
+                <form class="formulario" action="" method="post" >
+                    <span class="titulo">AOM</span> 
+                    <span class="sub-titulo">Registro</span>
+                    <span class="sub-titulo"></span>
+
+                    <div class="input" >
+                        <input class="caja-input" type="text" id="subscriptionName" name="subscriptionName" autocomplete="new-password" placeholder="Nombre de la sucripción" [(ngModel)]="newSubscription.subscriptionName"  required>
+                        <span class="icono">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="input" >
+                        <input class="caja-input" type="text" id="description" name="description" autocomplete="new-password" placeholder="Descripción" [(ngModel)]="newSubscription.description" required>						
+                        <span class="icono">
+                            <i class="fas fa-lock-open"></i>
+                        </span>
+                    </div>
+
+                    <div class="input" >
+                        <input class="caja-input" type="number" id="cycle" name="cycle" autocomplete="new-password" placeholder="Ciclo de pago"  [(ngModel)]="newSubscription.cycle" required>
+                        <span class="icono">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="input" >
+                        <input class="caja-input" type="date" id="firstBill" name="firstBill" autocomplete="new-password" placeholder="Fecha de la primera factura"  [(ngModel)]="newSubscription.firstBill" required>
+                        <span class="icono">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="input" >
+                        <input class="caja-input" type="number" id="remainMe" name="remainMe" autocomplete="new-password" placeholder="Recordatorio de pago" [(ngModel)]="newSubscription.remainMe" required>						
+                        <span class="icono">
+                            <i class="fas fa-lock-open"></i>
+                        </span>
+                    </div>
+                  
+                    <div class="input" >
+                        <input class="caja-input" type="number" id="price" name="price" autocomplete="new-password" placeholder="Precio" [(ngModel)]="newSubscription.price" required>						
+                        <span class="icono">
+                            <i class="fas fa-lock-open"></i>
+                        </span>
+                    </div>
+
+                    <div class="input" >
+                        <input class="caja-input" type="text" id="language" name="language" autocomplete="new-password" placeholder="Lenguaje de la aplicación" [(ngModel)]="newUser.interfaceLanguage" required>						
+                        <span class="icono">
+                            <i class="fas fa-lock-open"></i>
+                        </span>
+                    </div>
+
+                    <div class="input" >
+                        <input class="caja-input" type="hidden" id="userType" name="userType" autocomplete="new-password" value="1" [(ngModel)]="newUser.userType" required>
+                    </div>
+
+                    <div class="input" >
+                        <div class="todo-form-btn">
+                            <button type="submit" (click)="addUser()" class="caja-titulo-btn">
+                                Registrar
+                            </button>
+                        </div><br>
+                        <div class="text-center">
+                            <a class="txt2" routerLink="/" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
+                        </div>
+                    </div>
+                    
+                    <footer-color-tag></footer-color-tag>
