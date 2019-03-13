@@ -10,6 +10,15 @@ export class UserService {
 
     constructor(private http:HttpClient) { }
 
+    login(test:any) {
+
+    }
+
+    /*login(loginPayload) : Observable<ApiResponse> {
+        return this.http.post<ApiResponse>('http://localhost:8080/'+ 'token/generate-token', loginPayload).pipe(
+    catchError(val => of(val)));
+    };*/
+
     getUsers() {
         let url = "/apiAOM.php/?controller=userclass";
         return this.http.get(url,
