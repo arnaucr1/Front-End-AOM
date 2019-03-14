@@ -160,6 +160,14 @@ class userClass extends Tabla {
         }
     }
 
+    function login($user, $pass) {
+        $info = ['email' => $user, 'pass' => $pass];
+        echo "INFO: $user $pass";
+        var_dump($info);
+        $u = $this->getAll($info);
+        return !empty($u);
+    }
+    
     function showUserData($userID) {
         $data = $this->getAll(['userID' => $userID]);
         return $data;
