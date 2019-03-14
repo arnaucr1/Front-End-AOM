@@ -9,7 +9,8 @@ import { FootercolorComponent } from './footer-color/footer-color.component';
 import { RegistroComponent } from './registro/registro.component';
 import { EditarSubscripcionComponent } from './editar-subscripcion/editar-subscripcion.component';
 import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
-import { RegistroSubscripcionComponent } from './registro-subscripcion/registro-subscripcion.component'
+import { RegistroSubscripcionComponent } from './registro-subscripcion/registro-subscripcion.component';
+import { HomepageComponent } from './homepage/homepage.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
@@ -46,7 +47,8 @@ const config = new AuthServiceConfig([
     RegistroComponent,
     EditarSubscripcionComponent,
     EditarPerfilComponent,
-    RegistroSubscripcionComponent
+    RegistroSubscripcionComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
