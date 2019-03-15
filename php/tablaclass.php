@@ -78,12 +78,15 @@ abstract class Tabla {
      * @return type
      */
     function getAll($condicion = [], $completo = true) {
+       // echo "getAll;";
+       // var_dump ($condicion);
         $where = "";
         $campos = " * ";
         if (!empty($condicion)) {
             $where = " where " . join(" and ", array_map(function($v) {
                                 return $v . "=:" . $v;
                             }, array_keys($condicion)));
+                         
         }
         if (!$completo && !empty($this->showFields)) {
             $campos = implode(",", $this->showFields);
@@ -181,9 +184,8 @@ abstract class Tabla {
     }
 
     function login($user, $pass) {
-
-        $us = $this->getAll(['email' => $user, 'pass' => $pass]);
-        return !empty($us);
+        $u = $this->getAll(['email' => $user, 'pass' => $pass]);
+        return !empty($u);
     }
 
     //Función que se encarga de insetar los datos obtenidos en una consulta a la tabla
