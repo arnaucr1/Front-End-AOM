@@ -9,7 +9,8 @@ import { FootercolorComponent } from './footer-color/footer-color.component';
 import { RegistroComponent } from './registro/registro.component';
 import { EditarSubscripcionComponent } from './editar-subscripcion/editar-subscripcion.component';
 import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
-import { RegistroSubscripcionComponent } from './registro-subscripcion/registro-subscripcion.component'
+import { RegistroSubscripcionComponent } from './registro-subscripcion/registro-subscripcion.component';
+import { HomepageComponent } from './homepage/homepage.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
@@ -22,7 +23,7 @@ import { AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider, LinkedIn
 const config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider('624796833023-clhjgupm0pu6vgga7k5i5bsfp6qp6egh.apps.googleusercontent.com')
+    provider: new GoogleLoginProvider('525707736535-r9mlfv6mdpifu51f8sroujaq0jjiapg5.apps.googleusercontent.com')
   },
   {
     id: FacebookLoginProvider.PROVIDER_ID,
@@ -46,7 +47,8 @@ const config = new AuthServiceConfig([
     RegistroComponent,
     EditarSubscripcionComponent,
     EditarPerfilComponent,
-    RegistroSubscripcionComponent
+    RegistroSubscripcionComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
