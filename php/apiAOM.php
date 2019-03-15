@@ -43,7 +43,7 @@ if (empty($controller) || !file_exists($controller . ".php")) {
 require $controller . ".php";
 $objeto = new $controller;
 
-//Miramos qué verbo nos han enviado para actuar en consecuencia
+//Miramos qué verbo nos han enviado para actuar en 
 switch ($verbo) {
     case 'GET':
         //Si nos mandan la acción buscar realizamos la búsqueda
