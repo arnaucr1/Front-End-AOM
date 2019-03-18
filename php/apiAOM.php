@@ -8,6 +8,16 @@ require_once 'http.php';
 $verbo = $_SERVER['REQUEST_METHOD'];
 //Es posible que nos manden un id (lo usamos en GET, PUT y DELETE
 $id = filter_input(INPUT_GET, 'id');
+//$u = filter_input(INPUT_POST, 'email');
+//$p = filter_input(INPUT_POST, 'pass');
+$data = file_get_contents("php://input");
+$raw = json_decode($data);
+
+//var_dump($raw);
+$u=$raw->email;
+$p= $raw->pass;
+
+echo "U: $u  P: $p";
 //LLamamos controlador a la tabla a la que vamos a acceder
 $controller = filter_input(INPUT_GET, 'controller');
 //Incluímos la posibilidad de mandar una acción distinta al CRUD
@@ -33,7 +43,7 @@ if (empty($controller) || !file_exists($controller . ".php")) {
 require $controller . ".php";
 $objeto = new $controller;
 
-//Miramos qué verbo nos han enviado para actuar en consecuencia
+//Miramos qué verbo nos han enviado para actuar en 
 switch ($verbo) {
     case 'GET':
         //Si nos mandan la acción buscar realizamos la búsqueda
@@ -55,13 +65,29 @@ switch ($verbo) {
         }
         break;
     case 'POST':
+        if ($accion == "login") {
 
+            $data = file_get_contents("php://input");
+            $raw = json_decode($data);
+
+            var_dump($raw);
+            $raw->email;
+            $raw->pass;
+           
+
+            $objeto = $objeto->login($u, $p);
+            
+            var_dump($objeto);
+            
+            $http->setHttpHeaders(200, new Response("Lista $controller", $datos));
+        } else {
         //Ponemos los valores en cada campo del objeto
         foreach ($datos as $c => $v) {
             $objeto->$c = $v;
         }
         //Y lo guardamos
         $objeto->save();
+    }
         echo '{"status":"ok"}';
 
         break;
