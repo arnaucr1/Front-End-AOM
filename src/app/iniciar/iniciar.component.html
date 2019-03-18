@@ -24,22 +24,18 @@
                     </div>
                     <div class="input" >
                         <div class="todo-form-btn">
-                            <button type="submit" class="caja-titulo-btn">
-                                ENTRAR
-                            </button>
+                            <button type="submit" class="caja-titulo-btn">Entrar</button>
+                            <button type="submit" class="caja-titulo-btn" (click)="signInWithGoogle()"><i class="fab fa-google">Inciar con Google</i></button>
                         </div><br>
                     </div>
                     <div class="text-center">
                         <a class="txt2" routerLink="/registro" routerLinkActive="cssSiLinActiu"> Registrate ahora <i class="fas fa-arrow-right"></i></a>
-                        <a class="txt2" routerLink="/editarsubscripcion" routerLinkActive="cssSiLinActiu"> Editar subscripcion <i class="fas fa-arrow-right"></i></a>
+                      <!--  <a class="txt2" routerLink="/editarsubscripcion" routerLinkActive="cssSiLinActiu"> Editar subscripcion <i class="fas fa-arrow-right"></i></a>
                         <a class="txt2" routerLink="/editarperfil" routerLinkActive="cssSiLinActiu"> Editar perfil <i class="fas fa-arrow-right"></i></a>
-                        <a class="txt2" routerLink="/registrosubscripcion" routerLinkActive="cssSiLinActiu"> Añadir subscripcion <i class="fas fa-arrow-right"></i></a>
+                        <a class="txt2" routerLink="/registrosubscripcion" routerLinkActive="cssSiLinActiu"> Añadir subscripcion <i class="fas fa-arrow-right"></i></a>-->
                         <a class="txt2" routerLink="/homepage" routerLinkActive="cssSiLinActiu">Home<i class="fas fa-arrow-right"></i></a>
                     </div>
-           
                       <div id="name"></div>
-      
-
                 </form>
                 <div class=" bg-transparent text-center">
                   <div *ngIf="!user" class=" text-center">

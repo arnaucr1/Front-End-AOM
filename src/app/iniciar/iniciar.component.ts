@@ -26,13 +26,13 @@ export class IniciarSesionComponent implements OnInit {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
 
-  signInWithFB(): void {
+  /*signInWithFB(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
 
   signInWithLinkedIn(): void {
     this.authService.signIn(LinkedInLoginProvider.PROVIDER_ID);
-  }
+  }*/
 
   signOut(): void {
     this.authService.signOut();
