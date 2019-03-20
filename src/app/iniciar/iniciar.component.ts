@@ -4,17 +4,20 @@ import { AuthService } from 'angularx-social-login';
 import { SocialUser } from 'angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider } from 'angularx-social-login';
 import {Router} from "@angular/router";
+import { User } from '../user';
+import { UserService } from '../user.service';
 
 @Component({
     selector: 'iniciar-tag',
     templateUrl: './iniciar.component.html',
-    styleUrls: ['./iniciar.component.css']
+    styleUrls: ['./iniciar.component.css'],
+    providers: [UserService]
 })
 export class IniciarSesionComponent implements OnInit {
 
   user: SocialUser;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private userService:UserService) { }
 
   ngOnInit() {
 
@@ -33,6 +36,17 @@ export class IniciarSesionComponent implements OnInit {
       console.log("ERROR");
       console.log(res);
     }
+    )
+  }
+
+  signIn(): void {
+    this.userService.loginUser().subscribe(
+      (result) => {
+        console.log(result);
+      }, 
+      (error) => {
+        console.log(error);
+      }
     )
   }
 

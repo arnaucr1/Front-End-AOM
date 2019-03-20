@@ -17,7 +17,6 @@ $raw = json_decode($data);
 $u=$raw->email;
 $p= $raw->pass;
 
-echo "U: $u  P: $p";
 //LLamamos controlador a la tabla a la que vamos a acceder
 $controller = filter_input(INPUT_GET, 'controller');
 //Incluímos la posibilidad de mandar una acción distinta al CRUD
@@ -66,20 +65,17 @@ switch ($verbo) {
         break;
     case 'POST':
         if ($accion == "login") {
-
             $data = file_get_contents("php://input");
-            $raw = json_decode($data);
-
-            var_dump($raw);
+            $raw = json_decode($data);;
             $raw->email;
             $raw->pass;
-           
-
             $objeto = $objeto->login($u, $p);
+            if ($objeto == true) {
+                $http->setHttpHeaders(200, new Response("Login $controller", $datos));
+            } else {
+                echo '{"status":"Login incorrecto"}';
+            }
             
-            var_dump($objeto);
-            
-            $http->setHttpHeaders(200, new Response("Lista $controller", $datos));
         } else {
         //Ponemos los valores en cada campo del objeto
         foreach ($datos as $c => $v) {
