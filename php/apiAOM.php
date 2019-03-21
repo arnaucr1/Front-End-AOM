@@ -21,6 +21,7 @@ $p= $raw->pass;
 $controller = filter_input(INPUT_GET, 'controller');
 //Incluímos la posibilidad de mandar una acción distinta al CRUD
 $accion = filter_input(INPUT_GET, 'accion');
+
 //Recuperamos los datos del raw
 $raw = file_get_contents("php://input");
 //Los decodificamos de json a array de php
