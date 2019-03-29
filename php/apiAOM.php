@@ -14,8 +14,6 @@ $data = file_get_contents("php://input");
 $raw = json_decode($data);
 
 //var_dump($raw);
-$u=$raw->email;
-$p= $raw->pass;
 
 //LLamamos controlador a la tabla a la que vamos a acceder
 $controller = filter_input(INPUT_GET, 'controller');
@@ -66,6 +64,8 @@ switch ($verbo) {
         break;
     case 'POST':
         if ($accion == "login") {
+            $u=$raw->email;
+            $p= $raw->pass;
             $data = file_get_contents("php://input");
             $raw = json_decode($data);;
             $raw->email;

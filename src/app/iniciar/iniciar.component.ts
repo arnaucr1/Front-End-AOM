@@ -69,7 +69,11 @@ export class IniciarSesionComponent implements OnInit {
     console.log(this.user1);
     this.userService.loginUser(this.user1).subscribe(
       (result) => {
+        console.log(result["message"]);
+        if(result["message"]="Login userclass") {
+        this.router.navigate(['/homepage']);
         console.log(result);
+        }
       }, 
       (error) => {
         console.log(error);

@@ -1,35 +1,47 @@
 <main class="concord" id="concord-cards">
-  <header>
-                <time>
-                    <h5 id="date"> {{today | date:'dd/MM/yyyy'}} </h5> <!-- DATA ACTUAL -->
-                    <h3 id="day">Mis Suscripciones</h3>
-                </time>
-                <a href="../perfil" target="_blank"><img class="avatar" src="https://arnaucr.com/ot.png"></a>
-    <a href="../editarsubscripcion" class="botones" target="_blank"><i class="fas fa-edit"></i></a>
-    <a href="../editarperfil" class="botones" target="_blank"><i class="fas fa-user-edit"></i></a>
-    <a href="../registrosubscripcion" class="botones" target="_blank"><i class="fas fa-plus-circle"></i></a>
-    <div *ngIf="user" class="card text-center">
-    <div class="card-block">
-        <button class="btn btn-danger" (click)="signOut()">Cerrar Sesión</button>
-      </div>
+    <header>
+        
+        <time>
+            <h5 id="date"> {{today | date:'dd/MM/yyyy'}}</h5>
+            <h3 id="day">Mis Suscripciones</h3>
+        </time>
+
+        <a href="../perfil" target="_blank"><img class="avatar" src="https://arnaucr.com/ot.png"></a>
+        <a href="../editarsubscripcion" class="botones" target="_blank"><i class="fas fa-edit"></i></a>
+        <a href="../editarperfil" class="botones" target="_blank"><i class="fas fa-user-edit"></i></a>
+        <a href="../registrosubscripcion" class="botones" target="_blank"><i class="fas fa-plus-circle"></i></a>
+
+        <div *ngIf="user" class="card text-center">
+            <div class="card-block">
+                <button class="btn btn-danger" (click)="signOut()">Cerrar Sesión</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="card x" data-color="" *ngFor="let mySubscription of mySubscriptions; let i = index">
+        <input type="button" class="concord exit" value="×"/>
+
+        <section class="wrapper">
+            <img class="tarjeta" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/565097/city-landscape-vector.png">
+
+            <header class="card-title">
+                <h6>{{mySubscription.cycle}}</h6>
+                <h4>{{mySubscription.subscriptionName}}</h4>
+            </header>
+
+            <footer class="card-footer">
+                <input type="button" class="concord" value="€ {{mySubscription.price}}">
+            </footer>
+
+        </section>
+
+        <div class="content">
+            <p>
+                <b>Descripción</b>
+                {{mySubscription.description}}
+            </p>
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=64aea2d5c42b610bb0ed8aede22c2507"/>
+            <p>In elementum finibus dui, ac rutrum ante consectetur sit amet. Aenean mauris sem, pulvinar vel tempor vel, volutpat sed turpis. Vestibulum arcu est, blandit ac ex et, ultrices consequat est.</p>
+        </div>
+
     </div>
-  </header>
-  <div class="card x" data-color="" >
-    <input type="button" class="concord exit" value="×"/>
-    <section class="wrapper">
-        <img class="tarjeta" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/565097/city-landscape-vector.png">
-        <header class="card-title">
-            <h6>Mensual</h6>
-            <h4>Spotify</h4>
-        </header>
-        <footer class="card-footer">
-            <p>gghjghj.</p> <input type="button" class="concord" value="€ 9.99">
-        </footer>
-    </section>
-    <div class="content">
-        <p><b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Quisque lacinia, turpis ac congue vehicula, ipsum enim semper neque, nec ultrices mauris dui non neque. Phasellus libero purus, viverra sit amet consectetur at, sagittis vel turpis. Quisque nec nulla quis neque pharetra
-            volutpat. Etiam sodales odio eu eros dictum efficitur. </p>
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=64aea2d5c42b610bb0ed8aede22c2507"/>
-        <p>In elementum finibus dui, ac rutrum ante consectetur sit amet. Aenean mauris sem, pulvinar vel tempor vel, volutpat sed turpis. Vestibulum arcu est, blandit ac ex et, ultrices consequat est.</p>
-    </div>
-</div>

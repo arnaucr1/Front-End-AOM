@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { DatePipe } from '@angular/common';
+import { Subscription } from '../subscription';
+import { SubscriptionService } from '../subscription.service';
 
 @Component({
     selector: 'homepage-tag',
@@ -8,16 +10,33 @@ import { DatePipe } from '@angular/common';
     providers: [DatePipe]
 })
 export class HomepageComponent implements OnInit{
-    ngOnInit() {
-        
-    }
-
     today = new Date();
-constructor(private datePipe: DatePipe){
-    let dataActual = Date.now();
+    constructor(private datePipe: DatePipe, private subscriptionService:SubscriptionService){
+        let dataActual = Date.now();
+    }
+    mySubscriptions:Subscription[] = [];
+    
+    ngOnInit() {
+        this.getSubscriptions(1);
+        this.customBackgroundImage();
+    }
+    
+    getSubscriptions(subscriptionID:number) {
+        this.subscriptionService.getSubscriptions(subscriptionID).subscribe(
+          (result) => {
+              this.mySubscriptions = result["data"]
+              console.log(result["data"]);
+            }, (error) => {
+              console.log(error);
+            }
+        )
+    } 
 
-    //this.today = this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
-    //formatDate(this.today, 'yyyy/MM/dd', 'en')
-
-}
+    customBackgroundImage() {
+        if(this.mySubscriptions["SubscriptionName"] == "Netflix") {
+            console.log("test netflix");
+        } else if (this.mySubscriptions["SubscriptionName"] == "Spotify") {
+            console.log("test spotify")
+        }
+    }
 }
