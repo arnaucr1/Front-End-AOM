@@ -16,7 +16,7 @@ import { UserService } from '../user.service';
 export class IniciarSesionComponent implements OnInit {
 
   user: SocialUser;
-
+  user1:User=new User(0, "", "", null, "", "", "", 1);
   constructor(private authService: AuthService, private router: Router, private userService:UserService) { }
 
   ngOnInit() {
@@ -24,9 +24,12 @@ export class IniciarSesionComponent implements OnInit {
     this.authService.authState.subscribe((user) => {
       this.user = user;
       console.log("already logged");
-      this.router.navigate(['/homepage']);
+      //this.router.navigate(['/homepage']);
+      console.log(user);
     });
   }
+
+  newUserFromGoogle:User = new User(0, "", "", null, "", "", "", 1);
 
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then( (res) =>  {
@@ -39,7 +42,7 @@ export class IniciarSesionComponent implements OnInit {
     )
   }
 
-  signIn(): void {
+  /*signIn(): void {
     this.userService.loginUser().subscribe(
       (result) => {
         console.log(result);
@@ -48,7 +51,7 @@ export class IniciarSesionComponent implements OnInit {
         console.log(error);
       }
     )
-  }
+  }*/
 
   /*signInWithFB(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
@@ -60,6 +63,18 @@ export class IniciarSesionComponent implements OnInit {
 
   signOut(): void {
     this.authService.signOut();
+  }
+
+  signIn() {
+    console.log(this.user1);
+    this.userService.loginUser(this.user1).subscribe(
+      (result) => {
+        console.log(result);
+      }, 
+      (error) => {
+        console.log(error);
+      }
+    )
   }
 
 }

@@ -11,8 +11,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RegistroComponent implements OnInit{
     newUser:User = new User(0, "", "", null, "", "", "", 1);
-    //user:User = new User(0, "", "", null, "", "", "", 0);
-    //users = [this.user];
     constructor(private userService:UserService) {}
     ngOnInit(): void {
     }
