@@ -77,4 +77,9 @@ export class IniciarSesionComponent implements OnInit {
     )
   }
 
+
+  normalToken(){
+    
+  }
+
 }
