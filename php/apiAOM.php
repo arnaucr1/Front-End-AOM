@@ -64,19 +64,31 @@ switch ($verbo) {
         break;
     case 'POST':
         if ($accion == "login") {
-            $u=$raw->email;
-            $p= $raw->pass;
-            $data = file_get_contents("php://input");
-            $raw = json_decode($data);;
-            $raw->email;
-            $raw->pass;
-            $objeto = $objeto->login($u, $p);
-            if ($objeto == true) {
-                $http->setHttpHeaders(200, new Response("Login $controller", $datos));
+            $datos = file_get_contents("php://input");
+            $raw = json_decode($datos);
+            //$userType=0;
+            //$userID=1;
+            if ($raw->userType == 0 || $raw->userType == 1) {
+                
+                $datos = $objeto->login($raw->email, $raw->pass);
+                if (!empty($datos)) {
+                    $objeto = new $controller;
+
+                    if($userType == 0) {
+                        $objeto->load($raw->userID);
+                    } elseif ($userType == 1) {
+                        $objeto->load($raw->userID);
+                    }
+
+                    $objeto->setToken(bin2hex(random_bytes(100)));
+                    $objeto->save();
+                    $http->setHttpHeaders(200, new Response("Login $controller", $objeto->serialize()));
+                } else {
+                    $http->setHttpHeaders(400, new Response("Datos vacíos $controller", $datos));
+                }
             } else {
-                echo '{"status":"Login incorrecto"}';
+                $http->setHttpHeaders(400, new Response("El controlador no contiene la función login", $controller));
             }
-            
         } else {
         //Ponemos los valores en cada campo del objeto
         foreach ($datos as $c => $v) {

@@ -12,7 +12,8 @@ class userClass extends Tabla {
     private $pass;
     private $interfaceLanguage;
     private $userType;
-    private $num_fields = 8;
+    private $token;
+    private $num_fields = 9;
 
     function __construct() {
         $show = ["firstName"];
@@ -56,6 +57,10 @@ class userClass extends Tabla {
         return $this->userType;
     }
 
+    function getToken() {
+        return $this->token;
+    }
+    
     function setUserID($userID) {
         $this->userID = $userID;
     }
@@ -92,6 +97,10 @@ class userClass extends Tabla {
         $this->userType = $userType;
     }
 
+    function setToken($token) {
+        $this->token = $token;
+    }
+
     function __get($name) {
         $metodo = "get$name";
         if (method_exists($this, $metodo)) {
@@ -121,6 +130,7 @@ class userClass extends Tabla {
             $this->pass = $user['pass'];
             $this->interfaceLanguage = $user['interfaceLanguage'];
             $this->userType = $user['userType'];
+            $this->token = $token['token'];
         } else {
             throw new Exception("No existe ese registro");
         }
@@ -137,6 +147,7 @@ class userClass extends Tabla {
             $this->pass = null;
             $this->interfaceLanguage = null;
             $this->userType = null;
+            $this->token = null;
         } else {
             throw new Exception("No hay registro para borrar");
         }
