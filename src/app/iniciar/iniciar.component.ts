@@ -16,7 +16,7 @@ import { UserService } from '../user.service';
 export class IniciarSesionComponent implements OnInit {
 
   user: SocialUser;
-  user1:User=new User(0, "", "", null, "", "", "", 1);
+  user1:User=new User(0, "", "", null, "", "", "", 1, "");
   constructor(private authService: AuthService, private router: Router, private userService:UserService) { }
 
   ngOnInit() {
@@ -29,7 +29,7 @@ export class IniciarSesionComponent implements OnInit {
     });
   }
 
-  newUserFromGoogle:User = new User(0, "", "", null, "", "", "", 1);
+  newUserFromGoogle:User = new User(0, "", "", null, "", "", "", 1, "");
 
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then( (res) =>  {
@@ -81,7 +81,32 @@ export class IniciarSesionComponent implements OnInit {
     )
   }
 
-
+  login() {
+    this.userService.login(this.user1.email, this.user1.userType, this.user1.pass)
+      .subscribe(
+        (result)=> {
+          /*if(result["message"]="Login correcto") {
+            this.router.navigate(['/homepage']);
+            console.log(result);
+          }*/
+          let userID = result["data"]["userID"];
+          let firstName = result["data"]["firstName"];
+          let lastName = result["data"]["lastName"];
+          let birthDate = result["data"]["birthDate"];
+          let email = result["data"]["email"];
+          let pass = result["data"]["pass"];
+          let interfaceLanguage = result["data"]["interfaceLanguage"];
+          let userType = result["data"]["userType"];
+          let token = result["data"]["token"];
+          
+          let user:User=new User(userID, firstName, lastName, birthDate, email, pass, interfaceLanguage, userType, token);
+        }, 
+        (error)=>{
+          console.log(error);
+        }
+      )
+    }
+    
   normalToken(){
     
   }

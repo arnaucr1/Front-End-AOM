@@ -7,8 +7,9 @@ export class User {
     pass:string = "";
     interfaceLanguage:string = "";
     userType:number = 0;
+    token:string = "";
 
-    constructor(userID:number, firstName:string, lastName:string, birthDate:Date, email:string, pass:string, interfaceLanguage:string, userType:number) {
+    constructor(userID:number, firstName:string, lastName:string, birthDate:Date, email:string, pass:string, interfaceLanguage:string, userType:number, token:string) {
         this.userID = userID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -17,5 +18,6 @@ export class User {
         this.pass = pass;
         this.interfaceLanguage = interfaceLanguage;
         this.userType = userType;
+        this.token = token;
     }
 }

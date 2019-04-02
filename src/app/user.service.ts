@@ -10,9 +10,7 @@ export class UserService {
 
     constructor(private http:HttpClient) { }
 
-    login(test:any) {
-
-    }
+    //header={headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
 
     /*login(loginPayload) : Observable<ApiResponse> {
         return this.http.post<ApiResponse>('http://localhost:8080/'+ 'token/generate-token', loginPayload).pipe(
@@ -60,4 +58,16 @@ export class UserService {
             { headers:new HttpHeaders({'Content-Type':'application/json'}) }
             );
     }
+
+    login(email, tipo, pass){
+        let url = "/apiAOM.php/?controller=userclass&accion=login";
+        var data={
+            "email":email,
+            "pass":pass
+        };
+        return this.http.post(url, data, 
+            { headers:new HttpHeaders({'Content-Type':'application/json'})}
+        );
+}
+
 }

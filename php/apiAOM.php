@@ -65,24 +65,19 @@ switch ($verbo) {
     case 'POST':
         if ($accion == "login") {
             $datos = file_get_contents("php://input");
-            $raw = json_decode($datos);
-            //$userType=0;
-            //$userID=1;
-            if ($raw->userType == 0 || $raw->userType == 1) {
-                
+                $raw = json_decode($datos);
                 $datos = $objeto->login($raw->email, $raw->pass);
+            if ($datos[0]["userType"] == 0 || $datos[0]["userType"] == 1) {
                 if (!empty($datos)) {
                     $objeto = new $controller;
-
-                    if($userType == 0) {
-                        $objeto->load($raw->userID);
-                    } elseif ($userType == 1) {
-                        $objeto->load($raw->userID);
+                    if($datos[0]["userType"] == 0) {
+                        $objeto->load($datos[0]["userID"]);
+                    } elseif ($datos[0]["userType"] == 1) {
+                        $objeto->load($datos[0]["userID"]);
                     }
-
                     $objeto->setToken(bin2hex(random_bytes(100)));
                     $objeto->save();
-                    $http->setHttpHeaders(200, new Response("Login $controller", $objeto->serialize()));
+                    $http->setHttpHeaders(200, new Response("Login correcto", $objeto->serialize()));
                 } else {
                     $http->setHttpHeaders(400, new Response("Datos vacíos $controller", $datos));
                 }
@@ -97,7 +92,7 @@ switch ($verbo) {
         //Y lo guardamos
         $objeto->save();
     }
-        echo '{"status":"ok"}';
+        //echo '{"status":"ok"}';
 
         break;
     case 'PUT':

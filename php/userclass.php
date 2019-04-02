@@ -130,7 +130,7 @@ class userClass extends Tabla {
             $this->pass = $user['pass'];
             $this->interfaceLanguage = $user['interfaceLanguage'];
             $this->userType = $user['userType'];
-            $this->token = $token['token'];
+            $this->token = $user['token'];
         } else {
             throw new Exception("No existe ese registro");
         }
@@ -174,7 +174,11 @@ class userClass extends Tabla {
     function login($user, $pass) {
         $info = ['email' => $user, 'pass' => $pass];
         $u = $this->getAll($info);
-        return !empty($u);
+        if (!empty($u)) {
+            return $u;
+        }
+        //var_dump($u);
+        //return !empty($u);
     }
     
     function showUserData($userID) {
