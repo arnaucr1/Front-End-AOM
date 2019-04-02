@@ -17,6 +17,7 @@ export class HomepageComponent implements OnInit{
     mySubscriptions:Subscription[] = [];
     
     ngOnInit() {
+        console.log(localStorage.getItem("firstName"));
         this.getSubscriptions(1);
         this.customBackgroundImage();
     }

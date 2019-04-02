@@ -85,21 +85,24 @@ export class IniciarSesionComponent implements OnInit {
     this.userService.login(this.user1.email, this.user1.userType, this.user1.pass)
       .subscribe(
         (result)=> {
-          /*if(result["message"]="Login correcto") {
+          if(result["message"]="Login correcto") {
+            let userID = result["data"]["userID"];
+            let firstName = result["data"]["firstName"];
+            let lastName = result["data"]["lastName"];
+            let birthDate = result["data"]["birthDate"];
+            let email = result["data"]["email"];
+            let pass = result["data"]["pass"];
+            let interfaceLanguage = result["data"]["interfaceLanguage"];
+            let userType = result["data"]["userType"];
+            let token = result["data"]["token"];
+            let user:User=new User(userID, firstName, lastName, birthDate, email, pass, interfaceLanguage, userType, token);
+            localStorage.setItem("userID",userID);
+            localStorage.setItem("firstName",firstName);
+            localStorage.setItem("lastName",lastName);
+            localStorage.setItem("type",String(this.user1.userType));
+            localStorage.setItem("token",token);
             this.router.navigate(['/homepage']);
-            console.log(result);
-          }*/
-          let userID = result["data"]["userID"];
-          let firstName = result["data"]["firstName"];
-          let lastName = result["data"]["lastName"];
-          let birthDate = result["data"]["birthDate"];
-          let email = result["data"]["email"];
-          let pass = result["data"]["pass"];
-          let interfaceLanguage = result["data"]["interfaceLanguage"];
-          let userType = result["data"]["userType"];
-          let token = result["data"]["token"];
-          
-          let user:User=new User(userID, firstName, lastName, birthDate, email, pass, interfaceLanguage, userType, token);
+          }
         }, 
         (error)=>{
           console.log(error);
