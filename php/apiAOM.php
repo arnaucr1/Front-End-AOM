@@ -84,6 +84,14 @@ switch ($verbo) {
             } else {
                 $http->setHttpHeaders(400, new Response("El controlador no contiene la función login", $controller));
             }
+        } if($accion == "checkToken") {
+            $headers = apache_request_headers();
+            if(isset($headers["Authorization"]) && $headers["Authorization"] !=""){
+                $token_recibido=$headers["Authorization"];
+                echo $token_recibido."1";
+            } else {
+                echo "err";
+            }
         } else {
         //Ponemos los valores en cada campo del objeto
         foreach ($datos as $c => $v) {

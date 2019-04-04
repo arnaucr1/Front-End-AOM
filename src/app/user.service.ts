@@ -68,6 +68,6 @@ export class UserService {
         return this.http.post(url, data, 
             { headers:new HttpHeaders({'Content-Type':'application/json'})}
         );
-}
+    }
 
 }
