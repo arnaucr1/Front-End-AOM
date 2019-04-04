@@ -23,7 +23,22 @@ export class UserService {
             { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
             );
     }
-
+    getUserToken() {
+        let url = "/apiAOM.php/?controller=userclass&accion=checkToken";
+         return this.http.get(url, this.generateHeaders () );
+    }
+    generateHeaders() {
+        if (localStorage.getItem("token") && localStorage.getItem("token")!="undefined") {
+            return { headers: new HttpHeaders({ 'Content-Type': 'application/json',
+            'Authorization': localStorage.getItem("token") }) };
+        } else { return { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }; }
+    }
+    getUserByToken(token:string) {
+        let url = "/apiAOM.php/?controller=userclass&token="+token;
+        return this.http.get(url,
+            { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+            );
+    }
     getUser(numUser:number) {
         let url = "/apiAOM.php/?controller=userclass&id="+numUser;
         return this.http.get(url,

@@ -51,7 +51,16 @@ switch ($verbo) {
             $objeto = $objeto->loadUserSubscriptions($id);
             //$datos = $objeto-> ($datos);
             $http->setHttpHeaders(200, new Response("Lista $controller", $datos));
-        } elseif (empty($id)) {
+        } if($accion == "checkToken") {
+            $headers = apache_request_headers();
+            if(isset($headers["authorization"]) && $headers["authorization"] !=""){
+                $token_recibido=$headers["authorization"];    
+                $http->setHttpHeaders(200, new Response("Token $token_recibido"));
+            } else {
+                $http->setHttpHeaders(400, new Response("No hay token"));
+            }
+        }
+        elseif (empty($id)) {
             //Necesitamos crear la función loadAll en la clase o bien usar el getALL
             $datos = $objeto->loadAll();
             $http->setHttpHeaders(200, new Response("Lista $controller", $datos));
@@ -83,14 +92,6 @@ switch ($verbo) {
                 }
             } else {
                 $http->setHttpHeaders(400, new Response("El controlador no contiene la función login", $controller));
-            }
-        } if($accion == "checkToken") {
-            $headers = apache_request_headers();
-            if(isset($headers["Authorization"]) && $headers["Authorization"] !=""){
-                $token_recibido=$headers["Authorization"];
-                echo $token_recibido."1";
-            } else {
-                echo "err";
             }
         } else {
         //Ponemos los valores en cada campo del objeto
