@@ -177,10 +177,15 @@ class userClass extends Tabla {
         if (!empty($u)) {
             return $u;
         }
-        //var_dump($u);
-        //return !empty($u);
     }
     
+    function getDataToken($token) {
+        $dataToken = $this->getAll(['token' => $token]);
+        if (!empty($dataToken)) {
+            return $dataToken;
+        }
+    }
+
     function showUserData($userID) {
         $data = $this->getAll(['userID' => $userID]);
         return $data;

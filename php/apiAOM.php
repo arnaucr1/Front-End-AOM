@@ -48,14 +48,16 @@ switch ($verbo) {
         //Si nos hacen una petición GET podemos tener dos casos, que nos pidan un id concreto o no
         //En el primer caso buscamos ese registro concreto, en el segundo caso devolvemos todo
         if ($accion == "usersubscriptions") {
-            $objeto = $objeto->loadUserSubscriptions($id);
-            //$datos = $objeto-> ($datos);
+            $datos = $objeto->loadUserSubscriptions($id);
             $http->setHttpHeaders(200, new Response("Lista $controller", $datos));
-        } if($accion == "checkToken") {
+            break;
+        }   
+        if($accion == "checkToken") {
             $headers = apache_request_headers();
             if(isset($headers["authorization"]) && $headers["authorization"] !=""){
                 $token_recibido=$headers["authorization"];    
-                $http->setHttpHeaders(200, new Response("Token $token_recibido"));
+                $datos = $objeto->getDataToken($token_recibido);
+                $http->setHttpHeaders(200, new Response("$token_recibido", $datos));
             } else {
                 $http->setHttpHeaders(400, new Response("No hay token"));
             }

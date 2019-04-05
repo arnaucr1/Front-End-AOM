@@ -18,16 +18,17 @@ export class HomepageComponent implements OnInit{
         let dataActual = Date.now();
     }
     mySubscriptions:Subscription[] = [];
+    userData:User[] = [];
     
     ngOnInit() {
         console.log(localStorage.getItem("firstName"));
-        this.getSubscriptions(1);
+        this.getSubscriptions(parseInt(localStorage.getItem("userID")));
         this.customBackgroundImage();
         this.getU();
     }
     
-    getSubscriptions(subscriptionID:number) {
-        this.subscriptionService.getSubscriptions(subscriptionID).subscribe(
+    getSubscriptions(userID:number) {
+        this.subscriptionService.getSubscriptions(userID).subscribe(
           (result) => {
               this.mySubscriptions = result["data"]
               console.log(result["data"]);
@@ -48,7 +49,7 @@ export class HomepageComponent implements OnInit{
     getU() {
         this.userService.getUserToken().subscribe(
           (result) => {
-              console.log(result);
+              this.userData = result["data"];
             }, (error) => {
               console.log(error);
             }

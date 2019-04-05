@@ -10,7 +10,9 @@
         <a href="../editarsubscripcion" class="botones" target="_blank"><i class="fas fa-edit"></i></a>
         <a href="../editarperfil" class="botones" target="_blank"><i class="fas fa-user-edit"></i></a>
         <a href="../registrosubscripcion" class="botones" target="_blank"><i class="fas fa-plus-circle"></i></a>
-
+        <div class="usutest" *ngFor="let uData of userData; let i = index">
+            {{uData.firstName}}
+        </div>
         <div *ngIf="user" class="card text-center">
             <div class="card-block">
                 <button class="btn btn-danger" (click)="signOut()">Cerrar Sesión</button>

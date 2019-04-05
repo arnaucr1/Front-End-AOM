@@ -11,7 +11,7 @@ export class SubscriptionService {
     constructor(private http:HttpClient) { }
 
     getSubscriptions(userID:number) {
-        let url = "/apiAOM.php/?controller=subscriptionclass&userID="+userID;
+        let url = "/apiAOM.php/?controller=subscriptionclass&accion=usersubscriptions&id="+userID;
         return this.http.get(url,
             { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
             );
