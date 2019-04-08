@@ -1,6 +1,6 @@
 {
 	"/apiAOM.php/*": {
-	"target": "http://localhost/AOMFrontEnd/php",
+	"target": "http://localhost/Front-End-AOM/php",
 	"secure": false,
 	"logLevel": "debug",
 	"changeOrigin": true
