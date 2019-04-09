@@ -5,6 +5,7 @@ import { SubscriptionService } from '../subscription.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {User} from '../user';
 import { UserService } from '../user.service';
+import * as $ from 'jquery';
 
 @Component({
     selector: 'homepage-tag',
@@ -25,6 +26,7 @@ export class HomepageComponent implements OnInit{
         this.getSubscriptions(parseInt(localStorage.getItem("userID")));
         this.customBackgroundImage();
         this.getU();
+
     }
     
     getSubscriptions(userID:number) {
