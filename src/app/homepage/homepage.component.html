@@ -1,17 +1,18 @@
 <main class="concord" id="concord-cards">
     <header>
         
-        <time>
+        <time *ngFor="let uData of userData; let i = index">
+            <h1>Mis Suscripciones</h1>
             <h5 id="date"> {{today | date:'dd/MM/yyyy'}}</h5>
-            <h3 id="day">Mis Suscripciones</h3>
+            <h4 id="day">Bienvenid@: {{uData.firstName}}</h4>
         </time>
 
-        <a href="../perfil" target="_blank"><img class="avatar" src="https://arnaucr.com/ot.png"></a>
+        <a href="../perfil" target="_blank"><img class="avatar" src="#"></a>
         <a href="../editarsubscripcion" class="botones" target="_blank"><i class="fas fa-edit"></i></a>
         <a href="../editarperfil" class="botones" target="_blank"><i class="fas fa-user-edit"></i></a>
         <a href="../registrosubscripcion" class="botones" target="_blank"><i class="fas fa-plus-circle"></i></a>
-        <div class="usutest" *ngFor="let uData of userData; let i = index">
-            {{uData.firstName}}
+        <div class="usutest" >
+            
         </div>
         <div *ngIf="user" class="card text-center">
             <div class="card-block">
@@ -20,14 +21,13 @@
         </div>
     </header>
 
-    <div class="card x" data-color="" *ngFor="let mySubscription of mySubscriptions; let i = index">
+    <div class="card x {{mySubscription.subscriptionName}}" data-color=""  *ngFor="let mySubscription of mySubscriptions; let i = index">
         <input type="button" class="concord exit" value="×"/>
 
         <section class="wrapper">
-            <img class="tarjeta" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/565097/city-landscape-vector.png">
 
             <header class="card-title">
-                <h6>{{mySubscription.cycle}}</h6>
+                <h6>Ciclo de pago: {{mySubscription.cycle}}</h6>
                 <h4>{{mySubscription.subscriptionName}}</h4>
             </header>
 

@@ -1,6 +1,6 @@
 {
 	"/apiAOM.php/*": {
-	"target": "http://localhost/AOMFrontEnd/php",
+	"target": "http://localhost/AOMSubscriptionManager/",
 	"secure": false,
 	"logLevel": "debug",
 	"changeOrigin": true

@@ -21,30 +21,20 @@ export class HomepageComponent implements OnInit{
     userData:User[] = [];
     
     ngOnInit() {
-        console.log(localStorage.getItem("firstName"));
         this.getSubscriptions(parseInt(localStorage.getItem("userID")));
-        this.customBackgroundImage();
         this.getU();
     }
     
     getSubscriptions(userID:number) {
         this.subscriptionService.getSubscriptions(userID).subscribe(
           (result) => {
-              this.mySubscriptions = result["data"]
+              this.mySubscriptions = result["data"];
               console.log(result["data"]);
             }, (error) => {
               console.log(error);
             }
         )
     } 
-
-    customBackgroundImage() {
-        if(this.mySubscriptions["SubscriptionName"] == "Netflix") {
-            console.log("test netflix");
-        } else if (this.mySubscriptions["SubscriptionName"] == "Spotify") {
-            console.log("test spotify")
-        }
-    }
 
     getU() {
         this.userService.getUserToken().subscribe(
@@ -55,7 +45,4 @@ export class HomepageComponent implements OnInit{
             }
         )
     } 
-
-
-    
 }

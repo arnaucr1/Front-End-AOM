@@ -378,7 +378,25 @@ input[type="button"].concord-exit:active{
 	background: white;
 	opacity: 1;
 }
+.card {
+	background-color: grey;
+}
 
+.Spotify, .spotify{
+	background-image: url("https://developer.spotify.com/assets/branding-guidelines/icon4@2x.png")!important;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center; 
+	background-color: #64d862;
+}
+
+.Netflix, .netflix{
+	background-image: url("https://cdn-images-1.medium.com/max/1200/1*ty4NvNrGg4ReETxqU2N3Og.png")!important;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center; 
+	background-color: #d6312d;
+}
 
 @media screen and (min-width: 530px){
 	.card{
