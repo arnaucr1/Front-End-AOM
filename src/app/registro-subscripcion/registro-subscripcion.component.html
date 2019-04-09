@@ -10,7 +10,17 @@
                     <span class="sub-titulo"></span>
 
                     <div class="input" >
-                        <input class="caja-input" type="text" id="subscriptionName" name="subscriptionName" autocomplete="new-password" placeholder="Nombre de la sucripción" [(ngModel)]="newSubscription.subscriptionName"  required>
+                        <select class="caja-input" id="subscriptionName" name="subscriptionName" autocomplete="new-password" placeholder="Nombre de la sucripción" [(ngModel)]="newSubscription.subscriptionName"  required>
+                            <option value="netflix">Netflix</option>
+                            <option value="spotify">Spotify</option>
+                            <option value="applemusic">Apple Music</option>
+                            <option value="hbo">HBO</option>
+                            <option value="amazon">Amazon Prime</option>
+                            <option value="wuaki">Wuaki</option>
+                            <option value="dazn">DAZN</option>
+                        
+
+                        </select>
                         <span class="icono">
                             <i class="fa fa-user-circle" aria-hidden="true"></i>
                         </span>
