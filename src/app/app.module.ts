@@ -11,6 +11,7 @@ import { EditarSubscripcionComponent } from './editar-subscripcion/editar-subscr
 import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
 import { RegistroSubscripcionComponent } from './registro-subscripcion/registro-subscripcion.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { HomeAdminComponent } from './homeadmin/homeadmin.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
@@ -40,7 +41,8 @@ const config = new AuthServiceConfig([
     EditarSubscripcionComponent,
     EditarPerfilComponent,
     RegistroSubscripcionComponent,
-    HomepageComponent
+    HomepageComponent,
+    HomeAdminComponent
   ],
   imports: [
     BrowserModule,
