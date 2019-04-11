@@ -6,6 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {User} from '../user';
 import { UserService } from '../user.service';
 import * as $ from 'jquery';
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'homeadmin-tag',
@@ -15,7 +16,7 @@ import * as $ from 'jquery';
 })
 export class HomeAdminComponent implements OnInit{
     today = new Date();
-    constructor(private datePipe: DatePipe, private subscriptionService:SubscriptionService, private userService:UserService, private http:HttpClient){
+    constructor(private datePipe: DatePipe, private subscriptionService:SubscriptionService, private userService:UserService, private http:HttpClient, private router: Router){
         let dataActual = Date.now();
     }
     mySubscriptions:Subscription[] = [];
@@ -58,4 +59,20 @@ export class HomeAdminComponent implements OnInit{
             }
         )
     } 
+
+    delU(userID) {
+      this.userService.delUser(userID).subscribe(
+        (result) => {
+            console.log("Borrado correctamente");
+            window.location.reload();
+          }, (error) => {
+            console.log(error);
+          }
+      )
+    }
+
+    editU(userID) {
+      localStorage.setItem("editUID",userID);
+      this.router.navigate(['/editarperfilroot']);
+    }
 }

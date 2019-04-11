@@ -9,6 +9,7 @@ import { FootercolorComponent } from './footer-color/footer-color.component';
 import { RegistroComponent } from './registro/registro.component';
 import { EditarSubscripcionComponent } from './editar-subscripcion/editar-subscripcion.component';
 import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
+import { EditarPerfilRootComponent } from './editar-perfil-root/editar-perfil-root.component';
 import { RegistroSubscripcionComponent } from './registro-subscripcion/registro-subscripcion.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { HomeAdminComponent } from './homeadmin/homeadmin.component';
@@ -40,6 +41,7 @@ const config = new AuthServiceConfig([
     RegistroComponent,
     EditarSubscripcionComponent,
     EditarPerfilComponent,
+    EditarPerfilRootComponent,
     RegistroSubscripcionComponent,
     HomepageComponent,
     HomeAdminComponent
