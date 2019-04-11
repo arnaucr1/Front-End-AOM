@@ -5,17 +5,17 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-perfil-usuario',
-  templateUrl: './editar-perfil.component.html',
-  styleUrls: ['./editar-perfil.component.css'],
+  templateUrl: './editar-perfil-root.component.html',
+  styleUrls: ['./editar-perfil-root.component.css'],
   providers: [UserService]
 })
-export class EditarPerfilComponent implements OnInit {
+export class EditarPerfilRootComponent implements OnInit {
     //editUser:User = new User(0, "", "", null, "", "", "", 1);
     constructor(private userService:UserService) {}
     usuario:User = new User(0, "", "", null, "", "", "", 0, "");
     //usuario = [this.user];
   ngOnInit() {
-    this.getUser(parseInt(localStorage.getItem("userID")));
+    this.getUser(parseInt(localStorage.getItem("editUID")));
   }
 
   getUser(userID:number) {

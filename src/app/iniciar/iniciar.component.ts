@@ -71,7 +71,7 @@ export class IniciarSesionComponent implements OnInit {
       (result) => {
         console.log(result["message"]);
         if(result["message"]="Login userclass") {
-        this.router.navigate(['/homepage']);
+        //this.router.navigate(['/homepage']);
         console.log(result);
         }
       }, 
@@ -101,7 +101,12 @@ export class IniciarSesionComponent implements OnInit {
             localStorage.setItem("lastName",lastName);
             localStorage.setItem("type",String(this.user1.userType));
             localStorage.setItem("token",token);
-            this.router.navigate(['/homepage']);
+             
+            if(userType == "0") {
+              this.router.navigate(['/homeadmin']);
+            } else {
+              this.router.navigate(['/homepage']);
+            }
           }
         }, 
         (error)=>{
