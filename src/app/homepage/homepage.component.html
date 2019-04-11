@@ -1,16 +1,10 @@
 <main class="concord" id="concord-cards">
     <header>
-        
         <time *ngFor="let uData of userData; let i = index">
-            <h1>Mis Suscripciones</h1>
-            <h5 id="date"> {{today | date:'dd/MM/yyyy'}}</h5>
-            <h4 id="day">Bienvenid@: {{uData.firstName}}</h4>
+            <h5 id="date"> {{today | date:'EEEE' }} {{today | date:'d' }} de  {{today | date:'MMMM' }}</h5>
+            <h1 id="subscription-title">Subscripciones </h1> 
         </time>
-        <div *ngIf="user" class="card text-center">
-            <div class="card-block">
-                <button class="btn btn-danger" (click)="signOut()">Cerrar Sesión</button>
-            </div>
-        </div>
+  
     </header>
 
     <div class="card x {{mySubscription.subscriptionName}}" data-color=""  *ngFor="let mySubscription of mySubscriptions; let i = index">
