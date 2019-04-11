@@ -78,13 +78,14 @@ main.concord {
 	text-align: center;
 }
 .concord > header {
-	width: 90%;
+	width: 93%;
 	padding: 0px 15px 0px 15px;
 	margin: 0 auto;
 	position: relative;
 	display: block;
 	overflow: auto;
 	text-align: left;
+	padding-bottom:24px;
 }
 .concord > header time {
 	display: table-cell;
@@ -302,6 +303,7 @@ input[type="button"].concord{
 	right: 20px;
 	bottom: 19px;
 	box-sizing: border-box;
+
 }
 input[type="button"].concord:active{
 	color: rgba(28, 80, 245, 0.48);
