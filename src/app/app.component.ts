@@ -4,6 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { SubscriptionService } from './subscription.service';
 import { UserService } from './user.service';
 import { User } from './user';
+
+import { NewsApiService } from './news-api.service';
+
+
 import {
   transition,
   trigger,

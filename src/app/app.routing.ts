@@ -15,6 +15,7 @@ import { EditarPerfilRootComponent } from './editar-perfil-root/editar-perfil-ro
 import { RegistroSubscripcionComponent } from './registro-subscripcion/registro-subscripcion.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { HomeAdminComponent } from './homeadmin/homeadmin.component';
+import { EditarPasswordComponent } from './editar-password/editar-password.component';
 
 
 
@@ -29,6 +30,7 @@ const appRoutes:Routes=[
     {path: 'registrosubscripcion', component: RegistroSubscripcionComponent,/*canActivate:[AuthService]*/},
     {path: 'homepage', component: HomepageComponent,/*canActivate:[AuthService]*/},
     {path: 'homeadmin', component: HomeAdminComponent,/*canActivate:[AuthService]*/},
+    {path: 'modifypass', component: EditarPasswordComponent,/*canActivate:[AuthService]*/},
     {path: '**', redirectTo: 'inicio', pathMatch: 'full' } //Redireccion a inicio
     ];
 
