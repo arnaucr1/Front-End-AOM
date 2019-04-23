@@ -31,6 +31,7 @@ export class IniciarSesionComponent implements OnInit {
 
   newUserFromGoogle:User = new User(0, "", "", null, "", "", "", 1, "");
 
+  //Functión de login con Google
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then( (res) =>  {
       console.log("OK");
@@ -41,17 +42,6 @@ export class IniciarSesionComponent implements OnInit {
     }
     )
   }
-
-  /*signIn(): void {
-    this.userService.loginUser().subscribe(
-      (result) => {
-        console.log(result);
-      }, 
-      (error) => {
-        console.log(error);
-      }
-    )
-  }*/
 
   /*signInWithFB(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
@@ -65,22 +55,9 @@ export class IniciarSesionComponent implements OnInit {
     this.authService.signOut();
   }
 
-  signIn() {
-    console.log(this.user1);
-    this.userService.loginUser(this.user1).subscribe(
-      (result) => {
-        console.log(result["message"]);
-        if(result["message"]="Login userclass") {
-        //this.router.navigate(['/homepage']);
-        console.log(result);
-        }
-      }, 
-      (error) => {
-        console.log(error);
-      }
-    )
-  }
-
+  /**
+   * Función de login normal
+   */
   login() {
     this.userService.login(this.user1.email, this.user1.userType, this.user1.pass)
       .subscribe(

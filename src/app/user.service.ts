@@ -67,13 +67,6 @@ export class UserService {
             );
     }
 
-    loginUser(user:User) {
-        let url = "/apiAOM.php/?controller=userclass&accion=login";
-        return this.http.post(url, user, 
-            { headers:new HttpHeaders({'Content-Type':'application/json'}) }
-            );
-    }
-
     login(email, tipo, pass){
         let url = "/apiAOM.php/?controller=userclass&accion=login";
         var data={
@@ -84,5 +77,4 @@ export class UserService {
             { headers:new HttpHeaders({'Content-Type':'application/json'})}
         );
     }
-
 }

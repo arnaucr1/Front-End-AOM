@@ -10,6 +10,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { EditarSubscripcionComponent } from './editar-subscripcion/editar-subscripcion.component';
 import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
 import { EditarPerfilRootComponent } from './editar-perfil-root/editar-perfil-root.component';
+import { EditarPasswordComponent } from './editar-password/editar-password.component';
 import { RegistroSubscripcionComponent } from './registro-subscripcion/registro-subscripcion.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { HomeAdminComponent } from './homeadmin/homeadmin.component';
@@ -50,7 +51,8 @@ const config = new AuthServiceConfig([
     EditarPerfilRootComponent,
     RegistroSubscripcionComponent,
     HomepageComponent,
-    HomeAdminComponent
+    HomeAdminComponent,
+    EditarPasswordComponent
   ],
   imports: [
     BrowserModule,
