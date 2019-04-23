@@ -1,24 +1,10 @@
 <main class="concord" id="concord-cards">
     <header>
-        
         <time *ngFor="let uData of userData; let i = index">
-            <h1>Mis Suscripciones</h1>
-            <h5 id="date"> {{today | date:'dd/MM/yyyy'}}</h5>
-            <h4 id="day">Bienvenid@: {{uData.firstName}}</h4>
+            <h5 id="date"> {{today | date:'EEEE' }} {{today | date:'d' }} de  {{today | date:'MMMM' }}</h5>
+            <h1 id="subscription-title">Subscripciones </h1> 
         </time>
-
-        <a href="../perfil" target="_blank"><img class="avatar" src="#"></a>
-        <a href="../editarsubscripcion" class="botones" target="_blank"><i class="fas fa-edit"></i></a>
-        <a href="../editarperfil" class="botones" target="_blank"><i class="fas fa-user-edit"></i></a>
-        <a href="../registrosubscripcion" class="botones" target="_blank"><i class="fas fa-plus-circle"></i></a>
-        <div class="usutest" >
-            
-        </div>
-        <div *ngIf="user" class="card text-center">
-            <div class="card-block">
-                <button class="btn btn-danger" (click)="signOut()">Cerrar Sesión</button>
-            </div>
-        </div>
+  
     </header>
 
     <div class="card x {{mySubscription.subscriptionName}}" data-color=""  *ngFor="let mySubscription of mySubscriptions; let i = index">
@@ -45,5 +31,21 @@
             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=64aea2d5c42b610bb0ed8aede22c2507"/>
             <p>In elementum finibus dui, ac rutrum ante consectetur sit amet. Aenean mauris sem, pulvinar vel tempor vel, volutpat sed turpis. Vestibulum arcu est, blandit ac ex et, ultrices consequat est.</p>
         </div>
-
+       
     </div>
+    <div id="container-floating">
+        <div class="nd5 nds" data-toggle="tooltip" data-placement="left" data-original-title="Simone"></div>
+        <div class="nd4 nds" routerLink="/" data-toggle="tooltip" data-placement="left" data-original-title="contract@gmail.com"><img class="reminder">
+          <p class="letter">C</p>
+        </div>
+        <div class="nd3 nds" data-toggle="tooltip" data-placement="left" data-original-title="Reminder"><img class="reminder" src="//ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/ic_reminders_speeddial_white_24dp.png" /></div>
+        <div class="nd1 nds" routerLink="/editarperfil" data-toggle="tooltip" data-placement="left" data-original-title="Edoardo@live.it"><img class="reminder">
+          <p class="letter">E</p>
+        </div>
+        <div id="floating-button" routerLink="/registrosubscripcion" data-toggle="tooltip" data-placement="left" data-original-title="Create" onclick="newmail()">
+          <p class="plus">+</p>
+          <img class="edit" src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_compose2_1x.png">
+        </div>
+    </div>
+
+   

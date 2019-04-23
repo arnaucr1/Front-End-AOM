@@ -63,6 +63,7 @@
     min-height: 55px;
     line-height: 55px;
     z-index: 11;
+    box-shadow: 20px 4px 5px 5px rgba(0, 0, 0, 0.10), 0px 1px 20px 5px rgba(0, 0, 0, 0.10);
   }
   #footerRedesSocialesPermanente .flotanteIzquierdaFooter {
     font-family: 'Roboto', sans-serif;

@@ -13,7 +13,7 @@ import { EditarSubscripcionComponent } from './editar-subscripcion/editar-subscr
 import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
 import { RegistroSubscripcionComponent } from './registro-subscripcion/registro-subscripcion.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import{EditarPasswordComponent} from './editar-password/editar-password.component'
+import {EditarPasswordComponent} from './editar-password/editar-password.component'
 
 
 
