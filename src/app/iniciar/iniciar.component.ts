@@ -78,7 +78,7 @@ export class IniciarSesionComponent implements OnInit {
             localStorage.setItem("lastName",lastName);
             localStorage.setItem("type",String(this.user1.userType));
             localStorage.setItem("token",token);
-             
+            
             if(userType == "0") {
               this.router.navigate(['/homeadmin']);
             } else {

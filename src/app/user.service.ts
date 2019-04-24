@@ -77,4 +77,14 @@ export class UserService {
             { headers:new HttpHeaders({'Content-Type':'application/json'})}
         );
     }
+
+    cerrarSesion(numUser:number) {
+        let url = "/apiAOM.php/?controller=userclass&accion=cerrar";
+        var data = {
+            "userID":numUser
+        };
+        return this.http.post(url, data, 
+            { headers:new HttpHeaders({'Content-Type':'application/json'})}
+        ); 
+    }
 }

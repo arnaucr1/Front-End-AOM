@@ -5,6 +5,7 @@ import { SubscriptionService } from '../subscription.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {User} from '../user';
 import { UserService } from '../user.service';
+import {Router} from "@angular/router";
 import * as $ from 'jquery';
 
 @Component({
@@ -15,7 +16,7 @@ import * as $ from 'jquery';
 })
 export class HomepageComponent implements OnInit{
     today = new Date();
-    constructor(private datePipe: DatePipe, private subscriptionService:SubscriptionService, private userService:UserService, private http:HttpClient){
+    constructor(private datePipe: DatePipe, private subscriptionService:SubscriptionService, private userService:UserService, private http:HttpClient, private router: Router){
         let dataActual = Date.now();
     }
     mySubscriptions:Subscription[] = [];
@@ -46,5 +47,18 @@ export class HomepageComponent implements OnInit{
               console.log(error);
             }
         )
-    } 
+    }
+
+    cerrarSesion() {
+      this.userService.cerrarSesion(parseInt(localStorage.getItem("userID"))).subscribe(
+        (result) => {
+          console.log("ok");
+          this.router.navigate(['/']);
+          localStorage.clear();
+        }, (error) => {
+          console.log(error);
+        }
+      )
+    }
+
 }
