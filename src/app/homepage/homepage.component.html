@@ -6,7 +6,7 @@
         </time>
         <button class="btn btn-round color-1 material-design" data-color="#ffffff">📰 Noticias</button>
     </header>
-
+    <button type="submit" class="caja-titulo-btn" (click)="cerrarSesion()">Cerrar</button>
     <div class="card x {{mySubscription.subscriptionName}}" data-color=""  *ngFor="let mySubscription of mySubscriptions; let i = index">
         <input type="button" class="concord exit" value="×"/>
 
@@ -16,7 +16,6 @@
                 <h6>Ciclo de pago: {{mySubscription.cycle}}</h6>
                 <h4>{{mySubscription.subscriptionName}}</h4>
             </header>
-
             <footer class="card-footer">
                 <input type="button" class="concord" value="€ {{mySubscription.price}}">
             </footer>

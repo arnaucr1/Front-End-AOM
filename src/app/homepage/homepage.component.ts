@@ -50,7 +50,7 @@ export class HomepageComponent implements OnInit{
     }
 
     cerrarSesion() {
-      this.userService.cerrarSesion(parseInt(localStorage.getItem("userID"))).subscribe(
+      this.userService.cerrarSesion().subscribe(
         (result) => {
           console.log("ok");
           this.router.navigate(['/']);
