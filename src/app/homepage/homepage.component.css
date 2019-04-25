@@ -707,6 +707,9 @@ body{
 	font-family: "Roboto";
     font-weight: 600;
 }
+.btn p{
+margin-top:8px;
+}
 	.color-1 {
 	  background-color: #2d83e6;
 	}

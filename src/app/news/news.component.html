@@ -1,3 +1,23 @@
-<p>
-  news works!
-</p>
+<main class="concord" id="concord-cards">
+<header>
+  <time *ngFor="let uData of userData; let i = index">
+
+      <h1 id="subscription-title">Subscripciones </h1> 
+  </time>
+<a href="/homepage"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
+</header>
+<div class="example-card"  *ngFor="let article of mArticles">
+  <div>
+    <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="example-header-image"></div>
+    <div class="title">{{article.title}}</div>
+    <div>{{article.source.name}}</div>
+  </div>
+  <img mat-card-image class="img-article" src={{article.urlToImage}} alt="">
+  <div>
+    <p>
+      {{article.description}}
+    </p>
+  </div>
+  <a mat-button color="primary" href={{article.url}} target="_blank" > Ver noticia </a>
+  </div>
+</main>
