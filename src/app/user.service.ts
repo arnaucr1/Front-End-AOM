@@ -81,7 +81,7 @@ export class UserService {
     cerrarSesion() {
         let url = "/apiAOM.php/?controller=userclass&accion=logout";
         return this.http.get(url, 
-            { headers:new HttpHeaders({'Content-Type':'application/json'})}
+            { headers:new HttpHeaders({'Content-Type':'application/json', 'Authorization': localStorage.getItem("token")})}
         ); 
     }
 }
