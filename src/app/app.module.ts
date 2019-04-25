@@ -28,6 +28,7 @@ registerLocaleData(localePy, 'es');
  */
 import { SocialLoginModule } from "angularx-social-login";
 import { AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider  } from 'angularx-social-login';
+import { NewsComponent } from './news/news.component';
 
 const config = new AuthServiceConfig([
   {
@@ -52,7 +53,8 @@ const config = new AuthServiceConfig([
     RegistroSubscripcionComponent,
     HomepageComponent,
     HomeAdminComponent,
-    EditarPasswordComponent
+    EditarPasswordComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
