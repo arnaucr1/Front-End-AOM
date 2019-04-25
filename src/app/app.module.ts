@@ -14,6 +14,7 @@ import { EditarPasswordComponent } from './editar-password/editar-password.compo
 import { RegistroSubscripcionComponent } from './registro-subscripcion/registro-subscripcion.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { HomeAdminComponent } from './homeadmin/homeadmin.component';
+import { NewsComponent } from './news/news.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
@@ -28,7 +29,6 @@ registerLocaleData(localePy, 'es');
  */
 import { SocialLoginModule } from "angularx-social-login";
 import { AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider  } from 'angularx-social-login';
-import { NewsComponent } from './news/news.component';
 
 const config = new AuthServiceConfig([
   {
