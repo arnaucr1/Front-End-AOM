@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../user';
+import { Pass } from '../pass';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -12,8 +13,21 @@ import { HttpClient } from '@angular/common/http';
 
   export class EditarPasswordComponent implements OnInit {
     constructor(private userService:UserService) {}
-    //newSubscription:Subscription = new Subscription(0, "", "", 0, null, 0, 0, null);
+    pass:Pass = new Pass("", "", "");
   ngOnInit() {
     
   }
+
+  changePassword() {
+    this.userService.changePassword(this.pass.oldpass, this.pass.newpass, this.pass.newpass1)
+      .subscribe(
+        (result)=> {
+          console.log(result);
+        }, 
+        (error)=> {
+          console.log(error);
+        }
+      )
+    }
+
 }
