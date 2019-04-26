@@ -22,74 +22,38 @@ import {
   styleUrls: ['./app.component.css'],
   animations: [
     trigger('myAnimation', [
-      transition('* <=> *', [
-        // Initial state of new route
-        query(':enter',
-          style({
-            position: 'fixed',
-            width:'100%',
-            transform: 'translateX(100%)'
-          }),
-          {optional:true}),
-    
-        // move page off screen right on leave
-        query(':leave',
-          animate('380ms ease',
-            style({
-              position: 'fixed',
-              width:'100%',
-              transform: 'translateX(-100%)'
-            })
+
+      transition( '* => *', [
+
+          query(':enter', 
+              [
+                  style({ opacity: 0 })
+              ], 
+              { optional: true }
           ),
-        {optional:true}),
-    
-        // move page in screen from left to right
-        query(':enter',
-          animate('380ms ease',
-            style({
-              opacity: 1,
-              transform: 'translateX(0%)'
-            })
+
+          query(':leave', 
+              [
+                  style({ opacity: 1 }),
+                  animate('0.1s', style({ opacity: 0 }))
+              ], 
+              { optional: true }
           ),
-        {optional:true}),
+
+          query(':enter', 
+              [
+                  style({ opacity: 0 }),
+                  animate('0.1s', style({ opacity: 1 }))
+              ], 
+              { optional: true }
+          )
+
       ])
     
     
     
     ]),
-    trigger('myAnimation2', [
-      transition('* <=> *', [
-        // Initial state of new route
-        query(':enter',
-          style({
-            position: 'fixed',
-            width:'100%',
-            transform: 'translateX(-100%)'
-          }),
-          {optional:true}),
     
-        // move page off screen right on leave
-        query(':leave',
-          animate('380ms ease',
-            style({
-              position: 'fixed',
-              width:'100%',
-              transform: 'translateX(100%)'
-            })
-          ),
-        {optional:true}),
-    
-        // move page in screen from left to right
-        query(':enter',
-          animate('380ms ease',
-            style({
-              opacity: 1,
-              transform: 'translateX(0%)'
-            })
-          ),
-        {optional:true}),
-      ])    
-    ]),
       ], // register the animations
   providers: [SubscriptionService, UserService]
 })
