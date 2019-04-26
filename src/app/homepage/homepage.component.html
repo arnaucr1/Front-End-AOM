@@ -4,46 +4,10 @@
             <h5 id="date"> {{today | date:'EEEE' }} {{today | date:'d' }} de  {{today | date:'MMMM' }}</h5>
             <h1 id="subscription-title">Subscripciones </h1> 
         </time>
-    <a href="/news"> <div class="btn btn-round color-1 material-design" ><p>📰 Noticias </p></div></a>
+        <button class="btn btn-round color-2 material-design" (click)="cerrarSesion()" >Cerrar Sesión </button>
+        <a href="/news"> <div class="btn btn-round color-1 material-design" ><p>📰 Noticias </p></div></a>
+        <a href="/news"> <div class="btn btn-round color-1 material-design" ><p>💰 Estadísticas </p></div></a>
     </header>
- <!-- <button type="submit" class="caja-titulo-btn" (click)="cerrarSesion()">Cerrar</button> -->
-   
-    <div class="card x {{mySubscription.subscriptionName}}" data-color=""  *ngFor="let mySubscription of mySubscriptions; let i = index">
-        <input type="button" class="concord exit" value="×"/>
-        <section class="wrapper">
-            <header class="card-title">
-                <h6>Ciclo de pago: {{mySubscription.cycle}}</h6>
-                <h4>{{mySubscription.subscriptionName}}</h4>
-            </header>
-            <footer class="card-footer">
-                <input type="button" class="concord" value="€ {{mySubscription.price}}">
-            </footer>
-        </section>
-        <div class="content"> 
-            <p>
-                <b>Descripción</b>
-                {{mySubscription.description}}
-            </p>
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=64aea2d5c42b610bb0ed8aede22c2507"/>
-            <p>In elementum finibus dui, ac rutrum ante consectetur sit amet. Aenean mauris sem, pulvinar vel tempor vel, volutpat sed turpis. Vestibulum arcu est, blandit ac ex et, ultrices consequat est.</p>
-        </div>
-    </div>
-    <div id="container-floating">
-        <div class="nd5 nds" data-toggle="tooltip" data-placement="left" data-original-title="Simone"></div>
-        <div class="nd4 nds" data-toggle="tooltip" data-placement="left" data-original-title="Cerrar sesión" (click)="cerrarSesion()"><img class="reminder">
-          <p class="letter">C</p>
-        </div>
-        <div class="nd3 nds" routerLink="/" data-toggle="tooltip" data-placement="left" data-original-title="Modificar contraseña"><img class="reminder">
-            <a href="/modifypass"><p class="letter">P</p></a>
-          </div>
-        <div class="nd1 nds" data-toggle="tooltip" data-placement="left" data-original-title="Editar perfil"><img class="reminder">
-            <a href="/editarperfil"><p class="letter">E</p></a>
-        </div>
-        <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Registrar subscripción">
-            <a href="/registrosubscripcion"><p class="plus">+</p>
-            <img class="edit" src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_compose2_1x.png"></a>
-        </div>
-    </div>
 
     <div  class="flip-card x " data-color=""  *ngFor="let mySubscription of mySubscriptions; let i = index">
         <div class="flip-card-inner">
@@ -68,3 +32,19 @@
       </div>
 
    
+      <div id="container-floating">
+        <div class="nd5 nds" data-toggle="tooltip" data-placement="left" data-original-title="Simone"></div>
+        <div class="nd4 nds" data-toggle="tooltip" data-placement="left" data-original-title="Cerrar sesión" (click)="cerrarSesion()"><img class="reminder">
+          <p class="letter">C</p>
+        </div>
+        <div class="nd3 nds" routerLink="/" data-toggle="tooltip" data-placement="left" data-original-title="Modificar contraseña"><img class="reminder">
+            <a href="/modifypass"><p class="letter">P</p></a>
+          </div>
+        <div class="nd1 nds" data-toggle="tooltip" data-placement="left" data-original-title="Editar perfil"><img class="reminder">
+            <a href="/editarperfil"><p class="letter">E</p></a>
+        </div>
+        <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Registrar subscripción">
+            <a href="/registrosubscripcion"><p class="plus">+</p>
+            <img class="edit" src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_compose2_1x.png"></a>
+        </div>
+    </div>
