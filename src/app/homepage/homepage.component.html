@@ -4,8 +4,7 @@
             <h5 id="date"> {{today | date:'EEEE' }} {{today | date:'d' }} de  {{today | date:'MMMM' }}</h5>
             <h1 id="subscription-title">Subscripciones </h1> 
         </time>
-        <button class="btn btn-round color-1 material-design" data-color="#e80000" (click)="cerrarSesion()">Cerrar sesión</button>
-        <button class="btn btn-round color-1 material-design" data-color="#ffffff">📰 Noticias</button>
+    <a href="/news"> <div class="btn btn-round color-1 material-design" ><p>📰 Noticias </p></div></a>
     </header>
     <div class="card x {{mySubscription.subscriptionName}}" data-color=""  *ngFor="let mySubscription of mySubscriptions; let i = index">
         <input type="button" class="concord exit" value="×"/>
