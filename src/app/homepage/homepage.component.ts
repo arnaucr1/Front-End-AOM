@@ -52,7 +52,6 @@ export class HomepageComponent implements OnInit{
     cerrarSesion() {
       this.userService.cerrarSesion().subscribe(
         (result) => {
-          console.log("ok");
           this.router.navigate(['/']);
           localStorage.clear();
         }, (error) => {

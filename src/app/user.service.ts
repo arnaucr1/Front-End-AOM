@@ -67,6 +67,15 @@ export class UserService {
             );
     }
 
+    changePassword(oldpass, newpass, newpass1) {
+        let url = "/apiAOM.php/?controller=userclass&accion=modifypass";
+        var data={
+            "oldpass":oldpass,
+            "newpass":newpass,
+            "newpass1":newpass1
+        };
+    }
+
     login(email, tipo, pass){
         let url = "/apiAOM.php/?controller=userclass&accion=login";
         var data={
