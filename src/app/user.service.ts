@@ -67,6 +67,18 @@ export class UserService {
             );
     }
 
+    changePassword(oldpass, newpass, newpass1) {
+        let url = "/apiAOM.php/?controller=userclass&accion=modifypass";
+        var data={
+            "oldpass":oldpass,
+            "newpass":newpass,
+            "newpass1":newpass1
+        };
+        return this.http.post(url, data,
+            { headers:new HttpHeaders({'Content-Type':'application/json'})}
+            );
+    }
+
     login(email, tipo, pass){
         let url = "/apiAOM.php/?controller=userclass&accion=login";
         var data={
