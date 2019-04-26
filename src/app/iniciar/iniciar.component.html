@@ -8,10 +8,10 @@
             <div class="caja">	
                 <form class="formulario" action="" method="post" >
                     <span class="titulo">AOM</span> 
-                    <span class="sub-titulo">Versión 0.1</span>
+                    <span class="sub-titulo">Subscription Manager</span>
                     <span class="sub-titulo"></span>
                     <div class="input" >
-                        <input class="caja-input" type="text" id="email" name="email" autocomplete="new-password" placeholder="Email" [(ngModel)]="user1.email" required>
+                        <input class="caja-input" type="text" id="email" name="email" autocomplete="new-password" placeholder="Correo electrónico" [(ngModel)]="user1.email" required>
                         <span class="icono">
                             <i class="fa fa-user-circle" aria-hidden="true"></i>
                         </span>
@@ -25,11 +25,14 @@
                     <div class="input" >
                         <div class="todo-form-btn">
                             <button type="submit" class="caja-titulo-btn" (click)="login()">Entrar</button>
-                            <button type="submit" class="caja-titulo-btn" (click)="signInWithGoogle()"><i class="fab fa-google">Inciar con Google</i></button>
-                        </div><br>
+                            
+                        </div>
+                        <div class="todo-form-btn">
+                          <button type="submit" class="caja-titulo-btn2"  (click)="signInWithGoogle()"><i class="fab fa-google"></i> Acceder con Google</button>
+                        </div>
                     </div>
                     <div class="text-center">
-                        <a class="txt2" routerLink="/registro" routerLinkActive="cssSiLinActiu"> Registrate ahora <i class="fas fa-arrow-right"></i></a>
+                        <a class="txt2" routerLink="/registro" routerLinkActive="cssSiLinActiu"><i class="fas fa-user-plus"></i> Registrate ahora </a>
                       <!--  <a class="txt2" routerLink="/editarsubscripcion" routerLinkActive="cssSiLinActiu"> Editar subscripcion <i class="fas fa-arrow-right"></i></a>
                         <a class="txt2" routerLink="/editarperfil" routerLinkActive="cssSiLinActiu"> Editar perfil <i class="fas fa-arrow-right"></i></a>
                         <a class="txt2" routerLink="/registrosubscripcion" routerLinkActive="cssSiLinActiu"> Añadir subscripcion <i class="fas fa-arrow-right"></i></a>
@@ -37,7 +40,7 @@
                     </div>
                       <div id="name"></div>
                 </form>
-                <div class=" bg-transparent text-center">
+             <!--    <div class=" bg-transparent text-center">
                   <div *ngIf="!user" class=" text-center">
                     <div class="card-block">
                       <h4 class="card-title">Entrar con Google</h4>
@@ -48,9 +51,8 @@
                 
                     </div>
                   </div>
-                  <div *ngIf="user" class="card text-center">
-                
-                    <div class="card-block"></div>
+                   <div *ngIf="user" class="card text-center">
+                   <div class="card-block"></div>
                     <img class="card-img-top img-responsive photo" src="{{ user.photoUrl }}">
                     <div class="card-block">
                       <h4 class="card-title">{{ user.name }}</h4>
@@ -60,4 +62,4 @@
                       <button class="btn btn-danger" (click)="signOut()">Cerrar Sesión</button>
                     </div>
                   </div>
-                </div>
+                </div> -->
