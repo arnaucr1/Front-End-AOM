@@ -734,10 +734,7 @@ margin-top:10px;
 	-o-user-select:none;
 	
 	}
-	img{
-		width: 300px;
-		height: 300px;
-	}
+
 	.flip-card-inner {
 		position: relative;
 		width: 100%;
@@ -766,13 +763,13 @@ margin-top:10px;
 	}
 	
 	.flip-card-back  {
-		background-color: dodgerblue;
+		background-image: none !important;
 		color: white;
 		transform: rotateY(180deg);
 	}
 
 	.Spotify, .spotify{
-		background-image: url("https://developer.spotify.com/assets/branding-guidelines/icon4@2x.png")!important;
+		background-image: url("https://developer.spotify.com/assets/branding-guidelines/icon4@2x.png");
 		background-repeat: no-repeat;
 		background-size: contain;
 		background-position: center; 
@@ -781,7 +778,7 @@ margin-top:10px;
 	}
 	
 	.Netflix, .netflix{
-		background-image: url("https://cdn-images-1.medium.com/max/1200/1*ty4NvNrGg4ReETxqU2N3Og.png")!important;
+		background-image: url("https://cdn-images-1.medium.com/max/1200/1*ty4NvNrGg4ReETxqU2N3Og.png");
 		background-repeat: no-repeat;
 		background-size: contain;
 		background-position: center; 
@@ -807,4 +804,26 @@ margin-top:10px;
 	font-size: 1.5em;
 	left: 0;
 	padding: 29px 25px;
+}
+.titol3{
+	color:  rgba(255, 255, 255, 0.65);
+	text-transform: uppercase !important;
+	position: absolute;
+	left: 0;
+	padding: 17px 23px;
+	font-size: 2.2em;
+}
+
+.titol4{
+	color:  rgba(255, 255, 255, 0.65);
+	text-transform: uppercase !important;
+	position: absolute;
+	right: 0;
+	padding: 17px 23px;
+	font-size: 2.2em;
+	bottom: 0;
+}
+.descripcion{
+	font-size:1.2em;
+	margin-top:90px;
 }
