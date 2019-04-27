@@ -14,11 +14,13 @@
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
 	}
+	
 body,
 html {
 	padding: 0;
 	height: 100%;
 	width: 100%;
+
 }
 body.scroll-off{
 	overflow-y: hidden;
@@ -768,22 +770,7 @@ margin-top:10px;
 		transform: rotateY(180deg);
 	}
 
-	.Spotify, .spotify{
-		background-image: url("https://developer.spotify.com/assets/branding-guidelines/icon4@2x.png");
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-position: center; 
-		background-color: #1ed760;
-		
-	}
-	
-	.Netflix, .netflix{
-		background-image: url("https://cdn-images-1.medium.com/max/1200/1*ty4NvNrGg4ReETxqU2N3Og.png");
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-position: center; 
-		background-color: #d6312d;
-	}
+
 
 .titol1{
 	color:  rgba(255, 255, 255, 0.65);
@@ -795,7 +782,7 @@ margin-top:10px;
 	font-size: 0.8em;
 }
 .titol2{
-	color: white !important;
+	color: white ;
 	position: absolute;
 	font-size: 100%;
 	vertical-align: baseline;
@@ -826,4 +813,81 @@ margin-top:10px;
 .descripcion{
 	font-size:1.2em;
 	margin-top:90px;
+}
+
+.Spotify, .spotify{
+	background-image: url("https://developer.spotify.com/assets/branding-guidelines/icon4@2x.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center; 
+	background-color: #1ed760;
+	
+}
+
+.Netflix, .netflix{
+	background-image: url("https://cdn-images-1.medium.com/max/1200/1*ty4NvNrGg4ReETxqU2N3Og.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center; 
+	background-color: #d6312d;
+}
+
+.Twitch, .twitch{
+	background-image: url("https://www.twitch.tv/p/assets/uploads/combologo_474x356.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center; 
+	background-color: #6441a4;
+}
+
+.Evernote, .evernote{
+	background-image: url("https://evernote.com/blog/wp-content/uploads/2018/01/evernote-logo-wide.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center; 
+	background-color: #46b862;
+}
+
+.PlayStation, .playStation{
+	background-image: url("https://media.playstation.com/is/image/SCEA/ps4-june-refresh-playstation-plus-logo-01-us-07jun17?$facebook$");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center; 
+	background-color: #0a4595;
+}
+
+.iCloud, .iCloud{
+	background-image: url("https://arnaucr.com/imagesaom/icloud.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center; 
+	background-color: #ffffff;
+	color:black !important;
+}
+.iCloud, .iCloud .titol1{
+	color:black !important;
+}
+.iCloud, .iCloud .titol2{
+	color:black !important;
+}
+.iCloud, .iCloud .titol3{
+	color:black !important;
+}
+.iCloud, .iCloud .titol4{
+	color:black !important;
+}
+
+.Dropbox, .dropbox{
+	background-image: url("http://orignallogo.com/wp-content/uploads/2018/07/Dropbox-Logos-Icon-Vector-Free-Download.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center; 
+	background-color: #007ee5;
+}
+.AmazonPrime, .amazonPrime{
+	background-image: url("http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Prime_0.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center; 
+	background-color: #1c243b;
 }
