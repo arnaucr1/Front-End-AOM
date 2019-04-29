@@ -17,6 +17,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { HomeAdminComponent } from './homeadmin/homeadmin.component';
 import { EditarPasswordComponent } from './editar-password/editar-password.component';
 import { NewsComponent } from './news/news.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 
 
@@ -33,6 +34,7 @@ const appRoutes:Routes=[
     {path: 'homeadmin', component: HomeAdminComponent,/*canActivate:[AuthService]*/},
     {path: 'modifypass', component: EditarPasswordComponent,/*canActivate:[AuthService]*/},
     {path: 'news', component: NewsComponent,/*canActivate:[AuthService]*/},
+    {path: 'feedback', component: FeedbackComponent,/*canActivate:[AuthService]*/},
     {path: '**', redirectTo: 'inicio', pathMatch: 'full' } //Redireccion a inicio
     ];
 

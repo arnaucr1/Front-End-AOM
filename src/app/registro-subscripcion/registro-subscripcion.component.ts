@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 
   export class RegistroSubscripcionComponent implements OnInit {
     constructor(private subscriptionService:SubscriptionService) {}
-    newSubscription:Subscription = new Subscription(0, "", "", 0, null, 0, 0, null);
+    newSubscription:Subscription = new Subscription(0, "", "", 0, null, 0, 0, parseInt(localStorage.getItem("userID")));
   ngOnInit() {
     
   }

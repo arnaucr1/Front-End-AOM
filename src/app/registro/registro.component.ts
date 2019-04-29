@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
     providers: [UserService]
 })
 export class RegistroComponent implements OnInit{
-    newUser:User = new User(0, "", "", null, "", "", "", 1, "");
+    newUser:User = new User(0, "", "", null, "", "", 1, "");
     constructor(private userService:UserService) {}
     ngOnInit(): void {
     }

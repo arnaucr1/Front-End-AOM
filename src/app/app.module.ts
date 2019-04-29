@@ -15,6 +15,7 @@ import { RegistroSubscripcionComponent } from './registro-subscripcion/registro-
 import { HomepageComponent } from './homepage/homepage.component';
 import { HomeAdminComponent } from './homeadmin/homeadmin.component';
 import { NewsComponent } from './news/news.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
@@ -54,7 +55,8 @@ const config = new AuthServiceConfig([
     HomepageComponent,
     HomeAdminComponent,
     EditarPasswordComponent,
-    NewsComponent
+    NewsComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,

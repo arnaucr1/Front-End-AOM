@@ -15,7 +15,6 @@
           <div class="flip-card-front {{mySubscription.subscriptionName}}">
             <section class="wrapper">
                 <header class="card-title">
-                    <h6 class="titol1">Ciclo de pago: {{mySubscription.cycle}}</h6>
                     <h4 class="titol2">{{mySubscription.subscriptionName}}</h4>
                 </header>
                 <footer >
@@ -27,9 +26,11 @@
             <header class="card-title2">
               <h6 class="titol3"><i class="fas fa-trash-alt"></i></h6>
             </header>
-            <div class="descripcion">Descripcipon dhsfhjsdhfhdsklj</div>
+            <div class="descripcion">Descripción: {{mySubscription.description}}</div>
+            <div class="renovacion">Ciclo de pago: {{mySubscription.cycle}}</div>
+            <div class="aviso-renovacion">Aviso de renovación: {{mySubscription.remainMe}}</div>
             <footer >
-              <h6 class="titol4"><i class="far fa-edit"></i></h6>
+              <h6 class="titol4" (click)="edit_subscription()"><i class="far fa-edit"></i></h6>
             </footer>
           </div>
         </div>
@@ -39,7 +40,7 @@
       <div id="container-floating">
         <div class="nd5 nds" data-toggle="tooltip" data-placement="left" data-original-title="Simone"></div>
         <div class="nd4 nds" data-toggle="tooltip" data-placement="left" data-original-title="Cerrar sesión" (click)="cerrarSesion()"><img class="reminder">
-          <p class="letter">C</p>
+          <a href="/registrosubscripcion"><p class="letter">C</p></a>
         </div>
         <div class="nd3 nds" routerLink="/" data-toggle="tooltip" data-placement="left" data-original-title="Modificar contraseña"><img class="reminder">
             <a href="/modifypass"><p class="letter">P</p></a>

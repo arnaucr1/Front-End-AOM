@@ -10,7 +10,8 @@
                     <span class="sub-titulo"></span>
 
                     <div class="input" >
-                        <select class="caja-input" id="subscriptionName" name="subscriptionName" autocomplete="new-password" placeholder="Nombre de la sucripción" [(ngModel)]="newSubscription.subscriptionName"  required>
+                        <select class="caja-input" id="subscriptionName" name="subscriptionName" [(ngModel)]="newSubscription.subscriptionName" required>
+                            <option value="" disabled selected>Seleccione una subscripción</option>
                             <option value="netflix">Netflix</option>
                             <option value="spotify">Spotify</option>
                             <option value="applemusic">Apple Music</option>
@@ -18,8 +19,6 @@
                             <option value="amazon">Amazon Prime</option>
                             <option value="wuaki">Wuaki</option>
                             <option value="dazn">DAZN</option>
-                        
-
                         </select>
                         <span class="icono">
                             <i class="fa fa-user-circle" aria-hidden="true"></i>
@@ -34,12 +33,19 @@
                     </div>
 
                     <div class="input" >
-                        <input class="caja-input" type="number" id="cycle" name="cycle" autocomplete="new-password" placeholder="Ciclo de pago"  [(ngModel)]="newSubscription.cycle" required>
+                        <select class="caja-input" id="cycle" name="cycle" [(ngModel)]="newSubscription.cycle" required>
+                            <option value="" disabled selected>Seleccione el ciclo de pago</option>
+                            <option value="1">Mensual</option>
+                            <option value="3">Trimestral</option>
+                            <option value="6">Semestral</option>
+                            <option value="12">Anual</option>
+                            <option value="24">Bianual</option>
+                        </select>
                         <span class="icono">
                             <i class="fa fa-clock" aria-hidden="true"></i>
-                        </span>
+                        </span> 
                     </div>
-
+                    
                     <div class="input" >
                         <input class="caja-input" type="date" id="firstBill" name="firstBill" autocomplete="new-password" placeholder="Fecha de la primera factura"  [(ngModel)]="newSubscription.firstBill" required>
                         <span class="icono">
@@ -48,9 +54,15 @@
                     </div>
 
                     <div class="input" >
-                        <input class="caja-input" type="number" id="remainMe" name="remainMe" autocomplete="new-password" placeholder="Recordatorio de pago" [(ngModel)]="newSubscription.remainMe" required>						
+                        <select class="caja-input" id="remainMe" name="remainMe" [(ngModel)]="newSubscription.remainMe" required>
+                            <option value="" disabled selected>Seleccione el aviso de renovación</option>
+                            <option value="1">1 dia antes</option>
+                            <option value="5">5 días antes</option>
+                            <option value="7">Una semanas antes</option>
+                            <option value="15">Dos semanas antes</option>
+                        </select>
                         <span class="icono">
-                            <i class="fas fa-bell"></i>
+                                <i class="fas fa-bell"></i>
                         </span>
                     </div>
                   
@@ -62,17 +74,13 @@
                     </div>
 
                     <div class="input" >
-                        <input class="caja-input" type="hidden" id="userID" name="userID" autocomplete="new-password" value="1" [(ngModel)]="newSubscription.userID" required>
-                    </div>
-
-                    <div class="input" >
                         <div class="todo-form-btn">
                             <button type="submit" (click)="addSubscription()" class="caja-titulo-btn">
                                 Registrar
                             </button>
                         </div><br>
                         <div class="text-center">
-                            <a class="txt2" routerLink="/" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
+                            <a class="txt2" routerLink="/homepage" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
                         </div>
                     </div>
                     

@@ -10,10 +10,9 @@ import { HttpClient } from '@angular/common/http';
   providers: [UserService]
 })
 export class EditarPerfilComponent implements OnInit {
-    //editUser:User = new User(0, "", "", null, "", "", "", 1);
     constructor(private userService:UserService) {}
-    usuario:User = new User(0, "", "", null, "", "", "", 0, "");
-    //usuario = [this.user];
+    usuario:User = new User(0, "", "", null, "", "", 0, "");
+
   ngOnInit() {
     this.getUser(parseInt(localStorage.getItem("userID")));
   }

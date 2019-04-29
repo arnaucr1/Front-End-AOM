@@ -16,7 +16,7 @@ import { UserService } from '../user.service';
 export class IniciarSesionComponent implements OnInit {
 
   user: SocialUser;
-  user1:User=new User(0, "", "", null, "", "", "", 1, "");
+  user1:User=new User(0, "", "", null, "", "", 1, "");
   constructor(private authService: AuthService, private router: Router, private userService:UserService) { }
 
   ngOnInit() {
@@ -29,7 +29,7 @@ export class IniciarSesionComponent implements OnInit {
     });
   }
 
-  newUserFromGoogle:User = new User(0, "", "", null, "", "", "", 1, "");
+  newUserFromGoogle:User = new User(0, "", "", null, "", "", 1, "");
 
   //Functión de login con Google
   signInWithGoogle(): void {
@@ -69,10 +69,9 @@ export class IniciarSesionComponent implements OnInit {
             let birthDate = result["data"]["birthDate"];
             let email = result["data"]["email"];
             let pass = result["data"]["pass"];
-            let interfaceLanguage = result["data"]["interfaceLanguage"];
             let userType = result["data"]["userType"];
             let token = result["data"]["token"];
-            let user:User=new User(userID, firstName, lastName, birthDate, email, pass, interfaceLanguage, userType, token);
+            let user:User=new User(userID, firstName, lastName, birthDate, email, pass, userType, token);
             localStorage.setItem("userID",userID);
             localStorage.setItem("firstName",firstName);
             localStorage.setItem("lastName",lastName);

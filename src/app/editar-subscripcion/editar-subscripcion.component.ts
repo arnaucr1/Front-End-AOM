@@ -14,14 +14,17 @@ export class EditarSubscripcionComponent implements OnInit {
   constructor(private subscriptionService:SubscriptionService) {}
   editSubscription:Subscription = new Subscription(0, "", "", 0, null, 0, 0, null);
   ngOnInit() {
-    this.getSubscription(1);
+    this.getSubscription(parseInt(localStorage.getItem("subscriptionID")));
   }
 
   getSubscription(subscriptionID:number) {
     this.subscriptionService.getSubscription(subscriptionID).subscribe(
       (result) => {
-      this.editSubscription = result["data"];
-      console.log(result["data"]);
+      if(result["data"]["cycle"] == 2) {
+        result["data"]["cycle"] = "semestral";
+        this.editSubscription = result["data"];
+        console.log(result["data"]);
+      }
       },
       (error) => {
          console.log(error);

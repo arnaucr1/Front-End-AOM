@@ -49,6 +49,16 @@ export class HomepageComponent implements OnInit{
         )
     }
 
+    edit_subscription(subscriptionID){
+      subscriptionID = 1;
+      if(subscriptionID != null) {
+      localStorage.setItem("subscriptionID",subscriptionID);
+      this.router.navigate(['/editarsubscripcion']);
+      } else {
+        console.log("No ha seleccionado ninguna subscripción");
+      }
+    }
+
     cerrarSesion() {
       this.userService.cerrarSesion().subscribe(
         (result) => {
