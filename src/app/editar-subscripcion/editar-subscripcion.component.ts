@@ -20,11 +20,8 @@ export class EditarSubscripcionComponent implements OnInit {
   getSubscription(subscriptionID:number) {
     this.subscriptionService.getSubscription(subscriptionID).subscribe(
       (result) => {
-      if(result["data"]["cycle"] == 2) {
-        result["data"]["cycle"] = "semestral";
         this.editSubscription = result["data"];
         console.log(result["data"]);
-      }
       },
       (error) => {
          console.log(error);
@@ -32,8 +29,8 @@ export class EditarSubscripcionComponent implements OnInit {
     )
   }
 
-  modifySubscription(subscriptionID:number) {
-    this.subscriptionService.modifySubscription(subscriptionID, this.editSubscription).subscribe(
+  modifySubscription() {
+    this.subscriptionService.modifySubscription(parseInt(localStorage.getItem("subscriptionID")), this.editSubscription).subscribe(
       (result) => {
         console.log(result);
       }, 

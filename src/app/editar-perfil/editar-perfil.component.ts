@@ -28,8 +28,8 @@ export class EditarPerfilComponent implements OnInit {
       )
   } 
 
-  modifyUser(userID:number) {
-      this.userService.modifyUser(userID, this.usuario).subscribe(
+  modifyUser() {
+      this.userService.modifyUser(parseInt(localStorage.getItem("userID")), this.usuario).subscribe(
         (result) => {
             console.log(result);
             window.location.reload();

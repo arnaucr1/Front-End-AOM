@@ -8,45 +8,59 @@
                   <span class="sub-titulo"></span>
                   <span class="sub-titulo"></span>
                   <div class="input" >
-                      <input class="caja-input" type="text" id="subscriptionName" name="subscriptionName" autocomplete="new-password" placeholder="Nombre" value="{{editSubscription.subscriptionName}}" required>
+                      <input style="text-transform: capitalize;" class="caja-input" type="text" id="subscriptionName" name="subscriptionName" [(ngModel)]="editSubscription.subscriptionName" autocomplete="new-password" placeholder="Nombre" value="{{editSubscription.subscriptionName}}" required readonly>
                       <span class="icono">
                           <i class="fa fa-user-circle" aria-hidden="true"></i>
                       </span>
                   </div>
                   <div class="input" >
-                      <input class="caja-input" type="text" id="description" name="description" autocomplete="new-password" placeholder="Descripción" value="{{editSubscription.description}}" required>						
+                      <input class="caja-input" type="text" id="description" name="description" [(ngModel)]="editSubscription.description" autocomplete="new-password" placeholder="Descripción" value="{{editSubscription.description}}" required>						
                       <span class="icono">
                           <i class="fas fa-map-marker-alt"></i>
                       </span>
                   </div>
                   <div class="input" >
-                      <input class="caja-input" type="number" id="cycle" name="cycle" autocomplete="new-password" placeholder="Ciclo de pago" value="{{editSubscription.cycle}}" required>
-                      <span class="icono">
-                          <i class="fa fa-clock" aria-hidden="true"></i>
-                      </span>
-                  </div>
+                        <select class="caja-input" id="cycle" name="cycle" [(ngModel)]="editSubscription.cycle" required>
+                            <option value="" disabled selected>Seleccione el ciclo de pago</option>
+                            <option value="1">Mensual</option>
+                            <option value="3">Trimestral</option>
+                            <option value="6">Semestral</option>
+                            <option value="12">Anual</option>
+                            <option value="24">Bianual</option>
+                        </select>
+                        <span class="icono">
+                            <i class="fa fa-clock" aria-hidden="true"></i>
+                        </span> 
+                    </div>
                   <div class="input" >
-                      <input class="caja-input" type="date" id="first-bill" name="first-bill" autocomplete="new-password" placeholder="Primera factura" value="{{editSubscription.firstBill}}" required>
+                      <input class="caja-input" type="date" id="first-bill" name="first-bill" [(ngModel)]="editSubscription.firstBill" autocomplete="new-password" placeholder="Primera factura" value="{{editSubscription.firstBill}}" required>
                       <span class="icono">
                           <i class="fa fa-calendar-alt" aria-hidden="true"></i>
                       </span>
                   </div>
                   <div class="input" >
-                      <input class="caja-input" type="number" id="remainMe" name="remainMe" autocomplete="new-password" placeholder="Notificacion de recordatorio" value="{{editSubscription.remainMe}}" required>						
-                      <span class="icono">
-                          <i class="fa fa-bell"></i>
-                      </span>
-                  </div>
+                        <select class="caja-input" id="remainMe" name="remainMe" [(ngModel)]="editSubscription.remainMe" required>
+                            <option value="" disabled selected>Seleccione el aviso de renovación</option>
+                            <option value="1">Un dia antes</option>
+                            <option value="2">Dos días antes</option>
+                            <option value="5">Cinco días antes</option>
+                            <option value="7">Una semana antes</option>
+                            <option value="15">Dos semanas antes</option>
+                        </select>
+                        <span class="icono">
+                                <i class="fas fa-bell"></i>
+                        </span>
+                    </div>
                 
                   <div class="input" >
-                      <input class="caja-input" type="number" id="price" name="price" autocomplete="new-password" placeholder="Coste" value="{{editSubscription.price}}" required>						
+                      <input class="caja-input" type="number" id="price" name="price" [(ngModel)]="editSubscription.price" autocomplete="new-password" placeholder="Coste" value="{{editSubscription.price}}" required>						
                       <span class="icono">
                           <i class="fas fa-euro-sign"></i>
                       </span>
                   </div>
                   <div class="input" >
                       <div class="todo-form-btn">
-                          <button type="submit" class="caja-titulo-btn">
+                          <button type="submit" (click)="modifySubscription()" class="caja-titulo-btn">
                               Editar
                           </button>
                       </div><br>

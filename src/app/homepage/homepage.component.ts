@@ -46,16 +46,27 @@ export class HomepageComponent implements OnInit{
             }, (error) => {
               console.log(error);
             }
-        )
+        ) 
     }
 
     edit_subscription(subscriptionID){
-      subscriptionID = 1;
       if(subscriptionID != null) {
       localStorage.setItem("subscriptionID",subscriptionID);
       this.router.navigate(['/editarsubscripcion']);
       } else {
         console.log("No ha seleccionado ninguna subscripción");
+      }
+    }
+
+    deleteSubscription(subscriptionID){
+      if(subscriptionID != null) {
+        this.subscriptionService.delSubscription(subscriptionID).subscribe(
+          (result) => {
+            console.log(result);
+          }, (error) => {
+            console.log(error);
+          }
+        )
       }
     }
 
