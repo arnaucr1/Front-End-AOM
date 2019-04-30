@@ -7,6 +7,7 @@
         <button class="btn btn-round color-2 material-design" (click)="cerrarSesion()" >Cerrar Sesión </button>
         <a href="/news"> <div class="btn btn-round color-1 material-design" ><p>📰 Noticias </p></div></a>
         <a href="/news"> <div class="btn btn-round color-1 material-design" ><p>💰 Estadísticas </p></div></a>
+        <a href="/feedback"> <div class="btn btn-round color-1 material-design" ><p> Valora la plataforma </p></div></a>
     </header>
 
     <div  class="flip-card x " data-color=""  *ngFor="let mySubscription of mySubscriptions; let i = index">
@@ -24,13 +25,25 @@
           </div>
           <div class="flip-card-back {{mySubscription.subscriptionName}}">
             <header class="card-title2">
-              <h6 class="titol3"><i class="fas fa-trash-alt"></i></h6>
+              <h6 class="titol3" (click)="deleteSubscription(mySubscription.subscriptionID)"><i class="fas fa-trash-alt"></i></h6>
             </header>
             <div class="descripcion">Descripción: {{mySubscription.description}}</div>
-            <div class="renovacion">Ciclo de pago: {{mySubscription.cycle}}</div>
-            <div class="aviso-renovacion">Aviso de renovación: {{mySubscription.remainMe}}</div>
+            <div class="renovacion">Ciclo de pago: 
+              <span *ngIf="mySubscription.cycle == 1">Mensual</span>
+              <span *ngIf="mySubscription.cycle == 3">Trimestral</span>
+              <span *ngIf="mySubscription.cycle == 6">Semestral</span>
+              <span *ngIf="mySubscription.cycle == 12">Anual</span>
+              <span *ngIf="mySubscription.cycle == 24">Bianual</span>
+            </div>
+            <div class="aviso-renovacion">Aviso de renovación: 
+                <span *ngIf="mySubscription.remainMe == 1">Un día antes</span>
+                <span *ngIf="mySubscription.remainMe == 2">Dos días antes</span>
+                <span *ngIf="mySubscription.remainMe == 5">Cinco días antes</span>
+                <span *ngIf="mySubscription.remainMe == 7">Una semana antes</span>
+                <span *ngIf="mySubscription.remainMe == 15">Dos semanas antes</span>
+            </div>
             <footer >
-              <h6 class="titol4" (click)="edit_subscription()"><i class="far fa-edit"></i></h6>
+              <h6 class="titol4" (click)="edit_subscription(mySubscription.subscriptionID)"><i class="far fa-edit"></i></h6>
             </footer>
           </div>
         </div>
