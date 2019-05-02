@@ -63,6 +63,7 @@ export class HomepageComponent implements OnInit{
         this.subscriptionService.delSubscription(subscriptionID).subscribe(
           (result) => {
             console.log(result);
+            window.location.reload();
           }, (error) => {
             console.log(error);
           }
