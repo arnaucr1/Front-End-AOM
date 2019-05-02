@@ -14,11 +14,11 @@ export class EditarPerfilRootComponent implements OnInit {
     usuario:User = new User(0, "", "", null, "", "", 0, "");
 
   ngOnInit() {
-    this.getUser(parseInt(localStorage.getItem("editUID")));
+    this.getUser();
   }
 
-  getUser(userID:number) {
-      this.userService.getUser(userID).subscribe(
+  getUser() {
+      this.userService.getUsers().subscribe(
         (result) => {
             this.usuario = result["data"]
             console.log(result["data"]);
