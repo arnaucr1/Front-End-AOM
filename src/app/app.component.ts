@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from './subscription';
 import { HttpClient } from '@angular/common/http';
 import { SubscriptionService } from './subscription.service';
+import { FeedbackService } from './feedback.service';
 import { UserService } from './user.service';
 import { User } from './user';
 

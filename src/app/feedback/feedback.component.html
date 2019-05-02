@@ -1,17 +1,46 @@
-<fieldset class="rating">
-    <input type="radio" [name]="inputName" value="5" [checked]="rating===5" />
-    <label title="Rocks!" (click)='onClick(5)'>5 stars</label>
-      
-    <input type="radio" [name]="inputName" value="4" [checked]="rating===4" />
-    <label title="Pretty good" (click)='onClick(4)'>4 stars</label>
-      
-    <input type="radio" [name]="inputName" value="3" [checked]="rating===3" />
-    <label title="Meh" (click)='onClick(3)'>3 stars</label>
-      
-    <input type="radio" [name]="inputName" value="2" [checked]="rating===2" />
-    <label title="Kinda bad" (click)='onClick(2)'>2 stars</label>
-      
-    <input type="radio" [name]="inputName" value="1" [checked]="rating===1" />
-    <label title="Sucks big time" (click)='onClick(1)'>1 star</label>
-</fieldset>
-      
+<title>Iniciar Sesión</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<form class="formulario" action="" method="post" >    
+    <div class="limitador">
+        <div class="todo">
+            <div class="caja">	
+                <form class="formulario" action="" method="post" >
+                    <span class="titulo">AOM</span> 
+                    <span class="sub-titulo">Valore el servicio</span>
+                    <span class="sub-titulo"></span>
+
+                    <div class="input" id="feedbackForm">
+                        <fieldset class="rating">
+                            <input type="radio" [name]="inputName" value="5" [checked]="rating===5" />
+                            <label title="Rocks!" (click)='onClick(5)'>5 stars</label>
+                                      
+                            <input type="radio" [name]="inputName" value="4" [checked]="rating===4" />
+                            <label title="Pretty good" (click)='onClick(4)'>4 stars</label>
+                                      
+                            <input type="radio" [name]="inputName" value="3" [checked]="rating===3" />
+                            <label title="Meh" (click)='onClick(3)'>3 stars</label>
+                                      
+                            <input type="radio" [name]="inputName" value="2" [checked]="rating===2" />
+                            <label title="Kinda bad" (click)='onClick(2)'>2 stars</label>
+                                      
+                            <input type="radio" [name]="inputName" value="1" [checked]="rating===1" />
+                            <label title="Sucks big time" (click)='onClick(1)'>1 star</label>
+                        </fieldset>
+                    </div>
+
+                    <div class="input" >
+                        <div class="todo-form-btn">
+                            <button type="submit" (click)="feedbackApp()" class="caja-titulo-btn">
+                                Valorar
+                            </button>
+                        </div><br>
+                        <div class="text-center">
+                            <a class="txt2" routerLink="/homepage" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
+                        </div>
+                    </div>
+                    </form>
+                    <div class="input" >
+                            <textarea name="comment" form="feedbackForm">Enter text here...</textarea>
+                    </div>
+                    
+                    <footer-color-tag></footer-color-tag>
