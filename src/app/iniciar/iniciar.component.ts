@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 import { AuthService } from 'angularx-social-login';
 import { SocialUser } from 'angularx-social-login';
@@ -6,6 +6,10 @@ import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider } fro
 import {Router} from "@angular/router";
 import { User } from '../user';
 import { UserService } from '../user.service';
+
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';1
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
     selector: 'iniciar-tag',
@@ -15,9 +19,11 @@ import { UserService } from '../user.service';
 })
 export class IniciarSesionComponent implements OnInit {
 
+  
+
   user: SocialUser;
   user1:User=new User(0, "", "", null, "", "", 1, "");
-  constructor(private authService: AuthService, private router: Router, private userService:UserService) { }
+  constructor(private authService: AuthService, private router: Router, private userService:UserService,private modalService: NgbModal) { }
 
   ngOnInit() {
 
@@ -28,6 +34,8 @@ export class IniciarSesionComponent implements OnInit {
       console.log(user);
     });
   }
+
+
 
   newUserFromGoogle:User = new User(0, "", "", null, "", "", 1, "");
 
@@ -86,8 +94,34 @@ export class IniciarSesionComponent implements OnInit {
           }
         }, 
         (error)=>{
+        
           console.log(error);
+
         }
       )
     }
 }
+/*
+@Component({
+  selector: 'ngbd-modal-content',
+  template: `
+    <div class="modal-header">
+      <h4 class="modal-title">Hi there!</h4>
+      <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Hello, {{name}}!</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+    </div>
+  `
+})
+export class NgbdModalContent {
+  @Input() name;
+
+  constructor(public activeModal: NgbActiveModal) {}
+}
+*/

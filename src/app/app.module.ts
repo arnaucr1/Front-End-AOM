@@ -19,7 +19,10 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { registerLocaleData } from '@angular/common';
 import localePy from '@angular/common/locales/es-PY';
@@ -57,6 +60,8 @@ const config = new AuthServiceConfig([
     EditarPasswordComponent,
     NewsComponent,
     FeedbackComponent
+  
+    
   ],
   imports: [
     BrowserModule,
@@ -66,7 +71,9 @@ const config = new AuthServiceConfig([
     BrowserAnimationsModule,
     HttpClientModule,
     SocialLoginModule,
-    HttpModule
+    HttpModule,
+   // NgbModule,NgbdModalContent
+    
   ],
   providers: [appRoutingProviders, 
     {
