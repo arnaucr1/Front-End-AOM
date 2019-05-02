@@ -75,7 +75,7 @@ export class UserService {
             "newpass1":newpass1
         };
         return this.http.post(url, data,
-            { headers:new HttpHeaders({'Content-Type':'application/json'})}
+            { headers:new HttpHeaders({'Content-Type':'application/json', 'Authorization': localStorage.getItem("token")})}
             );
     }
 
