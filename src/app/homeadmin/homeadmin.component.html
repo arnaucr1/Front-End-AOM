@@ -2,12 +2,8 @@
     <header>
         
         <time *ngFor="let uData of userData; let i = index">
-            <h1>Home Admin</h1>
-            <h5 id="date"> {{today | date:'dd/MM/yyyy'}}</h5>
-            <h4 id="day">Bienvenid@: {{uData.firstName}}</h4>
+            <h1>Administrador</h1>
         </time>
-
-        <a href="../perfil" target="_blank"><img class="avatar" src="#"></a>
         <a href="../editarsubscripcion" class="botones" target="_blank"><i class="fas fa-edit"></i></a>
         <a href="../editarperfil" class="botones" target="_blank"><i class="fas fa-user-edit"></i></a>
         <a href="../registrosubscripcion" class="botones" target="_blank"><i class="fas fa-plus-circle"></i></a>
@@ -40,8 +36,7 @@
                     
                         </section>
                     </div>
-            </div>
-                       
+            </div>          
         <div class="col-6">
             <h2>Mis suscripciones</h2>
     <div class="card x {{mySubscription.subscriptionName}}" data-color=""  *ngFor="let mySubscription of mySubscriptions; let i = index">
