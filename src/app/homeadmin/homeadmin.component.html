@@ -4,9 +4,10 @@
         <time *ngFor="let uData of userData; let i = index">
             <h1>Administrador</h1>
         </time>
-        <a href="../editarsubscripcion" class="botones" target="_blank"><i class="fas fa-edit"></i></a>
-        <a href="../editarperfil" class="botones" target="_blank"><i class="fas fa-user-edit"></i></a>
-        <a href="../registrosubscripcion" class="botones" target="_blank"><i class="fas fa-plus-circle"></i></a>
+        <button class="btn btn-round color-2 material-design" (click)="cerrarSesion()" >Cerrar Sesión </button>
+     
+        <a href="/news"> <div class="btn btn-round color-1 material-design" ><p>💰 Estadísticas </p></div></a>
+     
         <div class="usutest" >
             
         </div>
@@ -19,7 +20,7 @@
 
     <div class="container">
 		<div class="row">
-			<div class="col-6">
+			<div class="col-6"><br><br><br>
                 <h2>Listado de usuarios</h2>
                     <div class="card x user-cards" data-color=""  *ngFor="let user of usersData; let i = index">
                         <input type="button" class="concord exit" value="×"/>
@@ -37,7 +38,7 @@
                         </section>
                     </div>
             </div>          
-        <div class="col-6">
+        <div class="col-6"><br><br><br>
             <h2>Mis suscripciones</h2>
     <div class="card x {{mySubscription.subscriptionName}}" data-color=""  *ngFor="let mySubscription of mySubscriptions; let i = index">
         <input type="button" class="concord exit" value="×"/>
