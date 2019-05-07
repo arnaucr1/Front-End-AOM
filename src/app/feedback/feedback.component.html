@@ -29,8 +29,12 @@
                     </div>
 
                     <div class="input" >
+                        <textarea name="comment" form="feedbackForm" [(ngModel)]="newFeedback.description">Enter text here...</textarea>
+                    </div>
+
+                    <div class="input" >
                         <div class="todo-form-btn">
-                            <button type="submit" (click)="feedbackApp()" class="caja-titulo-btn">
+                            <button type="submit" (click)="addFeedback()" class="caja-titulo-btn">
                                 Valorar
                             </button>
                         </div><br>
@@ -39,8 +43,4 @@
                         </div>
                     </div>
                     </form>
-                    <div class="input" >
-                            <textarea name="comment" form="feedbackForm">Enter text here...</textarea>
-                    </div>
-                    
                     <footer-color-tag></footer-color-tag>
