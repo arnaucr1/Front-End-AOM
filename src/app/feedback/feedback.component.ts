@@ -10,9 +10,6 @@ import { Feedback } from '../feedback';
 export class FeedbackComponent implements OnInit {
   constructor(private feedbackService:FeedbackService) {}
 
-  newFeedback:Feedback = new Feedback(0, 0, "", parseInt(localStorage.getItem("userID")));
-
-
   @Input() rating: number;
   @Input() itemId: number;
   @Output() ratingClick: EventEmitter<any> = new EventEmitter<any>();
@@ -21,17 +18,21 @@ export class FeedbackComponent implements OnInit {
   ngOnInit() {
     this.inputName = this.itemId + '_rating';
   }
-
+  vote:number = 0;
   onClick(rating: number): void {
     this.rating = rating;
+    this.vote = rating;
     console.log(rating);
     this.ratingClick.emit({
       itemId: this.itemId,
       rating: rating
     });
   }
+ 
+  newFeedback:Feedback = new Feedback(0, 0, "", parseInt(localStorage.getItem("userID")));
 
   addFeedback() {
+    this.newFeedback.vote= this.vote;
     this.feedbackService.addFeedback(this.newFeedback).subscribe(
       (result) => {
           console.log(result);
