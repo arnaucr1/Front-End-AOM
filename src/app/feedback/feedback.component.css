@@ -1,5 +1,15 @@
+textarea {
+  overflow: auto;
+  resize: vertical;
+  width: 600px;
+
+}
 .rating {
-    float:left;
+  display:block;
+  position:relative;
+
+      text-align:center !important;
+
 }
 
 .rating:not(:checked) > input {
@@ -9,13 +19,13 @@
 }
 
 .rating:not(:checked) > label {
-    float:right;
+
     width:1em;
     padding:0.1em;
     overflow:hidden;
     white-space:nowrap;
     cursor:pointer;
-    font-size:200%;
+    font-size:95px;
     line-height:1.2;
     color:#ddd;
 }
@@ -118,15 +128,10 @@
   .caja-titulo-btn:hover {
     background: #3a98fd;
   }
-  .inputs-feedback{
-    margin: auto;
-	text-align: left;
-	position: relative;
-      border:solid 1px;
+  .text-area{
+   display:block;
+position:relative;
+
+    text-align:center !important;
   }
-  .inputs-feedback2{
-	margin: auto;
-	text-align: left;
-    position: relative;
-    border:solid 1px;
-}
+

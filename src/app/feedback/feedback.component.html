@@ -6,7 +6,7 @@
             <div class="caja">	
                 <form class="formulario" action="" method="post" >
                     <span class="titulo">¡Valoranos!</span> 
-                    <div class="input inputs-feedback2" id="feedbackForm">
+                    <div class="input" id="feedbackForm">
                         <fieldset class="rating">
                             <input type="radio" [name]="inputName" value="5" [checked]="rating===5" />
                             <label title="Rocks!" (click)='onClick(5)'>5 stars</label>
@@ -24,8 +24,11 @@
                             <label title="Sucks big time" (click)='onClick(1)'>1 star</label>
                         </fieldset>
                     </div>
-                        <textarea name="comment" class="inputs-feedback2" form="feedbackForm">Escribenos tus comentarios...</textarea>
+                    <div class="text-area">
+                        <textarea name="comment"  form="feedbackForm">Escribenos tus comentarios...</textarea>
+                    </div>
                     <div class="input">
+                          
                         <div class="todo-form-btn ">
                             <button type="submit" (click)="feedbackApp()" class="caja-titulo-btn">
                                 Enviar
@@ -33,7 +36,7 @@
                         </div>
                   
                     </div>
-                    </form>
+                    </form><br><br><br>
                     <div class="text-center">
                         <a class="txt2" routerLink="/homepage" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
                     </div>
