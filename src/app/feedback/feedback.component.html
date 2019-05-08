@@ -5,11 +5,8 @@
         <div class="todo">
             <div class="caja">	
                 <form class="formulario" action="" method="post" >
-                    <span class="titulo">AOM</span> 
-                    <span class="sub-titulo">Valore el servicio</span>
-                    <span class="sub-titulo"></span>
-
-                    <div class="input" id="feedbackForm">
+                    <span class="titulo">¡Valoranos!</span> 
+                    <div class="input inputs-feedback2" id="feedbackForm">
                         <fieldset class="rating">
                             <input type="radio" [name]="inputName" value="5" [checked]="rating===5" />
                             <label title="Rocks!" (click)='onClick(5)'>5 stars</label>
@@ -27,20 +24,18 @@
                             <label title="Sucks big time" (click)='onClick(1)'>1 star</label>
                         </fieldset>
                     </div>
-
-                    <div class="input" >
-                        <div class="todo-form-btn">
+                        <textarea name="comment" class="inputs-feedback2" form="feedbackForm">Escribenos tus comentarios...</textarea>
+                    <div class="input">
+                        <div class="todo-form-btn ">
                             <button type="submit" (click)="feedbackApp()" class="caja-titulo-btn">
-                                Valorar
+                                Enviar
                             </button>
-                        </div><br>
-                        <div class="text-center">
-                            <a class="txt2" routerLink="/homepage" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
                         </div>
+                  
                     </div>
                     </form>
-                    <div class="input" >
-                            <textarea name="comment" form="feedbackForm">Enter text here...</textarea>
+                    <div class="text-center">
+                        <a class="txt2" routerLink="/homepage" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
                     </div>
                     
                     <footer-color-tag></footer-color-tag>
