@@ -53,6 +53,7 @@ export class HomeAdminComponent implements OnInit{
     getUsers() {
         this.userService.getUsers().subscribe(
           (result) => {
+              console.log(result);
               this.usersData = result["data"];
             }, (error) => {
               console.log(error);
