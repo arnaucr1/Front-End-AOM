@@ -25,12 +25,13 @@
                         </fieldset>
                     </div>
                     <div class="text-area">
-                        <textarea name="comment"  form="feedbackForm">Escribenos tus comentarios...</textarea>
+                        <textarea maxlength="255" placeholder="¿En que debemos de mejorar?" name="comment" form="feedbackForm" [(ngModel)]="newFeedback.description"></textarea>
                     </div>
+
                     <div class="input">
                           
                         <div class="todo-form-btn ">
-                            <button type="submit" (click)="feedbackApp()" class="caja-titulo-btn">
+                            <button type="submit" (click)="addFeedback()" class="caja-titulo-btn">
                                 Enviar
                             </button>
                         </div>
