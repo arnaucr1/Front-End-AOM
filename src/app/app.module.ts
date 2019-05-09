@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
+import { NotifierModule, NotifierOptions } from 'angular-notifier';
 
 import { AppComponent } from './app.component';
 import {routing, appRoutingProviders} from './app.routing'; 
@@ -40,7 +41,9 @@ const config = new AuthServiceConfig([
     provider: new GoogleLoginProvider('525707736535-r9mlfv6mdpifu51f8sroujaq0jjiapg5.apps.googleusercontent.com')
   }
 ]);
+const notifications: NotifierOptions={
 
+}
  export function provideConfig() {
    return config;
  }
@@ -72,6 +75,7 @@ const config = new AuthServiceConfig([
     HttpClientModule,
     SocialLoginModule,
     HttpModule,
+    NotifierModule.withConfig(notifications)
    // NgbModule,NgbdModalContent
     
   ],
