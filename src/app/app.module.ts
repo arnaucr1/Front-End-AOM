@@ -21,8 +21,6 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
-
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { registerLocaleData } from '@angular/common';
@@ -41,9 +39,47 @@ const config = new AuthServiceConfig([
     provider: new GoogleLoginProvider('525707736535-r9mlfv6mdpifu51f8sroujaq0jjiapg5.apps.googleusercontent.com')
   }
 ]);
-const notifications: NotifierOptions={
+const customNotifierOptions: NotifierOptions = {
+  position: {
+		horizontal: {
+			position: 'left',
+			distance: 12
+		},
+		vertical: {
+			position: 'bottom',
+			distance: 12,
+			gap: 10
+		}
+	},
+  theme: 'material',
+  behaviour: {
+    autoHide: 5000,
+    onClick: 'hide',
+    onMouseover: 'pauseAutoHide',
+    showDismissButton: true,
+    stacking: 4
+  },
+  animations: {
+    enabled: true,
+    show: {
+      preset: 'slide',
+      speed: 300,
+      easing: 'ease'
+    },
+    hide: {
+      preset: 'fade',
+      speed: 300,
+      easing: 'ease',
+      offset: 50
+    },
+    shift: {
+      speed: 300,
+      easing: 'ease'
+    },
+    overlap: 150
+  }
+};
 
-}
  export function provideConfig() {
    return config;
  }
@@ -75,7 +111,7 @@ const notifications: NotifierOptions={
     HttpClientModule,
     SocialLoginModule,
     HttpModule,
-    NotifierModule.withConfig(notifications)
+    NotifierModule.withConfig(customNotifierOptions)
    // NgbModule,NgbdModalContent
     
   ],

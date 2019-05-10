@@ -9,6 +9,7 @@ import { UserService } from '../user.service';
 
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';1
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NotifierService } from 'angular-notifier';
 
 
 @Component({
@@ -20,10 +21,12 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class IniciarSesionComponent implements OnInit {
 
   
-
+  private readonly notifier: NotifierService;
   user: SocialUser;
   user1:User=new User(0, "", "", null, "", "", 1, "");
-  constructor(private authService: AuthService, private router: Router, private userService:UserService,private modalService: NgbModal) { }
+  constructor(private authService: AuthService, private router: Router, private userService:UserService,private modalService: NgbModal, notifier: NotifierService) { 
+    this.notifier = notifier;
+   }
 
   ngOnInit() {
 
@@ -36,6 +39,9 @@ export class IniciarSesionComponent implements OnInit {
   }
 
 
+	public showNotification( type: string, message: string ): void {
+		this.notifier.notify( type, message );
+  }
 
   newUserFromGoogle:User = new User(0, "", "", null, "", "", 1, "");
 
@@ -94,7 +100,16 @@ export class IniciarSesionComponent implements OnInit {
           }
         }, 
         (error)=>{
-        
+          console.log("fef");
+          debugger;
+/*          this.notifier.show( {
+            type: 'error',
+            message: 'You are awesome! I mean it!'
+            //id: 'THAT_NOTIFICATION_ID' // Again, this is optional
+          } ); */
+          this.notifier.notify( 'success', 'You are awesome! I mean it!' );
+
+          //this.notifier.notify( 'error', 'Error de login' );
           console.log(error);
 
         }
