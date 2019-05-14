@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SubscriptionService } from '../subscription.service';
 import { Subscription } from '../subscription';
 import { HttpClient } from '@angular/common/http';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'app-editar-subscripcion',
@@ -10,8 +11,10 @@ import { HttpClient } from '@angular/common/http';
   providers: [SubscriptionService]
 })
 export class EditarSubscripcionComponent implements OnInit {
-
-  constructor(private subscriptionService:SubscriptionService) {}
+  private notifier: NotifierService;
+  constructor(private subscriptionService:SubscriptionService, notifier: NotifierService) {
+    this.notifier = notifier;
+  }
   editSubscription:Subscription = new Subscription(0, "", "", 0, null, 0, 0, null);
   ngOnInit() {
     this.getSubscription(parseInt(localStorage.getItem("subscriptionID")));
@@ -24,6 +27,7 @@ export class EditarSubscripcionComponent implements OnInit {
         console.log(result["data"]);
       },
       (error) => {
+        this.notifier.notify('error','Error al cargar la subscripción');
          console.log(error);
       }
     )
@@ -32,10 +36,10 @@ export class EditarSubscripcionComponent implements OnInit {
   modifySubscription() {
     this.subscriptionService.modifySubscription(parseInt(localStorage.getItem("subscriptionID")), this.editSubscription).subscribe(
       (result) => {
-        console.log(result);
+        this.notifier.notify('default','Datos actualizados correctamente');
       }, 
       (error) => {
-        console.log(error);
+        this.notifier.notify('error','Error al actualizar los datos');
       }
     )
   }

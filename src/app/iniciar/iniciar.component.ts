@@ -7,7 +7,7 @@ import {Router} from "@angular/router";
 import { User } from '../user';
 import { UserService } from '../user.service';
 
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';1
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NotifierService } from 'angular-notifier';
 
@@ -21,7 +21,7 @@ import { NotifierService } from 'angular-notifier';
 export class IniciarSesionComponent implements OnInit {
 
   
-  private readonly notifier: NotifierService;
+  private notifier: NotifierService;
   user: SocialUser;
   user1:User=new User(0, "", "", null, "", "", 1, "");
   constructor(private authService: AuthService, private router: Router, private userService:UserService,private modalService: NgbModal, notifier: NotifierService) { 
@@ -40,7 +40,8 @@ export class IniciarSesionComponent implements OnInit {
 
 
 	public showNotification( type: string, message: string ): void {
-		this.notifier.notify( type, message );
+    this.notifier.notify( type, message );
+    this.notifier.notify("default","www");
   }
 
   newUserFromGoogle:User = new User(0, "", "", null, "", "", 1, "");
@@ -56,14 +57,6 @@ export class IniciarSesionComponent implements OnInit {
     }
     )
   }
-
-  /*signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-  }
-
-  signInWithLinkedIn(): void {
-    this.authService.signIn(LinkedInLoginProvider.PROVIDER_ID);
-  }*/
 
   signOut(): void {
     this.authService.signOut();
@@ -100,43 +93,8 @@ export class IniciarSesionComponent implements OnInit {
           }
         }, 
         (error)=>{
-          console.log("fef");
-          debugger;
-/*          this.notifier.show( {
-            type: 'error',
-            message: 'You are awesome! I mean it!'
-            //id: 'THAT_NOTIFICATION_ID' // Again, this is optional
-          } ); */
-          this.notifier.notify( 'success', 'You are awesome! I mean it!' );
-
-          //this.notifier.notify( 'error', 'Error de login' );
-          console.log(error);
-
+          this.notifier.notify('error','Error de login');
         }
       )
     }
 }
-/*
-@Component({
-  selector: 'ngbd-modal-content',
-  template: `
-    <div class="modal-header">
-      <h4 class="modal-title">Hi there!</h4>
-      <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      <p>Hello, {{name}}!</p>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
-    </div>
-  `
-})
-export class NgbdModalContent {
-  @Input() name;
-
-  constructor(public activeModal: NgbActiveModal) {}
-}
-*/

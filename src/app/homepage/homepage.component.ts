@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {User} from '../user';
 import { UserService } from '../user.service';
 import {Router} from "@angular/router";
-import * as $ from 'jquery';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
     selector: 'homepage-tag',
@@ -16,8 +16,10 @@ import * as $ from 'jquery';
 })
 export class HomepageComponent implements OnInit{
     today = new Date();
-    constructor(private datePipe: DatePipe, private subscriptionService:SubscriptionService, private userService:UserService, private http:HttpClient, private router: Router){
+    private notifier: NotifierService;
+    constructor(private datePipe: DatePipe, private subscriptionService:SubscriptionService, private userService:UserService, private http:HttpClient, private router: Router, notifier: NotifierService){
         let dataActual = Date.now();
+        this.notifier = notifier;
     }
     mySubscriptions:Subscription[] = [];
     userData:User[] = [];
@@ -32,8 +34,8 @@ export class HomepageComponent implements OnInit{
         this.subscriptionService.getSubscriptions(userID).subscribe(
           (result) => {
               this.mySubscriptions = result["data"];
-              console.log(result["data"]);
             }, (error) => {
+              this.notifier.notify('error','Error al cargar las subscripciones');
               console.log(error);
             }
         )
@@ -44,6 +46,7 @@ export class HomepageComponent implements OnInit{
           (result) => {
               this.userData = result["data"];
             }, (error) => {
+              this.notifier.notify('error','No hay ningún usuario logeado');
               console.log(error);
             }
         ) 
@@ -54,7 +57,7 @@ export class HomepageComponent implements OnInit{
       localStorage.setItem("subscriptionID",subscriptionID);
       this.router.navigate(['/editarsubscripcion']);
       } else {
-        console.log("No ha seleccionado ninguna subscripción");
+        this.notifier.notify('error','No ha seleccionado ninguna subscripción');
       }
     }
 
