@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { FeedbackService } from '../feedback.service';
 import { Feedback } from '../feedback';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'app-feedback',
@@ -8,7 +9,10 @@ import { Feedback } from '../feedback';
   styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent implements OnInit {
-  constructor(private feedbackService:FeedbackService) {}
+  private notifier: NotifierService;
+  constructor(private feedbackService:FeedbackService, notifier: NotifierService) {
+    this.notifier = notifier;
+  }
 
   @Input() rating: number;
   @Input() itemId: number;
@@ -35,10 +39,10 @@ export class FeedbackComponent implements OnInit {
     this.newFeedback.vote= this.vote;
     this.feedbackService.addFeedback(this.newFeedback).subscribe(
       (result) => {
-          console.log(result);
+        this.notifier.notify('default','Gracias por valorar la aplicación');
         },
         (error) => {
-          console.log(error);
+          this.notifier.notify('error','Error al guardar la valoración');
         }
     )
 }

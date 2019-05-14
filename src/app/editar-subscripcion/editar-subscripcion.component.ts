@@ -24,11 +24,9 @@ export class EditarSubscripcionComponent implements OnInit {
     this.subscriptionService.getSubscription(subscriptionID).subscribe(
       (result) => {
         this.editSubscription = result["data"];
-        console.log(result["data"]);
       },
       (error) => {
         this.notifier.notify('error','Error al cargar la subscripción');
-         console.log(error);
       }
     )
   }

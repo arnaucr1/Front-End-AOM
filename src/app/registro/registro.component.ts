@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { UserService } from '../user.service';
 import { User } from '../user';
 import { HttpClient } from '@angular/common/http';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
     selector: 'registro-tag',
@@ -10,18 +11,21 @@ import { HttpClient } from '@angular/common/http';
     providers: [UserService]
 })
 export class RegistroComponent implements OnInit{
-    newUser:User = new User(0, "", "", null, "", "", 1, "");
-    constructor(private userService:UserService) {}
+  private notifier: NotifierService;
+  newUser:User = new User(0, "", "", null, "", "", 1, "");
+  constructor(private userService:UserService, notifier: NotifierService) {
+    this.notifier = notifier;
+  }
     ngOnInit(): void {
-    }
+  }
 
     addUser() {
         this.userService.addUser(this.newUser).subscribe(
           (result) => {
-            console.log(result);
+            this.notifier.notify('default','Usuario registrado correctamente');
           },
           (error) => {
-            console.log(error);
+            this.notifier.notify('error','Error al añadir el usuario');
           }
         )
     }

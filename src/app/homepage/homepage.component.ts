@@ -65,10 +65,10 @@ export class HomepageComponent implements OnInit{
       if(subscriptionID != null) {
         this.subscriptionService.delSubscription(subscriptionID).subscribe(
           (result) => {
-            console.log(result);
+            this.notifier.notify('default','Subcripción borrada correctamente');
             window.location.reload();
           }, (error) => {
-            console.log(error);
+            this.notifier.notify('error','Error al borrar la subscripción');
           }
         )
       }
@@ -80,7 +80,7 @@ export class HomepageComponent implements OnInit{
           this.router.navigate(['/']);
           localStorage.clear();
         }, (error) => {
-          console.log(error);
+          this.notifier.notify('error','Error al cerrar sesión');
         }
       )
     }

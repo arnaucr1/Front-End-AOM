@@ -3,6 +3,7 @@ import { UserService } from '../user.service';
 import { User } from '../user';
 import { Pass } from '../pass';
 import { HttpClient } from '@angular/common/http';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
     selector: 'app-editar-password',
@@ -12,7 +13,10 @@ import { HttpClient } from '@angular/common/http';
   })
 
   export class EditarPasswordComponent implements OnInit {
-    constructor(private userService:UserService) {}
+    private notifier: NotifierService;
+    constructor(private userService:UserService, notifier: NotifierService) {
+      this.notifier = notifier;
+    }
     pass:Pass = new Pass("", "", "");
   ngOnInit() {
     
@@ -22,10 +26,10 @@ import { HttpClient } from '@angular/common/http';
     this.userService.changePassword(this.pass.oldpass, this.pass.newpass, this.pass.newpass1)
       .subscribe(
         (result)=> {
-          console.log(result);
+          this.notifier.notify('default','Contraseña actualizada correctamente');
         }, 
         (error)=> {
-          console.log(error);
+          this.notifier.notify('error','Error al actualizar la contraseña. Revise los datos introducidos');
         }
       )
     }
