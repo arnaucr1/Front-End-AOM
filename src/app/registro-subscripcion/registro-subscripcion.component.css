@@ -51,7 +51,7 @@
   /*---------------------------------------------*/
   .titulo {
     font-family:rubik;
-    font-size: 65px;
+    font-size: 35px;
     color: #333333;
     line-height: 1.2;
     text-align: center;
@@ -194,7 +194,6 @@
    
   }
   
-  
   .caja-input {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
@@ -203,12 +202,12 @@
     display: block;
     width: 100%;
     background: #e6e6e6;
-    height: 60px;
+    height: 68px;
     border-radius: 30px;
     padding: 0 30px 0 68px;
     font-weight: 600;
-    -webkit-appearance: none;
-  }
+}
+
   
   .focus-caja-input {
     display: block;
@@ -273,33 +272,26 @@
   }
   .caja-titulo-btn {
     font-family: 'Roboto', sans-serif;
-    font-size: 23px;
+    font-size: 25px;
     line-height: 1.5;
     color: #fff;
-    width: 60%;
-    height: 50px;
-    border-radius:30px;
-    background: #4261ad;
-      background-size: 400% 400%;
-      -webkit-animation: Gradient 15s ease infinite;
-      -moz-animation: Gradient 15s ease infinite;
-      animation: Gradient 15s ease infinite;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
+    width: 44%;
+    height: 57px;
+    border-radius: 16px;
+    background: #007aff;
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
     display: -ms-flexbox;
-    display: flex;
+    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.10), 0px 1px 20px 0px rgba(0, 0, 0, 0.10);
     justify-content: center;
     align-items: center;
     padding: 0 5px;
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
     transition: all 0.4s;
-  }
-  .caja-titulo-btn:hover {
-    background: rgb(101, 194, 104);
-  }
+}
+.caja-titulo-btn:hover {
+  background: #3a98fd;
+}
   
   @media (max-width: 992px) {
     .caja {

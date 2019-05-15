@@ -6,8 +6,8 @@
             <div class="caja">
                 
                 <form class="formulario" action="" method="post" >
-                    <span class="titulo">AOM</span> 
-                    <span class="sub-titulo">Editar datos de perfil</span>
+                    <span class="titulo">Editar perfil</span> 
+
                     <span class="sub-titulo"></span>
                     <div class="input" >
                         <input class="caja-input" type="text" id="firstName" name="firstName" autocomplete="new-password" placeholder="Nombre" value="{{usuario.firstName}}" [(ngModel)]="usuario.firstName"  required>
@@ -44,7 +44,7 @@
                             </button>
                         </div><br>
                         <div class="text-center">
-                            <a class="txt2" routerLink="/" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
+                            <a class="txt2" routerLink="/homepage" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
                         </div>
                     </div>
                     </form>
