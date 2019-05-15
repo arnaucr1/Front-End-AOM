@@ -18,7 +18,7 @@ import { HomeAdminComponent } from './homeadmin/homeadmin.component';
 import { EditarPasswordComponent } from './editar-password/editar-password.component';
 import { NewsComponent } from './news/news.component';
 import { FeedbackComponent } from './feedback/feedback.component';
-import { EstadisticasComponent } from './estadisticas/estadisticas.component';
+import { MyBarChartComponent } from './my-bar-chart/my-bar-chart.component';
 
 
 
@@ -36,7 +36,7 @@ const appRoutes:Routes=[
     {path: 'modifypass', component: EditarPasswordComponent,/*canActivate:[AuthService]*/},
     {path: 'news', component: NewsComponent,/*canActivate:[AuthService]*/},
     {path: 'feedback', component: FeedbackComponent,/*canActivate:[AuthService]*/},
-    {path: 'estadisticas', component: EstadisticasComponent,/*canActivate:[AuthService]*/},
+    {path: 'estadisticas', component: MyBarChartComponent,/*canActivate:[AuthService]*/},
     {path: '**', redirectTo: 'inicio', pathMatch: 'full' } //Redireccion a inicio
     ];
 
