@@ -22,6 +22,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {ChartsModule} from 'ng2-charts';
+
 
 import { registerLocaleData } from '@angular/common';
 import localePy from '@angular/common/locales/es-PY';
@@ -111,7 +113,8 @@ const customNotifierOptions: NotifierOptions = {
     HttpClientModule,
     SocialLoginModule,
     HttpModule,
-    NotifierModule.withConfig(customNotifierOptions)
+    NotifierModule.withConfig(customNotifierOptions),
+    ChartsModule
    // NgbModule,NgbdModalContent
     
   ],

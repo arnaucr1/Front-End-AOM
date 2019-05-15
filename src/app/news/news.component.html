@@ -8,20 +8,6 @@
 <a href="/homepage"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
 </header>
 <div class="tot">
-<!-- <div class="card"  *ngFor="let article of mArticles">
-  <div class="card-body">
-    <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="example-header-image"></div>
-    <div class="card-title">{{article.title}}</div>
-    <div >{{article.source.name}}</div>
-  </div>
-  <img mat-card-image class="card-img-top" src={{article.urlToImage}} alt="">
-  <div>
-    <p>
-      {{article.description}}
-    </p>
-  </div> 
-  <a mat-button color="primary" href={{article.url}} target="_blank" > Ver noticia </a>
-  </div> -->
   <div class="card"  *ngFor="let article of mArticles">
       <img class="card-img-top" src="{{article.urlToImage}}" alt="Card image cap">
       <div class="card-body">

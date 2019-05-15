@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../user';
 import { HttpClient } from '@angular/common/http';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'app-perfil-usuario',
@@ -10,7 +11,8 @@ import { HttpClient } from '@angular/common/http';
   providers: [UserService]
 })
 export class EditarPerfilComponent implements OnInit {
-    constructor(private userService:UserService) {}
+    private notifier: NotifierService;
+    constructor(private userService:UserService, notifier: NotifierService) {}
     usuario:User = new User(0, "", "", null, "", "", 0, "");
 
   ngOnInit() {
@@ -20,10 +22,9 @@ export class EditarPerfilComponent implements OnInit {
   getUser(userID:number) {
       this.userService.getUser(userID).subscribe(
         (result) => {
-            this.usuario = result["data"]
-            console.log(result["data"]);
+            this.usuario = result["data"];
           }, (error) => {
-            console.log(error);
+            this.notifier.notify('error','Error al cargar el usuario');
           }
       )
   } 
@@ -31,11 +32,11 @@ export class EditarPerfilComponent implements OnInit {
   modifyUser() {
       this.userService.modifyUser(parseInt(localStorage.getItem("userID")), this.usuario).subscribe(
         (result) => {
-            console.log(result);
+            this.notifier.notify('default','Datos actualizados correctamente');
             window.location.reload();
           },
           (error) => {
-            console.log(error);
+            this.notifier.notify('error','Error al actualizar los datos');
           }
       )
   }

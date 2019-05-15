@@ -5,8 +5,8 @@ import { SubscriptionService } from '../subscription.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {User} from '../user';
 import { UserService } from '../user.service';
-import * as $ from 'jquery';
 import {Router} from "@angular/router";
+import { NotifierService } from 'angular-notifier';
 
 @Component({
     selector: 'homeadmin-tag',
@@ -16,8 +16,10 @@ import {Router} from "@angular/router";
 })
 export class HomeAdminComponent implements OnInit{
     today = new Date();
-    constructor(private datePipe: DatePipe, private subscriptionService:SubscriptionService, private userService:UserService, private http:HttpClient, private router: Router){
+    private notifier: NotifierService;
+    constructor(private datePipe: DatePipe, private subscriptionService:SubscriptionService, private userService:UserService, private http:HttpClient, private router: Router, notifier: NotifierService){
         let dataActual = Date.now();
+        this.notifier = notifier;
     }
     mySubscriptions:Subscription[] = [];
     userData:User[] = [];
@@ -33,9 +35,8 @@ export class HomeAdminComponent implements OnInit{
         this.subscriptionService.getSubscriptions(userID).subscribe(
           (result) => {
               this.mySubscriptions = result["data"];
-              console.log(result["data"]);
             }, (error) => {
-              console.log(error);
+              this.notifier.notify('error','Error al cargar las subscripciones');
             }
         )
     } 
@@ -45,7 +46,7 @@ export class HomeAdminComponent implements OnInit{
           (result) => {
               this.userData = result["data"];
             }, (error) => {
-              console.log(error);
+              this.notifier.notify('error','Error al cargar el usuario');
             }
         )
     } 
@@ -56,7 +57,7 @@ export class HomeAdminComponent implements OnInit{
               console.log(result);
               this.usersData = result["data"];
             }, (error) => {
-              console.log(error);
+              this.notifier.notify('error','Error al cargar los usuarios');
             }
         )
     } 
@@ -64,10 +65,10 @@ export class HomeAdminComponent implements OnInit{
     delU(userID) {
       this.userService.delUser(userID).subscribe(
         (result) => {
-            console.log("Borrado correctamente");
+            this.notifier.notify('default','Usuario borrado correctamente');
             window.location.reload();
           }, (error) => {
-            console.log(error);
+            this.notifier.notify('error','Error al borrar el usuario');
           }
       )
     }

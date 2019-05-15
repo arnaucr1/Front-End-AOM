@@ -31,38 +31,9 @@
                           <button type="submit" class="caja-titulo-btn2"  (click)="signInWithGoogle()"><i class="fab fa-google"></i> Acceder con Google</button>
                         </div>
                     </div>
-                    <button class="button button--primary" (click)="showNotification( 'default', 'Good evening, you lovely person!' )">
-                      Default me!
-                    </button>
                     <div class="text-center">
                         <a class="txt2" routerLink="/registro" routerLinkActive="cssSiLinActiu"><i class="fas fa-user-plus"></i> Registrate ahora </a>
-                      <!--  <a class="txt2" routerLink="/editarsubscripcion" routerLinkActive="cssSiLinActiu"> Editar subscripcion <i class="fas fa-arrow-right"></i></a>
-                        <a class="txt2" routerLink="/editarperfil" routerLinkActive="cssSiLinActiu"> Editar perfil <i class="fas fa-arrow-right"></i></a>
-                        <a class="txt2" routerLink="/registrosubscripcion" routerLinkActive="cssSiLinActiu"> Añadir subscripcion <i class="fas fa-arrow-right"></i></a>
-                        <a class="txt2" routerLink="/homepage" routerLinkActive="cssSiLinActiu">Home<i class="fas fa-arrow-right"></i></a>-->
                     </div>
                       <div id="name"></div>
                 </form>
-             <!--    <div class=" bg-transparent text-center">
-                  <div *ngIf="!user" class=" text-center">
-                    <div class="card-block">
-                      <h4 class="card-title">Entrar con Google</h4>
-                      <p class="card-text">Entrar:</p>
-                    </div>
-                    <div class="card-block">
-                      <button class="btn btn-social-icon btn-google mx-1" (click)="signInWithGoogle()"><span class="fa fa-google"></span></button>
-                
-                    </div>
-                  </div>
-                   <div *ngIf="user" class="card text-center">
-                   <div class="card-block"></div>
-                    <img class="card-img-top img-responsive photo" src="{{ user.photoUrl }}">
-                    <div class="card-block">
-                      <h4 class="card-title">{{ user.name }}</h4>
-                      <p class="card-text">{{ user.email }}</p>
-                    </div>
-                    <div class="card-block">
-                      <button class="btn btn-danger" (click)="signOut()">Cerrar Sesión</button>
-                    </div>
-                  </div>
-                </div> -->
+                <notifier-container></notifier-container>

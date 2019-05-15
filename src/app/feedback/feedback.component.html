@@ -5,7 +5,7 @@
         <div class="todo">
             <div class="caja">	
                 <form class="formulario" action="" method="post" >
-                    <span class="titulo">¡Valoranos!</span> 
+                    <span class="titulo">¡Valóranos!</span> 
                     <div class="input" id="feedbackForm">
                         <fieldset class="rating">
                             <input type="radio" [name]="inputName" value="5" [checked]="rating===5" />
@@ -27,7 +27,7 @@
                     <div class="text-area">
                         <textarea maxlength="255" placeholder="¿En que debemos de mejorar?" name="comment" form="feedbackForm" [(ngModel)]="newFeedback.description"></textarea>
                     </div>
-                    
+
                     <div class="input">
                           
                         <div class="todo-form-btn ">
@@ -41,5 +41,5 @@
                     <div class="text-center">
                         <a class="txt2" routerLink="/homepage" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
                     </div>
-                    
+                    <notifier-container></notifier-container>
                     <footer-color-tag></footer-color-tag>
