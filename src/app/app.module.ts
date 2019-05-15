@@ -22,6 +22,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {ChartsModule} from 'ng2-charts';
+
 
 import { registerLocaleData } from '@angular/common';
 import localePy from '@angular/common/locales/es-PY';
@@ -32,6 +34,7 @@ registerLocaleData(localePy, 'es');
  */
 import { SocialLoginModule } from "angularx-social-login";
 import { AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider  } from 'angularx-social-login';
+import { MyBarChartComponent } from './my-bar-chart/my-bar-chart.component';
 
 const config = new AuthServiceConfig([
   {
@@ -98,7 +101,8 @@ const customNotifierOptions: NotifierOptions = {
     HomeAdminComponent,
     EditarPasswordComponent,
     NewsComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    MyBarChartComponent
   
     
   ],
@@ -111,7 +115,8 @@ const customNotifierOptions: NotifierOptions = {
     HttpClientModule,
     SocialLoginModule,
     HttpModule,
-    NotifierModule.withConfig(customNotifierOptions)
+    NotifierModule.withConfig(customNotifierOptions),
+    ChartsModule
    // NgbModule,NgbdModalContent
     
   ],
