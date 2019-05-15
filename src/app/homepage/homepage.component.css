@@ -819,7 +819,7 @@ margin-top:10px;
 }
 
 .Spotify, .spotify{
-	background-image: url("https://developer.spotify.com/assets/branding-guidelines/icon4@2x.png");
+	background-image: url("../../assets/images/spotify.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center; 
@@ -828,7 +828,7 @@ margin-top:10px;
 }
 
 .Netflix, .netflix{
-	background-image: url("https://cdn-images-1.medium.com/max/1200/1*ty4NvNrGg4ReETxqU2N3Og.png");
+	background-image: url("../../assets/images/netflix.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center; 
@@ -836,7 +836,7 @@ margin-top:10px;
 }
 
 .Twitch, .twitch{
-	background-image: url("https://www.twitch.tv/p/assets/uploads/combologo_474x356.png");
+	background-image: url("../../assets/images/twitch.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center; 
@@ -844,15 +844,15 @@ margin-top:10px;
 }
 
 .Evernote, .evernote{
-	background-image: url("https://evernote.com/blog/wp-content/uploads/2018/01/evernote-logo-wide.png");
+	background-image: url("../../assets/images/evernote.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center; 
 	background-color: #46b862;
 }
 
-.PlayStation, .playStation{
-	background-image: url("https://media.playstation.com/is/image/SCEA/ps4-june-refresh-playstation-plus-logo-01-us-07jun17?$facebook$");
+.PlayStation, .playstationplus{
+	background-image: url("../../assets/images/playstationplus.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center; 
@@ -860,7 +860,7 @@ margin-top:10px;
 }
 
 .iCloud, .iCloud{
-	background-image: url("https://arnaucr.com/imagesaom/icloud.png");
+	background-image: url("../../assets/images/icloud.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center; 
@@ -881,16 +881,36 @@ margin-top:10px;
 }
 
 .Dropbox, .dropbox{
-	background-image: url("http://orignallogo.com/wp-content/uploads/2018/07/Dropbox-Logos-Icon-Vector-Free-Download.png");
+	background-image: url("../../assets/images/dropbox.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center; 
 	background-color: #007ee5;
 }
 .AmazonPrime, .amazonPrime{
-	background-image: url("http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Prime_0.png");
+	background-image: url("../../assets/images/prime.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center; 
 	background-color: #1c243b;
+}
+
+.HBO, .hbo{
+	background-image: url("../../assets/images/hbo.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center; 
+	background-color: #000000;
+}
+
+.AppleMusic, .applemusic{
+	background-image: url("../../assets/images/applemusic.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center; 
+	background-color: #ffffff;
+}
+
+.applemusic .titol2 {
+	color:black!important;
 }
