@@ -68,6 +68,7 @@ export class HomeAdminComponent implements OnInit{
             this.notifier.notify('default','Usuario borrado correctamente');
             window.location.reload();
           }, (error) => {
+            console.log(error);
             this.notifier.notify('error','Error al borrar el usuario');
           }
       )
@@ -76,5 +77,16 @@ export class HomeAdminComponent implements OnInit{
     editU(userID) {
       localStorage.setItem("editUID",userID);
       this.router.navigate(['/editarperfilroot']);
+    }
+
+    cerrarSesion() {
+      this.userService.cerrarSesion().subscribe(
+        (result) => {
+          this.router.navigate(['/']);
+          localStorage.clear();
+        }, (error) => {
+          this.notifier.notify('error','Error al cerrar sesión');
+        }
+      )
     }
 }

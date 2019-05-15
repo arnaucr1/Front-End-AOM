@@ -3,6 +3,7 @@ import { SubscriptionService } from '../subscription.service';
 import { Subscription } from '../subscription';
 import { HttpClient } from '@angular/common/http';
 import { NotifierService } from 'angular-notifier';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-editar-subscripcion',
@@ -12,13 +13,22 @@ import { NotifierService } from 'angular-notifier';
 })
 export class EditarSubscripcionComponent implements OnInit {
   private notifier: NotifierService;
-  constructor(private subscriptionService:SubscriptionService, notifier: NotifierService) {
+  constructor(private subscriptionService:SubscriptionService, notifier: NotifierService, private router: Router) {
     this.notifier = notifier;
   }
   editSubscription:Subscription = new Subscription(0, "", "", 0, null, 0, 0, null);
   ngOnInit() {
     this.getSubscription(parseInt(localStorage.getItem("subscriptionID")));
   }
+
+  returnToHome() {
+    let userType = localStorage.getItem("type");
+    if(userType == "0") {
+      this.router.navigate(['/homeadmin']);
+    } else {
+      this.router.navigate(['/homepage']);
+    }
+}
 
   getSubscription(subscriptionID:number) {
     this.subscriptionService.getSubscription(subscriptionID).subscribe(

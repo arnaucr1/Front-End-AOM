@@ -31,16 +31,9 @@
                     </div>
 
                     <div class="input" >
-                        <input class="caja-input" type="email" id="email" name="email" autocomplete="new-password" placeholder="Email" value="{{usuario.email}}" [(ngModel)]="usuario.email" required>
+                        <input class="caja-input" type="email" id="email" name="email" autocomplete="new-password" placeholder="Email" value="{{usuario.email}}" [(ngModel)]="usuario.email" readonly>
                         <span class="icono">
                             <i class="fa fa-at" aria-hidden="true"></i>
-                        </span>
-                    </div>
-
-                    <div class="input" >
-                        <input class="caja-input" type="text" id="language" name="language" autocomplete="new-password" placeholder="Lenguaje de la aplicación" value="{{usuario.interfaceLanguage}}" [(ngModel)]="usuario.interfaceLanguage" required>						
-                        <span class="icono">
-                            <i class="fas fa-flag"></i>
                         </span>
                     </div>
 

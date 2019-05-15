@@ -19,7 +19,6 @@ import {
 
 @Component({
   selector: 'app-root',
-  template:'<h1>Hello World</h1> <notifier-container></notifier-container>',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   animations: [
