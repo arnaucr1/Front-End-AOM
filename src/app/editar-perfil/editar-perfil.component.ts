@@ -12,7 +12,9 @@ import { NotifierService } from 'angular-notifier';
 })
 export class EditarPerfilComponent implements OnInit {
     private notifier: NotifierService;
-    constructor(private userService:UserService, notifier: NotifierService) {}
+    constructor(private userService:UserService, notifier: NotifierService) {
+      this.notifier = notifier;
+    }
     usuario:User = new User(0, "", "", null, "", "", 0, "");
 
   ngOnInit() {

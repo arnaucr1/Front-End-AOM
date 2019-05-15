@@ -18,11 +18,11 @@ export class EditarPerfilRootComponent implements OnInit {
   usuario:User = new User(0, "", "", null, "", "", 0, "");
 
   ngOnInit() {
-    this.getUser();
+    this.getUser(parseInt(localStorage.getItem("userID")));
   }
 
-  getUser() {
-      this.userService.getUsers().subscribe(
+  getUser(userID:number) {
+      this.userService.getUser(userID).subscribe(
         (result) => {
             this.usuario = result["data"]
           }, (error) => {
@@ -31,11 +31,10 @@ export class EditarPerfilRootComponent implements OnInit {
       )
   } 
 
-  modifyUser(userID:number) {
-      this.userService.modifyUser(userID, this.usuario).subscribe(
+  modifyUser() {
+      this.userService.modifyUser(parseInt(localStorage.getItem("userID")), this.usuario).subscribe(
         (result) => {
             this.notifier.notify('default','Datos actualizados correctamente');
-            window.location.reload();
           },
           (error) => {
             this.notifier.notify('error','Error al modificar el usuario');
