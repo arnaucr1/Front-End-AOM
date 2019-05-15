@@ -34,6 +34,7 @@ registerLocaleData(localePy, 'es');
  */
 import { SocialLoginModule } from "angularx-social-login";
 import { AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider  } from 'angularx-social-login';
+import { MyBarChartComponent } from './my-bar-chart/my-bar-chart.component';
 
 const config = new AuthServiceConfig([
   {
@@ -100,7 +101,8 @@ const customNotifierOptions: NotifierOptions = {
     HomeAdminComponent,
     EditarPasswordComponent,
     NewsComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    MyBarChartComponent
   
     
   ],
