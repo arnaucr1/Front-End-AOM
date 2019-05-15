@@ -29,7 +29,16 @@ textarea {
     line-height:1.2;
     color:#ddd;
 }
-
+.txt2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666666;
+  text-decoration:none;
+  display:block;
+  font-weight: 600;
+  cursor:pointer;
+}
 .rating:not(:checked) > label:before {
     content: '★ ';
 }

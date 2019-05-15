@@ -12,3 +12,51 @@ router-outlet ~ * {
   ::-webkit-scrollbar {
     display: none;
     }
+
+    .notifier__notification--material .notifier__notification-message {
+      display: inline-block;
+      margin-top: 0;
+      margin-bottom: 0;
+      vertical-align: top;
+      line-height: 32px;
+      font-size: 19px !important;
+  }
+    
+  .notifier__notification--error {
+    background-color: rgb(226, 18, 18) !important;
+    color: #FFF;
+    font-weight: 600;
+}
+
+
+element.style {
+  left: 12px;
+  bottom: 12px;
+  transform: translate3d(calc((-100% - 12px) - 10px), 0px, 0px);
+  visibility: visible;
+}
+.notifier__notification--error {
+  background-color: #D9534F;
+  color: #FFF;
+
+}
+.notifier__notification--material {
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  cursor: default;
+  /* padding-top: 11px; */
+  /* padding-right: 26px; */
+   padding-bottom: 16px !important; 
+  /* padding-left: 26px; */
+}
+.notifier__notification {
+  display: block !important;
+  position: relative !important;
+ margin: 0 auto;
+ border-radius: 6px !important;
+
+}
+
+.notifier__notification--material .notifier__notification-button {
+float:right;
+}
