@@ -134,6 +134,7 @@ main.concord {
  * Card Styling + Default
  ==================================== */
 .card {
+	
 	z-index: 1;
 	cursor: pointer;
 	display: inline-block;
