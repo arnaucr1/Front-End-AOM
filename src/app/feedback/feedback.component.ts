@@ -9,6 +9,7 @@ import { NotifierService } from 'angular-notifier';
   styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent implements OnInit {
+  userType = localStorage.getItem("type");
   private notifier: NotifierService;
   constructor(private feedbackService:FeedbackService, notifier: NotifierService) {
     this.notifier = notifier;

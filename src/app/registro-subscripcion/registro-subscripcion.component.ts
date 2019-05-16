@@ -12,6 +12,7 @@ import { NotifierService } from 'angular-notifier';
   })
 
   export class RegistroSubscripcionComponent implements OnInit {
+    userType = localStorage.getItem("type");
     private notifier: NotifierService;
     constructor(private subscriptionService:SubscriptionService, notifier: NotifierService) {
       this.notifier = notifier;

@@ -13,6 +13,7 @@ import { NotifierService } from 'angular-notifier';
   })
 
   export class EditarPasswordComponent implements OnInit {
+    userType = localStorage.getItem("type");
     private notifier: NotifierService;
     constructor(private userService:UserService, notifier: NotifierService) {
       this.notifier = notifier;

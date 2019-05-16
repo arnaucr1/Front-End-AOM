@@ -44,7 +44,8 @@
                             </button>
                         </div><br>
                         <div class="text-center">
-                            <a class="txt2" routerLink="/homepage" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
+                                <a *ngIf="userType==1" class="txt2" routerLink="/homepage" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
+                                <a *ngIf="userType==0" class="txt2" routerLink="/homeadmin" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
                         </div>
                     </div>
                     </form>

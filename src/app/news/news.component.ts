@@ -8,12 +8,12 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./news.component.css']
 })
 export class NewsComponent implements OnInit {
-
+	userType = localStorage.getItem("type");
 	mArticles:Array<any>;
 	mSources:Array<any>;
 	
 	constructor(private newsapi:NewsApiService){
-		console.log('app component constructor called');         
+    
 	}
 
 	ngOnInit() {

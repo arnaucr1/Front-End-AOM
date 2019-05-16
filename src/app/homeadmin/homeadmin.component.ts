@@ -79,6 +79,28 @@ export class HomeAdminComponent implements OnInit{
       this.router.navigate(['/editarperfilroot']);
     }
 
+    edit_subscription(subscriptionID){
+      if(subscriptionID != null) {
+      localStorage.setItem("subscriptionID",subscriptionID);
+      this.router.navigate(['/editarsubscripcion']);
+      } else {
+        this.notifier.notify('error','No ha seleccionado ninguna subscripción');
+      }
+    }
+
+    deleteSubscription(subscriptionID){
+      if(subscriptionID != null) {
+        this.subscriptionService.delSubscription(subscriptionID).subscribe(
+          (result) => {
+            this.notifier.notify('default','Subcripción borrada correctamente');
+            window.location.reload();
+          }, (error) => {
+            this.notifier.notify('error','Error al borrar la subscripción');
+          }
+        )
+      }
+    }
+
     cerrarSesion() {
       this.userService.cerrarSesion().subscribe(
         (result) => {

@@ -10,11 +10,11 @@ import { NotifierService } from 'angular-notifier';
   styleUrls: ['./my-bar-chart.component.css']
 })
 export class MyBarChartComponent implements OnInit {
+  userType = localStorage.getItem("type");
   private notifier: NotifierService;
   constructor(private subscriptionService:SubscriptionService, private userService:UserService,notifier: NotifierService) { 
     this.notifier = notifier;
   }
-
   public barChartLabels = [];
   public prices = [];
   public barChartData = [

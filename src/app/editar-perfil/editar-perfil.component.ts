@@ -11,6 +11,7 @@ import { NotifierService } from 'angular-notifier';
   providers: [UserService]
 })
 export class EditarPerfilComponent implements OnInit {
+    userType = localStorage.getItem("type");
     private notifier: NotifierService;
     constructor(private userService:UserService, notifier: NotifierService) {
       this.notifier = notifier;

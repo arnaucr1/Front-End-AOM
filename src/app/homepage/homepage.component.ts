@@ -27,7 +27,6 @@ export class HomepageComponent implements OnInit{
     ngOnInit() {
         this.getSubscriptions(parseInt(localStorage.getItem("userID")));
         this.getU();
-
     }
     
     getSubscriptions(userID:number) {
@@ -36,7 +35,6 @@ export class HomepageComponent implements OnInit{
               this.mySubscriptions = result["data"];
             }, (error) => {
               this.notifier.notify('error','Error al cargar las subscripciones');
-              console.log(error);
             }
         )
     } 
@@ -47,7 +45,6 @@ export class HomepageComponent implements OnInit{
               this.userData = result["data"];
             }, (error) => {
               this.notifier.notify('error','No hay ningún usuario logeado');
-              console.log(error);
             }
         ) 
     }
@@ -77,8 +74,8 @@ export class HomepageComponent implements OnInit{
     cerrarSesion() {
       this.userService.cerrarSesion().subscribe(
         (result) => {
-          this.router.navigate(['/']);
           localStorage.clear();
+          this.router.navigate(['/']);
         }, (error) => {
           this.notifier.notify('error','Error al cerrar sesión');
         }

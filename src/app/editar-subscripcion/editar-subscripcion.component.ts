@@ -17,19 +17,15 @@ export class EditarSubscripcionComponent implements OnInit {
     this.notifier = notifier;
   }
   userType = localStorage.getItem("type");
+  test = localStorage.getItem("firstName");
+  
   editSubscription:Subscription = new Subscription(0, "", "", 0, null, 0, 0, null);
   ngOnInit() {
+    console.log(this.test);
+    console.log(this.userType);
     this.getSubscription(parseInt(localStorage.getItem("subscriptionID")));
   }
   
-  returnToHome() {
-    if(this.userType == "0") {
-      this.router.navigate(['/homeadmin']);
-    } else {
-      this.router.navigate(['/']);
-    }
-}
-
   getSubscription(subscriptionID:number) {
     this.subscriptionService.getSubscription(subscriptionID).subscribe(
       (result) => {

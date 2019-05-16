@@ -1,11 +1,8 @@
 
 <main class="concord" id="concord-cards">
 <header>
-  <!--<time *ngFor="let uData of userData; let i = index">
-
-      <h1 id="subscription-title">Subscripciones </h1> 
-  </time>!-->
-<a href="/homepage"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
+<a *ngIf="userType==1" href="/homepage"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
+<a *ngIf="userType==0" href="/homeadmin"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
 </header>
 <div class="tot">
   <div class="card"  *ngFor="let article of mArticles">

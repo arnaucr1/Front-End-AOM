@@ -82,7 +82,7 @@ export class IniciarSesionComponent implements OnInit {
             localStorage.setItem("userID",userID);
             localStorage.setItem("firstName",firstName);
             localStorage.setItem("lastName",lastName);
-            localStorage.setItem("type",String(this.user1.userType));
+            localStorage.setItem("type",String(userType));
             localStorage.setItem("token",token);
             
             if(userType == "0") {
