@@ -739,6 +739,7 @@ margin-top:10px;
 		text-align: center;
 		transition: transform 0.8s;
 		transform-style: preserve-3d;
+		left:70px;
 	}
 	.flip-card:hover .flip-card-inner {
 		transform: rotateY(180deg);
