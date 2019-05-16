@@ -909,8 +909,22 @@ margin-top:10px;
 	background-size: contain;
 	background-position: center; 
 	background-color: #ffffff;
+	color:black!important;
 }
 
 .applemusic .titol2 {
 	color:black!important;
+}
+
+.applemusic .titol1{
+	color:black !important;
+}
+.applemusic .titol2{
+	color:black !important;
+}
+.applemusic .titol3{
+	color:black !important;
+}
+.applemusic .titol4{
+	color:black !important;
 }
