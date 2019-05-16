@@ -21,8 +21,6 @@ export class EditarSubscripcionComponent implements OnInit {
   
   editSubscription:Subscription = new Subscription(0, "", "", 0, null, 0, 0, null);
   ngOnInit() {
-    console.log(this.test);
-    console.log(this.userType);
     this.getSubscription(parseInt(localStorage.getItem("subscriptionID")));
   }
   
