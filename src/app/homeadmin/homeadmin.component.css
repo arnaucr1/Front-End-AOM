@@ -708,11 +708,6 @@ margin-top:10px;
 	  background-color: #DB4437;
 	}
 
-
-
-
-
-	
 	.flip-card {
 		
 		z-index: 1;
@@ -757,10 +752,6 @@ margin-top:10px;
 		cursor: pointer;
 		box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.10),
 		0px 1px 20px 0px rgba(0, 0, 0, 0.10);
-	}
-	.flip-card-front {
-	
-		
 	}
 	
 	.flip-card-back  {
@@ -818,7 +809,7 @@ margin-top:10px;
 }
 
 .Spotify, .spotify{
-	background-image: url("https://developer.spotify.com/assets/branding-guidelines/icon4@2x.png");
+	background-image: url("../../assets/images/spotify.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center; 
@@ -827,7 +818,7 @@ margin-top:10px;
 }
 
 .Netflix, .netflix{
-	background-image: url("https://cdn-images-1.medium.com/max/1200/1*ty4NvNrGg4ReETxqU2N3Og.png");
+	background-image: url("../../assets/images/netflix.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center; 
@@ -835,7 +826,7 @@ margin-top:10px;
 }
 
 .Twitch, .twitch{
-	background-image: url("https://www.twitch.tv/p/assets/uploads/combologo_474x356.png");
+	background-image: url("../../assets/images/twitch.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center; 
@@ -843,53 +834,100 @@ margin-top:10px;
 }
 
 .Evernote, .evernote{
-	background-image: url("https://evernote.com/blog/wp-content/uploads/2018/01/evernote-logo-wide.png");
+	background-image: url("../../assets/images/evernote.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center; 
 	background-color: #46b862;
 }
 
-.PlayStation, .playStation{
-	background-image: url("https://media.playstation.com/is/image/SCEA/ps4-june-refresh-playstation-plus-logo-01-us-07jun17?$facebook$");
+.PlayStation, .playstationplus{
+	background-image: url("../../assets/images/playstationplus.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center; 
 	background-color: #0a4595;
 }
 
-.iCloud, .iCloud{
-	background-image: url("https://arnaucr.com/imagesaom/icloud.png");
+.iCloud, .icloud{
+	background-image: url("../../assets/images/icloud.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center; 
 	background-color: #ffffff;
 	color:black !important;
 }
-.iCloud, .iCloud .titol1{
+.iCloud, .icloud .titol1{
 	color:black !important;
 }
-.iCloud, .iCloud .titol2{
+.iCloud, .icloud .titol2{
 	color:black !important;
 }
-.iCloud, .iCloud .titol3{
+.iCloud, .icloud .titol3{
 	color:black !important;
 }
-.iCloud, .iCloud .titol4{
+.iCloud, .icloud .titol4{
 	color:black !important;
 }
 
 .Dropbox, .dropbox{
-	background-image: url("http://orignallogo.com/wp-content/uploads/2018/07/Dropbox-Logos-Icon-Vector-Free-Download.png");
+	background-image: url("../../assets/images/dropbox.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center; 
 	background-color: #007ee5;
 }
-.AmazonPrime, .amazonPrime{
-	background-image: url("http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Prime_0.png");
+.AmazonPrime, .amazonprime{
+	background-image: url("../../assets/images/prime.png");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center; 
 	background-color: #1c243b;
+}
+
+.HBO, .hbo{
+	background-image: url("../../assets/images/hbo.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center; 
+	background-color: #000000;
+}
+
+.AppleMusic, .applemusic{
+	background-image: url("../../assets/images/applemusic.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center; 
+	background-color: #ffffff;
+	color:black!important;
+}
+
+.wuaki .titol2, .applemusic .titol2 {
+	color:black!important;
+}
+.wuaki .titol1, .applemusic .titol1{
+	color:black !important;
+}
+.wuaki .titol3, .applemusic .titol3{
+	color:black !important;
+}
+.wuaki .titol4, .applemusic .titol4{
+	color:black !important;
+}
+
+.wuaki{
+	background-image: url("../../assets/images/wuaki.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center; 
+	background-color: #ffffff;
+	color:black!important;
+}
+
+.dazn{
+	background-image: url("../../assets/images/dazn.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center; 
+	background-color: #0c1c25;
 }

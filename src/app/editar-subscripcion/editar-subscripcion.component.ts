@@ -16,17 +16,17 @@ export class EditarSubscripcionComponent implements OnInit {
   constructor(private subscriptionService:SubscriptionService, notifier: NotifierService, private router: Router) {
     this.notifier = notifier;
   }
+  userType = localStorage.getItem("type");
   editSubscription:Subscription = new Subscription(0, "", "", 0, null, 0, 0, null);
   ngOnInit() {
     this.getSubscription(parseInt(localStorage.getItem("subscriptionID")));
   }
-
+  
   returnToHome() {
-    let userType = localStorage.getItem("type");
-    if(userType == "0") {
+    if(this.userType == "0") {
       this.router.navigate(['/homeadmin']);
     } else {
-      this.router.navigate(['/homepage']);
+      this.router.navigate(['/']);
     }
 }
 
