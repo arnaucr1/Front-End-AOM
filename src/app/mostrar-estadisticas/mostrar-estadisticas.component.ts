@@ -12,7 +12,7 @@ import { NotifierService } from 'angular-notifier';
     styleUrls: ['./mostrar-estadisticas.component.css'],
     providers: [DatePipe]
 })
-export class HomepageComponent implements OnInit{
+export class MostrarEstadisticasComponent implements OnInit{
     today = new Date();
     private notifier: NotifierService;
     constructor(private feedbackService:FeedbackService, private http:HttpClient, private router: Router, notifier: NotifierService){
