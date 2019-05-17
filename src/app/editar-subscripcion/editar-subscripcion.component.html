@@ -1,25 +1,41 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<main class="concord" id="concord-cards" *ngFor="let uData of userData; let i = index">
+    <header>
+        <time>
+            <h5 id="date"> {{today | date:'EEEE' }} {{today | date:'d' }} de  {{today | date:'MMMM' }}</h5>
+            <h1 id="subscription-title">Subscripciones </h1> 
+        </time>
+        <button class="btn btn-round color-2 material-design" (click)="cerrarSesion()" >Cerrar Sesión </button>
+        <a href="/feedback"> <div class="btn btn-round color-1 material-design" ><p> 💛 Valóranos </p></div></a>
+        <a href="/news"> <div class="btn btn-round color-1 material-design" ><p>📰 Noticias </p></div></a>
+        <a href="/estadisticas"> <div class="btn btn-round color-1 material-design" ><p>💰 Estadísticas </p></div></a>
+        <a *ngIf="userType==1" href="/homepage"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
+        <a *ngIf="userType==0" href="/homeadmin"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
+    </header>
+
 <form class="formulario" action="" method="post" >    
   <div class="limitador">
       <div class="todo">
           <div class="caja">	
               <form class="formulario" action="" method="post" >
-                  <span class="titulo">Editar Suscripción</span> 
-                  <span class="sub-titulo"></span>
-                  <span class="sub-titulo"></span>
-                  <div class="input" >
+                    <span class="titulo">Editar Suscripción</span> 
+                    <span class="sub-titulo"></span>
+                    <span class="sub-titulo"></span>
+                  
+                    <div class="input" >
                       <input style="text-transform: capitalize;" class="caja-input" type="text" id="subscriptionName" name="subscriptionName" [(ngModel)]="editSubscription.subscriptionName" autocomplete="new-password" placeholder="Nombre" value="{{editSubscription.subscriptionName}}" required readonly>
                       <span class="icono">
                           <i class="fa fa-user-circle" aria-hidden="true"></i>
                       </span>
-                  </div>
-                  <div class="input" >
+                    </div>
+                  
+                    <div class="input" >
                       <input class="caja-input" type="text" id="description" name="description" [(ngModel)]="editSubscription.description" autocomplete="new-password" placeholder="Descripción" value="{{editSubscription.description}}" required>						
                       <span class="icono">
                           <i class="fas fa-map-marker-alt"></i>
                       </span>
-                  </div>
-                  <div class="input" >
+                    </div>
+                  
+                    <div class="input" >
                         <select class="caja-input" id="cycle" name="cycle" [(ngModel)]="editSubscription.cycle" required>
                             <option value="" disabled selected>Seleccione el ciclo de pago</option>
                             <option value="1">Mensual</option>
@@ -32,13 +48,15 @@
                             <i class="fa fa-clock" aria-hidden="true"></i>
                         </span> 
                     </div>
-                  <div class="input" >
-                      <input class="caja-input" type="date" id="first-bill" name="first-bill" [(ngModel)]="editSubscription.firstBill" autocomplete="new-password" placeholder="Primera factura" value="{{editSubscription.firstBill}}" required>
-                      <span class="icono">
-                          <i class="fa fa-calendar-alt" aria-hidden="true"></i>
-                      </span>
-                  </div>
-                  <div class="input" >
+
+                    <div class="input" >
+                        <input class="caja-input" type="date" id="first-bill" name="first-bill" [(ngModel)]="editSubscription.firstBill" autocomplete="new-password" placeholder="Primera factura" value="{{editSubscription.firstBill}}" required>
+                        <span class="icono">
+                            <i class="fa fa-calendar-alt" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="input" >
                         <select class="caja-input" id="remainMe" name="remainMe" [(ngModel)]="editSubscription.remainMe" required>
                             <option value="" disabled selected>Seleccione el aviso de renovación</option>
                             <option value="1">Un dia antes</option>
@@ -47,27 +65,30 @@
                             <option value="7">Una semana antes</option>
                             <option value="15">Dos semanas antes</option>
                         </select>
+
                         <span class="icono">
                                 <i class="fas fa-bell"></i>
                         </span>
+
                     </div>
                 
-                  <div class="input" >
-                      <input class="caja-input" type="number" id="price" name="price" [(ngModel)]="editSubscription.price" autocomplete="new-password" placeholder="Coste" value="{{editSubscription.price}}" required>						
-                      <span class="icono">
-                          <i class="fas fa-euro-sign"></i>
-                      </span>
-                  </div>
-                  <div class="input" >
-                      <div class="todo-form-btn">
-                          <button type="submit" (click)="modifySubscription()" class="caja-titulo-btn">
-                              Editar
-                          </button>
-                      </div><br>
-                      <div class="text-center">
-                            <a *ngIf="userType==1" class="txt2" routerLink="/homepage" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
-                            <a *ngIf="userType==0" class="txt2" routerLink="/homeadmin" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
-                      </div>
-                  </div>
-                  <notifier-container></notifier-container>
-                  <footer-color-tag></footer-color-tag>
+                    <div class="input" >
+                        <input class="caja-input" type="number" id="price" name="price" [(ngModel)]="editSubscription.price" autocomplete="new-password" placeholder="Coste" value="{{editSubscription.price}}" required>						
+                        <span class="icono">
+                            <i class="fas fa-euro-sign"></i>
+                        </span>
+                    </div>
+
+                    <div class="input" >
+                        <div class="todo-form-btn">
+                            <button type="submit" (click)="modifySubscription()" class="caja-titulo-btn">Editar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</form>
+</main>
+<notifier-container></notifier-container>
+<footer-color-tag></footer-color-tag>
