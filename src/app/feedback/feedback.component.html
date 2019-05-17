@@ -1,46 +1,58 @@
-<title>Iniciar Sesión</title>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-<form class="formulario" action="" method="post" >    
-    <div class="limitador">
-        <div class="todo">
-            <div class="caja">	
-                <form class="formulario" action="" method="post" >
-                    <span class="titulo">¡Valóranos!</span> 
-                    <div class="input" id="feedbackForm">
-                        <fieldset class="rating">
-                            <input type="radio" [name]="inputName" value="5" [checked]="rating===5" />
-                            <label title="¡Increible!" (click)='onClick(5)'>5 stars</label>
-                                      
-                            <input type="radio" [name]="inputName" value="4" [checked]="rating===4" />
-                            <label title="¡Esta bien!" (click)='onClick(4)'>4 stars</label>
-                                      
-                            <input type="radio" [name]="inputName" value="3" [checked]="rating===3" />
-                            <label title="Hay que mejorar" (click)='onClick(3)'>3 stars</label>
-                                      
-                            <input type="radio" [name]="inputName" value="2" [checked]="rating===2" />
-                            <label title="Un poco mierda" (click)='onClick(2)'>2 stars</label>
-                                      
-                            <input type="radio" [name]="inputName" value="1" [checked]="rating===1" />
-                            <label title="Una puta mierda" (click)='onClick(1)'>1 star</label>
-                        </fieldset>
-                    </div>
-                    <div class="text-area">
-                        <textarea maxlength="255" placeholder="¿En que debemos de mejorar?" name="comment" form="feedbackForm" [(ngModel)]="newFeedback.description"></textarea>
-                    </div>
+<main class="concord" id="concord-cards" *ngFor="let uData of userData; let i = index">
+    <header>
+        <time>
+            <h5 id="date"> {{today | date:'EEEE' }} {{today | date:'d' }} de  {{today | date:'MMMM' }}</h5>
+            <h1 id="subscription-title">Subscripciones </h1> 
+        </time>
+        <button class="btn btn-round color-2 material-design" (click)="cerrarSesion()" >Cerrar Sesión </button>
+        <a href="/feedback"> <div class="btn btn-round color-1 material-design" ><p> 💛 Valóranos </p></div></a>
+        <a href="/news"> <div class="btn btn-round color-1 material-design" ><p>📰 Noticias </p></div></a>
+        <a href="/estadisticas"> <div class="btn btn-round color-1 material-design" ><p>💰 Estadísticas </p></div></a>
+        <a *ngIf="userType==1" href="/homepage"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
+        <a *ngIf="userType==0" href="/homeadmin"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
+    </header>
 
-                    <div class="input">
-                          
-                        <div class="todo-form-btn ">
-                            <button type="submit" (click)="addFeedback()" class="caja-titulo-btn">
-                                Enviar
-                            </button>
+    <form class="formulario" action="" method="post" >    
+        <div class="limitador">
+            <div class="todo">
+                <div class="caja">	
+                    <form class="formulario" action="" method="post" >
+                        <span class="titulo">¡Valóranos!</span> 
+                        
+                        <div class="input" id="feedbackForm">
+                            <fieldset class="rating">
+                                <input type="radio" [name]="inputName" value="5" [checked]="rating===5" />
+                                <label title="Muy satisfecho" (click)='onClick(5)'>5 stars</label>
+                                        
+                                <input type="radio" [name]="inputName" value="4" [checked]="rating===4" />
+                                <label title="Satisfecho" (click)='onClick(4)'>4 stars</label>
+                                        
+                                <input type="radio" [name]="inputName" value="3" [checked]="rating===3" />
+                                <label title="Regular" (click)='onClick(3)'>3 stars</label>
+                                        
+                                <input type="radio" [name]="inputName" value="2" [checked]="rating===2" />
+                                <label title="Mal" (click)='onClick(2)'>2 stars</label>
+                                        
+                                <input type="radio" [name]="inputName" value="1" [checked]="rating===1" />
+                                <label title="Muy mal" (click)='onClick(1)'>1 star</label>
+                            </fieldset>
                         </div>
-                  
+
+                        <div class="text-area">
+                            <textarea maxlength="255" placeholder="¿En que debemos de mejorar?" name="comment" form="feedbackForm" [(ngModel)]="newFeedback.description"></textarea>
+                        </div>
+
+                        <div class="input">   
+                            <div class="todo-form-btn ">
+                                <button type="submit" (click)="addFeedback()" class="caja-titulo-btn">Enviar</button>
+                            </div>
+                        </div>
+
+                        </form><br><br><br>
                     </div>
-                    </form><br><br><br>
-                    <div class="text-center">
-                            <a *ngIf="userType==1" class="txt2" routerLink="/homepage" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
-                            <a *ngIf="userType==0" class="txt2" routerLink="/homeadmin" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
-                    </div>
-                    <notifier-container></notifier-container>
-                    <footer-color-tag></footer-color-tag>
+                </div>
+            </div>
+        </form>
+</main>
+<notifier-container></notifier-container>
+<footer-color-tag></footer-color-tag>

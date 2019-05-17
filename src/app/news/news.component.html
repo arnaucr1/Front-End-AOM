@@ -1,17 +1,26 @@
+<main class="concord" id="concord-cards" *ngFor="let uData of userData; let i = index">
+  <header>
+    <time>
+      <h5 id="date"> {{today | date:'EEEE' }} {{today | date:'d' }} de  {{today | date:'MMMM' }}</h5>
+      <h1 id="subscription-title">Subscripciones </h1> 
+    </time>
+    <button class="btn btn-round color-2 material-design" (click)="cerrarSesion()" >Cerrar Sesión </button>
+    <a href="/feedback"> <div class="btn btn-round color-1 material-design" ><p> 💛 Valóranos </p></div></a>
+    <a href="/news"> <div class="btn btn-round color-1 material-design" ><p>📰 Noticias </p></div></a>
+    <a href="/estadisticas"> <div class="btn btn-round color-1 material-design" ><p>💰 Estadísticas </p></div></a>
+    <a *ngIf="userType==1" href="/homepage"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
+    <a *ngIf="userType==0" href="/homeadmin"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
+  </header>
 
-<main class="concord" id="concord-cards">
-<header>
-<a *ngIf="userType==1" href="/homepage"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
-<a *ngIf="userType==0" href="/homeadmin"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
-</header>
 <div class="tot">
   <div class="card"  *ngFor="let article of mArticles">
-      <img class="card-img-top" src="{{article.urlToImage}}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{article.title}}</h5>
-        <p class="card-text">{{article.description}}</p>
-        <a href={{article.url}} class="btn btn-primary" style="line-height:40px">Ver noticia</a>
-      </div>
+    <img class="card-img-top" src="{{article.urlToImage}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{article.title}}</h5>
+      <p class="card-text">{{article.description}}</p>
+      <a href={{article.url}} class="btn btn-primary" style="line-height:40px">Ver noticia</a>
     </div>
-  </div><br><br>
+  </div>
+  </div>
+  <br><br>
 </main>
