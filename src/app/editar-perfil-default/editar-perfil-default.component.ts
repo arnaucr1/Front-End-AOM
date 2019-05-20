@@ -6,11 +6,11 @@ import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'app-perfil-usuario',
-  templateUrl: './editar-perfil.component.html',
-  styleUrls: ['./editar-perfil.component.css'],
+  templateUrl: './editar-perfil-default.component.html',
+  styleUrls: ['./editar-perfil-default.component.css'],
   providers: [UserService]
 })
-export class EditarPerfilComponent implements OnInit {
+export class EditarPerfilDefaultComponent implements OnInit {
     userType = localStorage.getItem("type");
     private notifier: NotifierService;
     constructor(private userService:UserService, notifier: NotifierService) {
@@ -19,7 +19,7 @@ export class EditarPerfilComponent implements OnInit {
     usuario:User = new User(0, "", "", null, "", "", 0, "");
 
   ngOnInit() {
-    this.getUser(parseInt(localStorage.getItem("userID")));
+    this.getUser(parseInt(localStorage.getItem("editUID")));
   }
 
   getUser(userID:number) {
@@ -33,7 +33,7 @@ export class EditarPerfilComponent implements OnInit {
   } 
 
   modifyUser() {
-      this.userService.modifyUser(parseInt(localStorage.getItem("userID")), this.usuario).subscribe(
+      this.userService.modifyUser(parseInt(localStorage.getItem("editUID")), this.usuario).subscribe(
         (result) => {
             this.notifier.notify('default','Datos actualizados correctamente');
             window.location.reload();

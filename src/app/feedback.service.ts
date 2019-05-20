@@ -16,7 +16,7 @@ export class FeedbackService {
             );
     }
     getFeedbacks() {
-        let url = "/apiAOM.php/?controller=subscriptionclass&accion=feedbackclass";
+        let url = "/apiAOM.php/?controller=feedbackclass";
         return this.http.get(url,
             { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
             );

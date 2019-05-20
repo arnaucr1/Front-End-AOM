@@ -5,6 +5,8 @@ import { FeedbackService } from '../feedback.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Router} from "@angular/router";
 import { NotifierService } from 'angular-notifier';
+import {User} from '../user';
+import { UserService } from '../user.service';
 
 @Component({
     selector: 'mostrar-estadisticas-tag',
@@ -15,20 +17,31 @@ import { NotifierService } from 'angular-notifier';
 export class MostrarEstadisticasComponent implements OnInit{
     today = new Date();
     private notifier: NotifierService;
-    constructor(private feedbackService:FeedbackService, private http:HttpClient, private router: Router, notifier: NotifierService){
+    constructor(private feedbackService:FeedbackService, private http:HttpClient, private router: Router, notifier: NotifierService, private userService:UserService){
         this.notifier = notifier;
     }
+    userData:User[] = [];
     myFeedbacks:Feedback[] = [];
     
     ngOnInit() {
-        this.getSubscriptions(parseInt(localStorage.getItem("userID")));
+        this.getU();
+        this.getFeedbacks();
+    }
+
+    getU() {
+        this.userService.getUserToken().subscribe(
+          (result) => {
+              this.userData = result["data"];
+            }, (error) => {
+              this.notifier.notify('error','Para acceder a esta página debe de inciar sesión');
+            }
+        )
     }
     
-    getSubscriptions(userID:number) {
+    getFeedbacks() {
         this.feedbackService.getFeedbacks().subscribe(
           (result) => {
               this.myFeedbacks = result["data"];
-              console.log(this.myFeedbacks);
             }, (error) => {
               this.notifier.notify('error','Error al cargar las valoraciones');
             }

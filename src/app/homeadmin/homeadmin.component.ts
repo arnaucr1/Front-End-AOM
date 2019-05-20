@@ -26,21 +26,10 @@ export class HomeAdminComponent implements OnInit{
     usersData:User[] = [];
     
     ngOnInit() {
-        this.getSubscriptions(parseInt(localStorage.getItem("userID")));
         this.getU();
         this.getUsers();
     }
-    
-    getSubscriptions(userID:number) {
-        this.subscriptionService.getSubscriptions(userID).subscribe(
-          (result) => {
-              this.mySubscriptions = result["data"];
-            }, (error) => {
-              this.notifier.notify('error','Error al cargar las subscripciones');
-            }
-        )
-    } 
-
+  
     getU() {
         this.userService.getUserToken().subscribe(
           (result) => {
@@ -75,29 +64,11 @@ export class HomeAdminComponent implements OnInit{
     }
 
     editU(userID) {
-      localStorage.setItem("editUID",userID);
-      this.router.navigate(['/editarperfilroot']);
-    }
-
-    edit_subscription(subscriptionID){
-      if(subscriptionID != null) {
-      localStorage.setItem("subscriptionID",subscriptionID);
-      this.router.navigate(['/editarsubscripcion']);
+      if (parseInt(localStorage.getItem("userID")) == userID) {
+        this.router.navigate(['/editarperfilroot']);
       } else {
-        this.notifier.notify('error','No ha seleccionado ninguna subscripción');
-      }
-    }
-
-    deleteSubscription(subscriptionID){
-      if(subscriptionID != null) {
-        this.subscriptionService.delSubscription(subscriptionID).subscribe(
-          (result) => {
-            this.notifier.notify('default','Subcripción borrada correctamente');
-            window.location.reload();
-          }, (error) => {
-            this.notifier.notify('error','Error al borrar la subscripción');
-          }
-        )
+        localStorage.setItem("editUID",userID);
+        this.router.navigate(['/editarperfildefault']);
       }
     }
 

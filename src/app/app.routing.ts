@@ -6,18 +6,22 @@ import { NgModule } from '@angular/core';
 
 
 import { IniciarSesionComponent } from './iniciar/iniciar.component';
+
 import { RegistroComponent } from './registro/registro.component';
+import { RegistroSubscripcionComponent } from './registro-subscripcion/registro-subscripcion.component';
 
 import { EditarSubscripcionComponent } from './editar-subscripcion/editar-subscripcion.component';
-
 import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
+import { EditarPerfilDefaultComponent } from './editar-perfil-default/editar-perfil-default.component';
 import { EditarPerfilRootComponent } from './editar-perfil-root/editar-perfil-root.component';
-import { RegistroSubscripcionComponent } from './registro-subscripcion/registro-subscripcion.component';
+
 import { HomepageComponent } from './homepage/homepage.component';
 import { HomeAdminComponent } from './homeadmin/homeadmin.component';
+
 import { EditarPasswordComponent } from './editar-password/editar-password.component';
 import { NewsComponent } from './news/news.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { MostrarEstadisticasComponent } from './mostrar-estadisticas/mostrar-estadisticas.component'
 import { MyBarChartComponent } from './my-bar-chart/my-bar-chart.component';
 
 
@@ -37,6 +41,8 @@ const appRoutes:Routes=[
     {path: 'news', component: NewsComponent,/*canActivate:[AuthService]*/},
     {path: 'feedback', component: FeedbackComponent,/*canActivate:[AuthService]*/},
     {path: 'estadisticas', component: MyBarChartComponent,/*canActivate:[AuthService]*/},
+    {path: 'mostrarestadisticas', component: MostrarEstadisticasComponent,/*canActivate:[AuthService]*/},
+    {path: 'editarperfildefault', component: EditarPerfilDefaultComponent,/*canActivate:[AuthService]*/},
     {path: '**', redirectTo: 'inicio', pathMatch: 'full' } //Redireccion a inicio
     ];
 

@@ -25,8 +25,8 @@ export class HomepageComponent implements OnInit{
     userData:User[] = [];
     
     ngOnInit() {
-        this.getSubscriptions(parseInt(localStorage.getItem("userID")));
         this.getU();
+        this.getSubscriptions(parseInt(localStorage.getItem("userID")));
     }
     
     getSubscriptions(userID:number) {
@@ -43,9 +43,9 @@ export class HomepageComponent implements OnInit{
         this.userService.getUserToken().subscribe(
           (result) => {
               this.userData = result["data"];
-            }, (error) => {
-              this.notifier.notify('error','No hay ningún usuario logeado');
-            }
+          }, (error) => {
+            this.notifier.notify('error','No hay ningún usuario logeado');
+          }
         ) 
     }
 

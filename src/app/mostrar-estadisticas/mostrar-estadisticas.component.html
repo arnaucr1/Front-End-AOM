@@ -1,0 +1,43 @@
+<main class="concord" id="concord-cards" *ngFor="let uData of userData; let i = index">
+    <header>
+        <time *ngFor="let uData of userData; let i = index">
+            <h5 id="date"> {{today | date:'EEEE' }} {{today | date:'d' }} de  {{today | date:'MMMM' }}</h5>
+            <h1 id="subscription-title">Subscripciones </h1> 
+        </time>
+        <button class="btn btn-round color-2 material-design" (click)="cerrarSesion()" >Cerrar Sesión </button>
+        <a *ngIf="userType==1" href="/homepage"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
+        <a *ngIf="userType==0" href="/homeadmin"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a> 
+    </header>
+
+    <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th class="th-sm">Usuario</th>
+            <th class="th-sm">Puntuación</th>
+            <th class="th-sm">Comentarios</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let feedback of myFeedbacks; let i = index">
+            <td>{{feedback.userID}}</td>
+            <td>
+                {{feedback.vote}} - 
+                <span *ngIf="feedback.vote == 1">Muy mal</span>
+                <span *ngIf="feedback.vote == 2">Mal</span>
+                <span *ngIf="feedback.vote == 3">Regular</span>
+                <span *ngIf="feedback.vote == 4">Satisfecho</span>
+                <span *ngIf="feedback.vote == 5">Muy satisfecho</span>
+            </td>
+            <td>{{feedback.description}}</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>Usuario</th>
+            <th>Puntuación</th>
+            <th>Comentarios</th>
+        </tr>
+        </tfoot>
+    </table>
+</main>
+<notifier-container></notifier-container>
