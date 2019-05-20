@@ -1,8 +1,7 @@
 <main class="concord" id="concord-cards" *ngFor="let uData of userData; let i = index">
     <header>
         <time>
-            <h5 id="date"> {{today | date:'EEEE' }} {{today | date:'d' }} de  {{today | date:'MMMM' }}</h5>
-            <h1 id="subscription-title">Subscripciones </h1> 
+            <h1 id="subscription-title">Editar subscripción </h1> 
         </time>
         <button class="btn btn-round color-2 material-design" (click)="cerrarSesion()" >Cerrar Sesión </button>
         <a href="/feedback"> <div class="btn btn-round color-1 material-design" ><p> 💛 Valóranos </p></div></a>

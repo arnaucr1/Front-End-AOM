@@ -1,56 +1,65 @@
-<title>Iniciar Sesión</title>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-<form class="formulario" action="" method="post" >    
-    <div class="limitador">
-        <div class="todo">
-            <div class="caja">
-                
-                <form class="formulario" action="" method="post" >
-                    <span class="titulo">AOM</span> 
-                    <span class="sub-titulo">Editar datos de perfil</span>
-                    <span class="sub-titulo"></span>
-                    <div class="input" >
-                        <input class="caja-input" type="text" id="firstName" name="firstName" autocomplete="new-password" placeholder="Nombre" value="{{usuario.firstName}}" [(ngModel)]="usuario.firstName"  required>
-                        <span class="icono">
-                            <i class="fa fa-user-circle" aria-hidden="true"></i>
-                        </span>
-                    </div>
-
-                    <div class="input" >
-                        <input class="caja-input" type="text" id="lastName" name="lastName" autocomplete="new-password" placeholder="Apellidos" value="{{usuario.lastName}}" [(ngModel)]="usuario.lastName" required>						
-                        <span class="icono">
-                            <i class="fas fa-user-circle"></i>
-                        </span>
-                    </div>
-
-                    <div class="input" >
-                        <input class="caja-input" type="date" id="birthDate" name="birthDate" autocomplete="new-password" placeholder="Fecha nacimiento" value="{{usuario.birthDate}}" [(ngModel)]="usuario.birthDate" required>
-                        <span class="icono">
-                            <i class="fa fa-calendar-alt" aria-hidden="true"></i>
-                        </span>
-                    </div>
-
-                    <div class="input" >
-                        <input class="caja-input" type="email" id="email" name="email" autocomplete="new-password" placeholder="Email" value="{{usuario.email}}" [(ngModel)]="usuario.email" readonly>
-                        <span class="icono">
-                            <i class="fa fa-at" aria-hidden="true"></i>
-                        </span>
-                    </div>
-
-                    <div class="input" >
-                        <div class="todo-form-btn">
-                            <button type="submit" (click)="modifyUser(1)" class="caja-titulo-btn">
-                                Actualizar
-                            </button>
-                        </div><br>
-                        <div class="text-center">
-                            <a class="txt2" routerLink="/homeadmin" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
+<main>
+    <header>
+        <time>
+            <h1 id="subscription-title">Editar perfil</h1> 
+        </time>
+        <button class="btn btn-round color-2 material-design" (click)="cerrarSesion()" >Cerrar Sesión </button>
+        <a href="/feedback"> <div class="btn btn-round color-1 material-design" ><p> 💛 Valóranos </p></div></a>
+        <a href="/news"> <div class="btn btn-round color-1 material-design" ><p>📰 Noticias </p></div></a>
+        <a href="/estadisticas"> <div class="btn btn-round color-1 material-design" ><p>💰 Estadísticas </p></div></a>
+        <a *ngIf="userType==1" href="/homepage"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
+        <a *ngIf="userType==0" href="/homeadmin"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
+    </header>
+    <form class="formulario" action="" method="post" >    
+        <div class="limitador">
+            <div class="todo">
+                <div class="caja">   
+                    <form class="formulario" action="" method="post">
+                        <span class="sub-titulo"></span>
+                        <div class="input" >
+                            <input class="caja-input" type="text" id="firstName" name="firstName" autocomplete="new-password" placeholder="Nombre" value="{{usuario.firstName}}" [(ngModel)]="usuario.firstName"  required>
+                            <span class="icono">
+                                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                            </span>
                         </div>
-                    </div>
+
+                        <div class="input" >
+                            <input class="caja-input" type="text" id="lastName" name="lastName" autocomplete="new-password" placeholder="Apellidos" value="{{usuario.lastName}}" [(ngModel)]="usuario.lastName" required>						
+                            <span class="icono">
+                                <i class="fas fa-user-circle"></i>
+                            </span>
+                        </div>
+
+                        <div class="input" >
+                            <input class="caja-input" type="date" id="birthDate" name="birthDate" autocomplete="new-password" placeholder="Fecha nacimiento" value="{{usuario.birthDate}}" [(ngModel)]="usuario.birthDate" required>
+                            <span class="icono">
+                                <i class="fa fa-calendar-alt" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
+                        <div class="input" >
+                            <input class="caja-input" type="email" id="email" name="email" autocomplete="new-password" placeholder="Email" value="{{usuario.email}}" [(ngModel)]="usuario.email" readonly>
+                            <span class="icono">
+                                <i class="fa fa-at" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
+                        <div class="input" >
+                            <div class="todo-form-btn">
+                                <button type="submit" (click)="modifyUser(1)" class="caja-titulo-btn">
+                                    Actualizar
+                                </button>
+                            </div><br>
+                            <div class="text-center">
+                                <a class="txt2" routerLink="/homeadmin" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
+                            </div>
+                        </div>
                     </form>
-                    </div>
-                    </div>
-                    </div>
-                    </form>
-                    <notifier-container></notifier-container>
-                    <footer-color-tag></footer-color-tag>
+                </div>
+            </div>
+        </div>
+    </form>
+</main>
+<notifier-container></notifier-container>
+<footer-color-tag></footer-color-tag>
