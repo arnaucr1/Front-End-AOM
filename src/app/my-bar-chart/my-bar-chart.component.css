@@ -30,6 +30,12 @@ width:1200px;
 .btn p{
 margin-top:8px;
 }
-	.color-1 {
+	
+.color-1 {
 	  background-color: #2d83e6;
 	}
+
+.todo {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
