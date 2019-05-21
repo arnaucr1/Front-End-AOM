@@ -1,12 +1,55 @@
 <a *ngIf="userType==1" href="/homepage"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
 <a *ngIf="userType==0" href="/homeadmin"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
 <div class="padre">
-  <div class="todo" >
+
+  <div *ngIf="barChartLabelsMensual != ''" class="todo" >
+    <h3>Subscripciones mensuales</h3>
     <canvas baseChart
-          [datasets]="barChartData"
-          [labels]="barChartLabels"
+          [datasets]="barChartDataMensual"
+          [labels]="barChartLabelsMensual"
           [options]="barChartOptions"
           [legend]="barChartLegend"
           [chartType]="barChartType"></canvas>
   </div>
+
+  <div *ngIf="barChartLabelsTrimestral != ''" class="todo" >
+      <h3>Subscripciones Trimestrales</h3>
+      <canvas baseChart
+            [datasets]="barChartDataTrimestral"
+            [labels]="barChartLabelsTrimestral"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"></canvas>
+  </div>
+
+  <div *ngIf="barChartLabelsSemestral != ''" class="todo" >
+      <h3>Subscripciones Semestrales</h3>
+      <canvas baseChart
+            [datasets]="barChartDataSemestral"
+            [labels]="barChartLabelsSemestral"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"></canvas>
+  </div>
+
+  <div *ngIf="barChartLabelsAnual != ''" class="todo" >
+      <h3>Subscripciones Anuales</h3>
+      <canvas baseChart
+            [datasets]="barChartDataAnual"
+            [labels]="barChartLabelsAnual"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"></canvas>
+  </div>
+
+  <div *ngIf="barChartLabelsBianual != ''" class="todo" >
+      <h3>Subscripciones Bianuales</h3>
+      <canvas baseChart
+            [datasets]="barChartDataBianual"
+            [labels]="barChartLabelsBianual"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"></canvas>
+  </div>
+
 </div>
