@@ -2,14 +2,14 @@
     <header>
         <time>
             <h5 id="date"> {{today | date:'EEEE' }} {{today | date:'d' }} de  {{today | date:'MMMM' }}</h5>
-            <h1 id="subscription-title">Subscripciones </h1> 
+            <h1 id="subscription-title">¡Valóranos! </h1> 
         </time>
         <button class="btn btn-round color-2 material-design" (click)="cerrarSesion()" >Cerrar Sesión </button>
-        <a href="/feedback"> <div class="btn btn-round color-1 material-design" ><p> 💛 Valóranos </p></div></a>
-        <a href="/news"> <div class="btn btn-round color-1 material-design" ><p>📰 Noticias </p></div></a>
-        <a href="/estadisticas"> <div class="btn btn-round color-1 material-design" ><p>💰 Estadísticas </p></div></a>
         <a *ngIf="userType==1" href="/homepage"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
         <a *ngIf="userType==0" href="/homeadmin"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
+        <a href="/news"> <div class="btn btn-round color-1 material-design" ><p>📰 Noticias </p></div></a>
+        <a href="/estadisticas"> <div class="btn btn-round color-1 material-design" ><p>💰 Estadísticas </p></div></a>
+       
     </header>
 
     <form class="formulario" action="" method="post" >    
@@ -17,7 +17,7 @@
             <div class="todo">
                 <div class="caja">	
                     <form class="formulario" action="" method="post" >
-                        <span class="titulo">¡Valóranos!</span> 
+     
                         
                         <div class="input" id="feedbackForm">
                             <fieldset class="rating">
