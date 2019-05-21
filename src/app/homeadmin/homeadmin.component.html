@@ -1,75 +1,44 @@
-<main class="concord" id="concord-cards" >
+<main class="concord" id="concord-cards" *ngFor="let uData of userData; let i = index">
     <header>
-        <time *ngFor="let uData of userData; let i = index">
+        <time>
             <h1>Administrador</h1>
+            <h5 id="date"> {{today | date:'EEEE' }} {{today | date:'d' }} de  {{today | date:'MMMM' }}</h5>
         </time>
         <button class="btn btn-round color-2 material-design" (click)="cerrarSesion()" >Cerrar Sesión </button>
-        <a href="/news"> <div class="btn btn-round color-1 material-design" ><p>📰 Noticias </p></div></a>
-     
-        <div class="usutest" >
-            
-        </div>
+        <a href="/mostrarestadisticas"> <div class="btn btn-round color-1 material-design" ><p>Ver valoraciones </p></div></a>
     </header>
 
     <div class="container">
 		<div class="row">
-			<div class="col-6"><br><br><br>
+            <div class="col-12">
                 <h2>Listado de usuarios</h2>
-                <div class="card x user-cards" data-color=""  *ngFor="let user of usersData; let i = index">
-                    <input type="button" class="concord exit" value="×"/>
-                    <section class="wrapper">
-                    <header class="card-title">
-                        <b>Nombre del usuario: {{user.firstName}} {{user.lastName}}</b><br>
-                        <b>Correo electrónico: {{user.email}}</b>
-                    </header>
-                    
-                    <footer class="card-footer">
-                        <input type="button" (click)="editU(user.userID)" class="concord" value="Editar">
-                        <input type="button" (click)="delU(user.userID)" class="concord delete-button" value="Borrar">
-                    </footer>
-                    </section>
-                </div>
+                <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                    <thead>
+                      <tr>
+                        <th class="th-sm">Nombre</th>
+                        <th class="th-sm">Apellidos</th>
+                        <th class="th-sm">Correo electrónico</th>
+                        <th class="th-sm">Acción</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let user of usersData; let i = index">
+                        <td>{{user.firstName}}</td>
+                        <td>{{user.lastName}}</td>
+                        <td>{{user.email}}</td>
+                        <td><button (click)="delU(user.userID)" class="concord delete-button">Borrar</button> / <button (click)="editU(user.userID)" class="concord">Editar</button></td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Correo electrónico</th>
+                        <th>¿Borrar?</th>
+                      </tr>
+                    </tfoot>
+                  </table>
             </div>  
-
-            <div class="col-6"><br><br><br>
-                <div  class="flip-card x " data-color=""  *ngFor="let mySubscription of mySubscriptions; let i = index">
-                    <div class="flip-card-inner">    
-                    <div class="flip-card-front {{mySubscription.subscriptionName}}">
-                        <section class="wrapper">
-                            <header class="card-title">
-                                <h4 class="titol2">{{mySubscription.subscriptionName}}</h4>
-                            </header>
-                        <footer >
-                            <input type="button" class="concord" value="€ {{mySubscription.price}}">
-                        </footer>
-                        </section>
-                    </div>
-                  <div class="flip-card-back {{mySubscription.subscriptionName}}">
-                    <header class="card-title2">
-                        <h6 class="titol3" (click)="deleteSubscription(mySubscription.subscriptionID)"><i class="fas fa-trash-alt"></i></h6>
-                    </header>
-                    <div class="descripcion">Descripción: {{mySubscription.description}}</div>
-                    <div class="renovacion">Ciclo de pago: 
-                      <span *ngIf="mySubscription.cycle == 1">Mensual</span>
-                      <span *ngIf="mySubscription.cycle == 3">Trimestral</span>
-                      <span *ngIf="mySubscription.cycle == 6">Semestral</span>
-                      <span *ngIf="mySubscription.cycle == 12">Anual</span>
-                      <span *ngIf="mySubscription.cycle == 24">Bianual</span>
-                    </div>
-                    <div class="aviso-renovacion">Aviso de renovación: 
-                        <span *ngIf="mySubscription.remainMe == 1">Un día antes</span>
-                        <span *ngIf="mySubscription.remainMe == 2">Dos días antes</span>
-                        <span *ngIf="mySubscription.remainMe == 5">Cinco días antes</span>
-                        <span *ngIf="mySubscription.remainMe == 7">Una semana antes</span>
-                        <span *ngIf="mySubscription.remainMe == 15">Dos semanas antes</span>
-                    </div>
-                    <footer >
-                      <h6 class="titol4" (click)="edit_subscription(mySubscription.subscriptionID)"><i class="far fa-edit"></i></h6>
-                    </footer>
-                  </div>
-                </div>
-              </div>
-            </div>
         </div>
     </div>
 <div id="container-floating">
@@ -88,4 +57,5 @@
         <img class="edit" src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_compose2_1x.png"></a>
     </div>
 </div>
+</main>
 <notifier-container></notifier-container>

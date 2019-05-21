@@ -15,8 +15,10 @@ import { EditarPasswordComponent } from './editar-password/editar-password.compo
 import { RegistroSubscripcionComponent } from './registro-subscripcion/registro-subscripcion.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { HomeAdminComponent } from './homeadmin/homeadmin.component';
+import { EditarPerfilDefaultComponent } from './editar-perfil-default/editar-perfil-default.component';
 import { NewsComponent } from './news/news.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { MostrarEstadisticasComponent } from './mostrar-estadisticas/mostrar-estadisticas.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
@@ -102,9 +104,9 @@ const customNotifierOptions: NotifierOptions = {
     EditarPasswordComponent,
     NewsComponent,
     FeedbackComponent,
-    MyBarChartComponent
-  
-    
+    MyBarChartComponent,
+    EditarPerfilDefaultComponent,
+    MostrarEstadisticasComponent
   ],
   imports: [
     BrowserModule,

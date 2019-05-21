@@ -1,8 +1,9 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-<main *ngIf="userType==1">
+<main *ngIf="userType==0">
     <header>
         <time>
-            <h1 id="subscription-title">Editar perfil </h1> 
+            <h1 id="subscription-title">Editar perfil</h1>º
+            <span>Importante: Está editando un usuario que no es el suyo</span>
         </time>
         <button class="btn btn-round color-2 material-design" (click)="cerrarSesion()" >Cerrar Sesión </button>
         <a href="/feedback"> <div class="btn btn-round color-1 material-design" ><p> 💛 Valóranos </p></div></a>
@@ -11,12 +12,11 @@
         <a *ngIf="userType==1" href="/homepage"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
         <a *ngIf="userType==0" href="/homeadmin"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
     </header>
-    <form class="formulario" action="" method="post">    
+    <form class="formulario" action="" method="post" >    
         <div class="limitador">
             <div class="todo">
                 <div class="caja">  
-                    <form class="formulario" action="" method="post" >
-                        <span class="titulo">Editar perfil</span>
+                    <form class="formulario" action="" method="post">
                         <span class="sub-titulo"></span>
                         <div class="input" >
                             <input class="caja-input" type="text" id="firstName" name="firstName" autocomplete="new-password" placeholder="Nombre" value="{{usuario.firstName}}" [(ngModel)]="usuario.firstName"  required>
