@@ -542,4 +542,10 @@
     margin-bottom: -35px;
     color:red;
   }
-  .text-center {text-align: center;}
+  .text-center {
+    text-align: center;
+  }
+
+  #errorsForm {
+    text-align: center;
+}
