@@ -23,64 +23,68 @@ import { NotifierService } from 'angular-notifier';
   }
 
   addSubscription() {
-    let correcto = true;
+    let correctoSubscriptionName = true;
+    let correctoCycle = true;
+    let correctoFirstBill = true;
+    let correctoRemainMe = true;
+    let correctoPrice = true;
 
       let inputSubscriptionName = document.getElementById("subscriptionName");
       if(this.newSubscription.subscriptionName != "") {
         document.getElementById("subscriptionNameErr").innerHTML = "";
         inputSubscriptionName.style.backgroundColor="#e6e6e6";
-        correcto = true;
+        correctoSubscriptionName = true;
       } else {
         document.getElementById("subscriptionNameErr").innerHTML = "No puede dejar el campo Subscripción vacío";
         inputSubscriptionName.style.backgroundColor="#d83221b0";
-        correcto = false
+        correctoSubscriptionName = false
       }
 
       let inputCycle = document.getElementById("cycle");
       if(this.newSubscription.cycle != 0) {
         document.getElementById("cycleErr").innerHTML = "";
         inputCycle.style.backgroundColor="#e6e6e6";
-        correcto = true;
+        correctoCycle = true;
       } else {
         document.getElementById("cycleErr").innerHTML = "No puede dejar el campo Ciclo de pago vacío";
         inputCycle.style.backgroundColor="#d83221b0";
-        correcto = false
+        correctoCycle = false
       }
 
       let inputFirstBill = document.getElementById("firstBill");
       if(this.newSubscription.firstBill != null) {
         document.getElementById("firstBillErr").innerHTML = "";
         inputFirstBill.style.backgroundColor="#e6e6e6";
-        correcto = true;
+        correctoFirstBill = true;
       } else {
         document.getElementById("firstBillErr").innerHTML = "No puede dejar el campo Primera factura vacío";
         inputFirstBill.style.backgroundColor="#d83221b0";
-        correcto = false
+        correctoFirstBill = false
       }
 
       let inputRemainMe = document.getElementById("remainMe");
       if(this.newSubscription.remainMe != 0) {
         document.getElementById("remainMeErr").innerHTML = "";
         inputRemainMe.style.backgroundColor="#e6e6e6";
-        correcto = true;
+        correctoRemainMe = true;
       } else {
         document.getElementById("remainMeErr").innerHTML = "No puede dejar el campo Aviso de renovación vacío";
         inputRemainMe.style.backgroundColor="#d83221b0";
-        correcto = false
+        correctoRemainMe = false
       }
 
       let inputPrice = document.getElementById("price");
       if(this.newSubscription.price > 0) {
         document.getElementById("priceErr").innerHTML = "";
         inputPrice.style.backgroundColor="#e6e6e6";
-        correcto = true;
+        correctoPrice = true;
       } else {
         document.getElementById("priceErr").innerHTML = "No puede dejar el campo Precio vacío";
         inputPrice.style.backgroundColor="#d83221b0";
-        correcto = false
+        correctoPrice = false
       }
 
-      if (correcto == true) {
+      if (correctoSubscriptionName == true && correctoCycle == true && correctoFirstBill == true && correctoRemainMe == true && correctoPrice == true) {
       this.subscriptionService.addSubscription(this.newSubscription).subscribe(
         (result) => {
             this.notifier.notify('default','Subscripción añadida correctamente');

@@ -37,11 +37,15 @@
                                 <label title="Muy mal" (click)='onClick(1)'>1 star</label>
                             </fieldset>
                         </div>
-
-                        <div class="text-area">
-                            <textarea maxlength="255" placeholder="¿En que debemos de mejorar?" name="comment" form="feedbackForm" [(ngModel)]="newFeedback.description"></textarea>
+                        <div id="errorsForm">
+                            <span id="starsErr"></span>
                         </div>
-
+                        <div class="text-area">
+                            <textarea maxlength="255" placeholder="¿En que debemos de mejorar?" name="comment" id="comments" form="feedbackForm" [(ngModel)]="newFeedback.description"></textarea>
+                        </div>
+                        <div id="errorsForm">
+                            <span id="commentErr"></span>
+                        </div>
                         <div class="input">   
                             <div class="todo-form-btn ">
                                 <button type="submit" (click)="addFeedback()" class="caja-titulo-btn">Enviar</button>

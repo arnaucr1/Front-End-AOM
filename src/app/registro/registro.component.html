@@ -46,17 +46,23 @@
                     <span id="emailErr"></span>
                     </div>
                     <div class="input" >
-                        <input class="caja-input" type="password" id="password" name="password" autocomplete="new-password" placeholder="Contraseña" [(ngModel)]="newUser.pass" required>						
+                        <input class="caja-input" type="password" id="password1" name="password" autocomplete="new-password" placeholder="Contraseña" [(ngModel)]="newUser.pass" required>						
                         <span class="icono">
                             <i class="fas fa-key"></i>
                         </span>
                     </div>
-                  
+                    <div id="errorsForm">
+                        <span id="passwords1Err"></span>
+                    </div>
+
                     <div class="input" >
-                        <input class="caja-input" type="password" id="password" name="password" autocomplete="new-password" placeholder="Repite Contraseña" required>						
+                        <input class="caja-input" type="password" id="password2" name="password" autocomplete="new-password" placeholder="Repite Contraseña" required>						
                         <span class="icono">
                             <i class="fas fa-key"></i>
                         </span>
+                    </div>
+                    <div id="errorsForm">
+                        <span id="passwordsErr"></span>
                     </div>
 
                     <div class="input" >

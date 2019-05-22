@@ -58,7 +58,31 @@ export class FeedbackComponent implements OnInit {
 	}
 
   addFeedback() {
-    this.newFeedback.vote= this.vote;
+    let correctoStars = true;
+    let correctoComments = true;
+
+    if(this.vote != 0) {
+      document.getElementById("starsErr").innerHTML = "";
+      correctoStars = true;
+      this.newFeedback.vote= this.vote;
+    } else {
+      document.getElementById("starsErr").innerHTML = "No puede votar sin marcar las estrellas";
+      correctoStars = false;
+    }
+
+    let inputComment = <HTMLInputElement>document.getElementById("comments");
+    if(inputComment.value != "") {
+      document.getElementById("commentErr").innerHTML = "";
+      inputComment.style.backgroundColor="#e6e6e6";
+      this.newFeedback.vote= this.vote;
+      correctoStars = true;
+    } else {
+      document.getElementById("commentErr").innerHTML = "No puede votar sin dejar un comentario";
+      inputComment.style.backgroundColor="#d83221b0";
+      correctoStars = false;
+    }
+
+    if(correctoStars == true && correctoComments == true) {
     this.feedbackService.addFeedback(this.newFeedback).subscribe(
       (result) => {
         this.notifier.notify('default','Gracias por valorar la aplicación');
@@ -68,5 +92,5 @@ export class FeedbackComponent implements OnInit {
         }
     )
   }
-
+  }
 }
