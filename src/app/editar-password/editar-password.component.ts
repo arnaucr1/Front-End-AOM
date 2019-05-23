@@ -19,9 +19,20 @@ import { NotifierService } from 'angular-notifier';
       this.notifier = notifier;
     }
     pass:Pass = new Pass("", "", "");
+    userData:User[] = [];
   ngOnInit() {
-    
+    this.getU();
   }
+
+  getU() {
+    this.userService.getUserToken().subscribe(
+      (result) => {
+          this.userData = result["data"];
+      }, (error) => {
+        this.notifier.notify('error','No hay ningún usuario logeado');
+      }
+    ) 
+}
 
   changePassword() {
     this.userService.changePassword(this.pass.oldpass, this.pass.newpass, this.pass.newpass1)
