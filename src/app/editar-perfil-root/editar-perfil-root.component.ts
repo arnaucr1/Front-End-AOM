@@ -16,10 +16,22 @@ export class EditarPerfilRootComponent implements OnInit {
     this.notifier = notifier;
   }
   usuario:User = new User(0, "", "", null, "", "", 0, "");
-
+  userData:User[] = [];
+  
   ngOnInit() {
+    this.getU();
     this.getUser(parseInt(localStorage.getItem("userID")));
   }
+
+  getU() {
+    this.userService.getUserToken().subscribe(
+      (result) => {
+          this.userData = result["data"];
+      }, (error) => {
+        this.notifier.notify('error','No hay ningún usuario logeado');
+      }
+    ) 
+}
 
   getUser(userID:number) {
       this.userService.getUser(userID).subscribe(
