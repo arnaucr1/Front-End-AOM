@@ -17,7 +17,7 @@ export class EditarPerfilRootComponent implements OnInit {
   }
   usuario:User = new User(0, "", "", null, "", "", 0, "");
   userData:User[] = [];
-  
+  userType = localStorage.getItem("type");
   ngOnInit() {
     this.getU();
     this.getUser(parseInt(localStorage.getItem("userID")));

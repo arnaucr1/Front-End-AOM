@@ -1,8 +1,7 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-<main class="concord" id="concord-cards" *ngFor="let uData of userData; let i = index">
+<main class="concord" id="concord-cards" *ngIf="userType==0">
     <header>
         <time>
-            <h1 id="subscription-title">Editar perfil</h1> 
+            <h1 id="subscription-title">Editar perfil </h1> 
         </time>
         <button class="btn btn-round color-2 material-design" (click)="cerrarSesion()" >Cerrar Sesión </button>
         <a href="/feedback"> <div class="btn btn-round color-1 material-design" ><p> 💛 Valóranos </p></div></a>

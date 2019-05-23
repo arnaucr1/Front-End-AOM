@@ -166,9 +166,9 @@
   }
   .todo {
     width: 100%;
-
+    margin-top: 25px;
+    margin-bottom: 80px;
     display: flex;
- 
     justify-content: center;
  
   }
@@ -193,7 +193,6 @@
     margin-bottom: 10px;
    
   }
-  
   
   .caja-input {
     font-family: 'Roboto', sans-serif;
@@ -423,17 +422,6 @@
     transition: width 150ms ease 100ms;
   }
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   .select {
     position: relative;
     display: inline-block;
@@ -546,6 +534,18 @@
     margin-bottom: -35px;
     color:red;
   }
-  .text-center {text-align: center;}
+  .text-center {
+    text-align: center;
+  }
+
+  #errorsForm {
+    bottom: 5px;
+    position: relative;
+    text-align: center;
+}
+
+#subscription-title {
+  padding-top: 10px;
+}
   
   
