@@ -13,6 +13,16 @@
 <div class="container">
       <div class="row">
             <div class="col-12">
+      <div class="todo" >
+            <h3>Anual global subscripciones</h3>
+            <canvas baseChart
+                  [datasets]="barChartDataAnualAno"
+                  [labels]="barChartLabelsAnualAno"
+                  [options]="barChartOptions"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType"></canvas>
+      </div>
+
   <div *ngIf="barChartLabelsMensual != ''" class="todo" >
     <h3>Subscripciones mensuales</h3>
     <canvas baseChart

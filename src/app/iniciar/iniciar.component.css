@@ -57,7 +57,6 @@
     text-align: center;
     width: 100%;
     display: block;
-    margin-top:25px;
     padding-bottom: 10px;
     font-weight: 600;
   }
@@ -629,4 +628,9 @@ font-weight: 500;
   .card {
     width: 20rem;
     margin: 0 auto;
+  }
+
+  .titulo img{
+      width: 100px;
+      height: auto;
   }

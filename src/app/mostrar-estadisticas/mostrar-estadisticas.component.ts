@@ -49,4 +49,15 @@ export class MostrarEstadisticasComponent implements OnInit{
         )
     } 
 
+    cerrarSesion() {
+      this.userService.cerrarSesion().subscribe(
+        (result) => {
+          localStorage.clear();
+          this.router.navigate(['/']);
+        }, (error) => {
+          this.notifier.notify('error','Error al cerrar sesión');
+        }
+      )
+    }
+    
 }

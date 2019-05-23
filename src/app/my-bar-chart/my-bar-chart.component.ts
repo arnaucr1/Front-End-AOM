@@ -48,6 +48,12 @@ export class MyBarChartComponent implements OnInit {
     {data: this.pricesBianual, label: 'Coste de cada subscripción en €'}
   ];
 
+  public pricesAnualAno = [];
+  public barChartLabelsAnualAno = [];
+  public barChartDataAnualAno = [
+    {data: this.pricesAnualAno, label: 'Coste de cada subscripción en €'}
+  ];
+
   public barChartLabels = [];
   public prices = [];
   public barChartData = [
@@ -83,22 +89,37 @@ export class MyBarChartComponent implements OnInit {
             if(subscription.cycle == 1) {
               this.barChartLabelsMensual.push(subscription.subscriptionName);
               this.pricesMensual.push(subscription.price);
+
+              this.barChartLabelsAnualAno.push(subscription.subscriptionName);
+              this.pricesAnualAno.push(subscription.price*12);
             }
             if (subscription.cycle == 3) {
               this.barChartLabelsTrimestral.push(subscription.subscriptionName);
               this.pricesTrimestral.push(subscription.price);
+
+              this.barChartLabelsAnualAno.push(subscription.subscriptionName);
+              this.pricesAnualAno.push(subscription.price*4);
             }
             if (subscription.cycle == 6) {
               this.barChartLabelsSemestral.push(subscription.subscriptionName);
               this.pricesSemestral.push(subscription.price);
+
+              this.barChartLabelsAnualAno.push(subscription.subscriptionName);
+              this.pricesAnualAno.push(subscription.price*2);
             }
             if (subscription.cycle == 12) {
               this.barChartLabelsAnual.push(subscription.subscriptionName);
               this.pricesAnual.push(subscription.price);
+
+              this.barChartLabelsAnualAno.push(subscription.subscriptionName);
+              this.pricesAnualAno.push(subscription.price);
             }  
             if (subscription.cycle == 24) {
               this.barChartLabelsBianual.push(subscription.subscriptionName);
               this.pricesBianual.push(subscription.price);
+
+              this.barChartLabelsAnualAno.push(subscription.subscriptionName);
+              this.pricesAnualAno.push(subscription.price/2);
             }
 
           }
