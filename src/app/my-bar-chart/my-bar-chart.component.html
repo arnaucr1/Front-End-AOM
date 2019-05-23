@@ -1,7 +1,18 @@
-<a *ngIf="userType==1" href="/homepage"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
-<a *ngIf="userType==0" href="/homeadmin"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
-<div class="padre">
+<main class="concord" id="concord-cards" *ngFor="let uData of userData; let i = index">
+<header>
+      <time>
+            <h1 id="subscription-title">Estadísticas</h1> 
+      </time>
+      <button class="btn btn-round color-2 material-design" (click)="cerrarSesion()" >Cerrar Sesión </button>
+      <a href="/feedback"> <div class="btn btn-round color-1 material-design" ><p> 💛 Valóranos </p></div></a>
+      <a href="/news"> <div class="btn btn-round color-1 material-design" ><p>📰 Noticias </p></div></a>
+      <a *ngIf="userType==1" href="/homepage"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
+      <a *ngIf="userType==0" href="/homeadmin"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
+</header>
 
+<div class="container">
+      <div class="row">
+            <div class="col-12">
   <div *ngIf="barChartLabelsMensual != ''" class="todo" >
     <h3>Subscripciones mensuales</h3>
     <canvas baseChart
@@ -51,5 +62,8 @@
             [legend]="barChartLegend"
             [chartType]="barChartType"></canvas>
   </div>
-
 </div>
+</div>
+</div>
+</main>
+<notifier-container></notifier-container>

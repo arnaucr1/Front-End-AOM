@@ -10,45 +10,59 @@
                     <span class="sub-titulo"></span>
 
                     <div class="input" >
-                        <input class="caja-input" type="text" id="firstName" name="firstName" autocomplete="new-password" placeholder="Nombre" [(ngModel)]="newUser.firstName"  required>
+                        <input class="caja-input" id="firstName" name="firstName" autocomplete="new-password" placeholder="Nombre" [(ngModel)]="newUser.firstName" type="text" required>
                         <span class="icono">
                             <i class="fa fa-user-circle" aria-hidden="true"></i>
                         </span>
                     </div>
-
+                    <div id="errorsForm">
+                        <span id="firstNameErr" style="text-align:center;"></span>
+                    </div>
                     <div class="input" >
                         <input class="caja-input" type="text" id="lastName" name="lastName" autocomplete="new-password" placeholder="Apellidos" [(ngModel)]="newUser.lastName" required>						
                         <span class="icono">
                             <i class="fas fa-user-circle"></i>
                         </span>
                     </div>
-
+                    <div id="errorsForm">
+                    <span id="lastNameErr"></span>
+                    </div>
                     <div class="input" >
                         <input class="caja-input" type="date" id="birthDate" name="birthDate" autocomplete="new-password" placeholder="Fecha nacimiento"  [(ngModel)]="newUser.birthDate" required>
                         <span class="icono">
                             <i class="fa fa-calendar-alt" aria-hidden="true"></i>
                         </span>
                     </div>
-
-                    <div class="input" >
+                    <div id="errorsForm">
+                    <span id="birthDateErr"></span>
+                    </div>
+                    <div class="input">
                         <input class="caja-input" type="email" id="email" name="email" autocomplete="new-password" placeholder="Email"  [(ngModel)]="newUser.email" required>
                         <span class="icono">
                             <i class="fa fa-at" aria-hidden="true"></i>
                         </span>
                     </div>
-
+                    <div id="errorsForm">
+                    <span id="emailErr"></span>
+                    </div>
                     <div class="input" >
-                        <input class="caja-input" type="password" id="password" name="password" autocomplete="new-password" placeholder="Contraseña" [(ngModel)]="newUser.pass" required>						
+                        <input class="caja-input" type="password" id="password1" name="password" autocomplete="new-password" placeholder="Contraseña" [(ngModel)]="newUser.pass" required>						
                         <span class="icono">
                             <i class="fas fa-key"></i>
                         </span>
                     </div>
-                  
+                    <div id="errorsForm">
+                        <span id="passwords1Err"></span>
+                    </div>
+
                     <div class="input" >
-                        <input class="caja-input" type="password" id="password" name="password" autocomplete="new-password" placeholder="Repite Contraseña" required>						
+                        <input class="caja-input" type="password" id="password2" name="password" autocomplete="new-password" placeholder="Repite Contraseña" required>						
                         <span class="icono">
                             <i class="fas fa-key"></i>
                         </span>
+                    </div>
+                    <div id="errorsForm">
+                        <span id="passwordsErr"></span>
                     </div>
 
                     <div class="input" >

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import {User} from '../user';
 import { SubscriptionService } from '../subscription.service';
 import { Subscription } from '../subscription';
 import { NotifierService } from 'angular-notifier';
@@ -12,7 +13,7 @@ import { NotifierService } from 'angular-notifier';
 export class MyBarChartComponent implements OnInit {
   userType = localStorage.getItem("type");
   private notifier: NotifierService;
-  constructor(private subscriptionService:SubscriptionService, private userService:UserService,notifier: NotifierService) { 
+  constructor(private subscriptionService:SubscriptionService, private userService:UserService, notifier: NotifierService) { 
     this.notifier = notifier;
   }
 
@@ -53,21 +54,30 @@ export class MyBarChartComponent implements OnInit {
   ];
   public barChartType = 'bar';
   public barChartLegend = true;
-
+  userData:User[] = [];
   mySubscriptions:Subscription[] = [];
 
   ngOnInit() {
-    console.log(this.barChartLabelsBianual);
+    this.getU();
     this.getSubscriptions(parseInt(localStorage.getItem("userID")));
+  }
+
+  getU() {
+    this.userService.getUserToken().subscribe(
+      (result) => {
+          this.userData = result["data"];
+      }, (error) => {
+        this.notifier.notify('error','No hay ningún usuario logeado');
+      }
+    ) 
   }
 
   getSubscriptions(userID:number) {
     this.subscriptionService.getSubscriptions(userID).subscribe(
       (result) => {
           this.mySubscriptions = result["data"];
-          console.log(this.mySubscriptions);
+
           for (let subscription of this.mySubscriptions) {
-            //console.log(subscription.cycle);
             
             if(subscription.cycle == 1) {
               this.barChartLabelsMensual.push(subscription.subscriptionName);
@@ -89,8 +99,7 @@ export class MyBarChartComponent implements OnInit {
               this.barChartLabelsBianual.push(subscription.subscriptionName);
               this.pricesBianual.push(subscription.price);
             }
-            //this.barChartLabels.push(subscription.subscriptionName);
-            //this.prices.push(subscription.price);
+
           }
         }, (error) => {
           this.notifier.notify('error','Error al cargar las subscripciones');

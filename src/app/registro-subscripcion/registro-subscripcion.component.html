@@ -40,9 +40,12 @@
                                 <i class="fa fa-user-circle" aria-hidden="true"></i>
                             </span>
                         </div>
+                        <div id="errorsForm">
+                            <span id="subscriptionNameErr" style="text-align:center;"></span>
+                        </div>
 
                         <div class="input" >
-                            <input class="caja-input" type="text" id="description" name="description" autocomplete="new-password" placeholder="Descripción" [(ngModel)]="newSubscription.description" required>						
+                            <input class="caja-input" type="text" id="description" name="description" autocomplete="new-password" placeholder="Descripción" [(ngModel)]="newSubscription.description">						
                             <span class="icono">
                                 <i class="fas fa-map-marker-alt"></i>
                             </span>
@@ -50,7 +53,7 @@
 
                         <div class="input" >
                             <select class="caja-input" id="cycle" name="cycle" [(ngModel)]="newSubscription.cycle" required>
-                                <option value="" disabled selected>Seleccione el ciclo de pago</option>
+                                <option value="0" disabled selected>Seleccione el ciclo de pago</option>
                                 <option value="1">Mensual</option>
                                 <option value="3">Trimestral</option>
                                 <option value="6">Semestral</option>
@@ -61,6 +64,9 @@
                                 <i class="fa fa-clock" aria-hidden="true"></i>
                             </span> 
                         </div>
+                        <div id="errorsForm">
+                            <span id="cycleErr" style="text-align:center;"></span>
+                        </div>
                         
                         <div class="input" >
                             <input class="caja-input" type="date" id="firstBill" name="firstBill" autocomplete="new-password" placeholder="Fecha de la primera factura"  [(ngModel)]="newSubscription.firstBill" required>
@@ -68,10 +74,13 @@
                                 <i class="fa fa fa-calendar-alt" aria-hidden="true"></i>
                             </span>
                         </div>
+                        <div id="errorsForm">
+                            <span id="firstBillErr" style="text-align:center;"></span>
+                        </div>
 
                         <div class="input" >
                             <select class="caja-input" id="remainMe" name="remainMe" [(ngModel)]="newSubscription.remainMe" required>
-                                <option value="" disabled selected>Seleccione el aviso de renovación</option>
+                                <option value="0" disabled selected>Seleccione el aviso de renovación</option>
                                 <option value="1">Un dia antes</option>
                                 <option value="2">Dos días antes</option>
                                 <option value="5">Cinco días antes</option>
@@ -82,12 +91,18 @@
                                     <i class="fas fa-bell"></i>
                             </span>
                         </div>
+                        <div id="errorsForm">
+                            <span id="remainMeErr" style="text-align:center;"></span>
+                        </div>
                     
                         <div class="input" >
                             <input class="caja-input" type="number" id="price" name="price" autocomplete="new-password" placeholder="Precio" [(ngModel)]="newSubscription.price" required>						
                             <span class="icono">
                                 <i class="fas fa-euro-sign"></i>
                             </span>
+                        </div>
+                        <div id="errorsForm">
+                            <span id="priceErr" style="text-align:center;"></span>
                         </div>
 
                         <div class="input" >

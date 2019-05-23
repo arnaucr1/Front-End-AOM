@@ -47,14 +47,18 @@
                             <i class="fa fa-clock" aria-hidden="true"></i>
                         </span> 
                     </div>
-
+                    <div id="errorsForm">
+                        <span id="cycleErr" style="text-align:center;"></span>
+                    </div>
                     <div class="input" >
                         <input class="caja-input" type="date" id="first-bill" name="first-bill" [(ngModel)]="editSubscription.firstBill" autocomplete="new-password" placeholder="Primera factura" value="{{editSubscription.firstBill}}" required>
                         <span class="icono">
                             <i class="fa fa-calendar-alt" aria-hidden="true"></i>
                         </span>
                     </div>
-
+                    <div id="errorsForm">
+                        <span id="firstBillErr" style="text-align:center;"></span>
+                    </div>
                     <div class="input" >
                         <select class="caja-input" id="remainMe" name="remainMe" [(ngModel)]="editSubscription.remainMe" required>
                             <option value="" disabled selected>Seleccione el aviso de renovación</option>
@@ -70,14 +74,18 @@
                         </span>
 
                     </div>
-                
+                    <div id="errorsForm">
+                        <span id="remainMeErr" style="text-align:center;"></span>
+                    </div>
                     <div class="input" >
                         <input class="caja-input" type="number" id="price" name="price" [(ngModel)]="editSubscription.price" autocomplete="new-password" placeholder="Coste" value="{{editSubscription.price}}" required>						
                         <span class="icono">
                             <i class="fas fa-euro-sign"></i>
                         </span>
                     </div>
-
+                    <div id="errorsForm">
+                        <span id="priceErr" style="text-align:center;"></span>
+                    </div>
                     <div class="input" >
                         <div class="todo-form-btn">
                             <button type="submit" (click)="modifySubscription()" class="caja-titulo-btn">Editar</button>

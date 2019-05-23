@@ -942,3 +942,10 @@
     
   
     
+  .text-center {
+    text-align: center;
+  }
+
+  #errorsForm {
+    text-align: center;
+}
