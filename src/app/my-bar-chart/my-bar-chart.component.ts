@@ -87,38 +87,38 @@ export class MyBarChartComponent implements OnInit {
           for (let subscription of this.mySubscriptions) {
             
             if(subscription.cycle == 1) {
-              this.barChartLabelsMensual.push(subscription.subscriptionName);
+              this.barChartLabelsMensual.push(subscription.subscriptionName.charAt(0).toUpperCase()+subscription.subscriptionName.slice(1));
               this.pricesMensual.push(subscription.price);
 
-              this.barChartLabelsAnualAno.push(subscription.subscriptionName);
+              this.barChartLabelsAnualAno.push(subscription.subscriptionName.charAt(0).toUpperCase()+subscription.subscriptionName.slice(1));
               this.pricesAnualAno.push(subscription.price*12);
             }
             if (subscription.cycle == 3) {
-              this.barChartLabelsTrimestral.push(subscription.subscriptionName);
+              this.barChartLabelsTrimestral.push(subscription.subscriptionName.charAt(0).toUpperCase()+subscription.subscriptionName.slice(1));
               this.pricesTrimestral.push(subscription.price);
 
-              this.barChartLabelsAnualAno.push(subscription.subscriptionName);
+              this.barChartLabelsAnualAno.push(subscription.subscriptionName.charAt(0).toUpperCase()+subscription.subscriptionName.slice(1));
               this.pricesAnualAno.push(subscription.price*4);
             }
             if (subscription.cycle == 6) {
-              this.barChartLabelsSemestral.push(subscription.subscriptionName);
+              this.barChartLabelsSemestral.push(subscription.subscriptionName.charAt(0).toUpperCase()+subscription.subscriptionName.slice(1));
               this.pricesSemestral.push(subscription.price);
 
-              this.barChartLabelsAnualAno.push(subscription.subscriptionName);
+              this.barChartLabelsAnualAno.push(subscription.subscriptionName.charAt(0).toUpperCase()+subscription.subscriptionName.slice(1));
               this.pricesAnualAno.push(subscription.price*2);
             }
             if (subscription.cycle == 12) {
-              this.barChartLabelsAnual.push(subscription.subscriptionName);
+              this.barChartLabelsAnual.push(subscription.subscriptionName.charAt(0).toUpperCase()+subscription.subscriptionName.slice(1));
               this.pricesAnual.push(subscription.price);
 
-              this.barChartLabelsAnualAno.push(subscription.subscriptionName);
+              this.barChartLabelsAnualAno.push(subscription.subscriptionName.charAt(0).toUpperCase()+subscription.subscriptionName.slice(1));
               this.pricesAnualAno.push(subscription.price);
             }  
             if (subscription.cycle == 24) {
-              this.barChartLabelsBianual.push(subscription.subscriptionName);
+              this.barChartLabelsBianual.push(subscription.subscriptionName.charAt(0).toUpperCase()+subscription.subscriptionName.slice(1));
               this.pricesBianual.push(subscription.price);
 
-              this.barChartLabelsAnualAno.push(subscription.subscriptionName);
+              this.barChartLabelsAnualAno.push(subscription.subscriptionName.charAt(0).toUpperCase()+subscription.subscriptionName.slice(1));
               this.pricesAnualAno.push(subscription.price/2);
             }
 

@@ -32,9 +32,7 @@ export class IniciarSesionComponent implements OnInit {
 
     this.authService.authState.subscribe((user) => {
       this.user = user;
-      console.log("already logged");
       //this.router.navigate(['/homepage']);
-      console.log(user);
     });
   }
 
@@ -49,10 +47,8 @@ export class IniciarSesionComponent implements OnInit {
   //Functión de login con Google
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then( (res) =>  {
-      console.log("OK");
       this.router.navigate(['/homepage']);
     },(res)=>{
-      console.log("ERROR");
       console.log(res);
     }
     )
