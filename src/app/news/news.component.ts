@@ -5,6 +5,8 @@ import { UserService } from '../user.service';
 import { DatePipe } from '@angular/common';
 import {User} from '../user';
 import {Router} from "@angular/router";
+import { Subscription } from '../subscription';
+import { SubscriptionService } from '../subscription.service';
 
 @Component({
   selector: 'app-news',
@@ -19,23 +21,45 @@ export class NewsComponent implements OnInit {
 	userType = localStorage.getItem("type");
 	mArticles:Array<any>;
 	mSources:Array<any>;
+	show:boolean = false;
 	
-	constructor(private newsapi:NewsApiService, private datePipe: DatePipe, private userService:UserService, notifier: NotifierService, private router: Router){
+	constructor(private newsapi:NewsApiService, private datePipe: DatePipe, private userService:UserService, notifier: NotifierService, private router: Router, private subscriptionService:SubscriptionService){
     let dataActual = Date.now();
     this.notifier = notifier;
 	}
 	userData:User[] = [];
-
-	ngOnInit() {
-	  this.newsapi.initArticles().subscribe(data => this.mArticles = data['articles']);
-		this.newsapi.initSources().subscribe(data=> this.mSources = data['sources']);	
+	mySubscriptions:Subscription[] = [];
+	
+	ngOnInit() {	
+		//this.newsapi.initArticles("netflix").subscribe(data => this.mArticles = data['articles']);
+		//this.newsapi.initSources().subscribe(data=> this.mSources = data['sources']);	
 		this.getU();
-  }
+		this.getSubscriptions(parseInt(localStorage.getItem("userID")));
+	}
+	
+	getSubscriptions(userID:number) {
+		this.subscriptionService.getSubscriptions(userID).subscribe(
+			(result) => {
+					this.mySubscriptions = result["data"];
+				}, (error) => {
+					this.notifier.notify('error','Error al cargar las subscripciones');
+				}
+		)
+} 
 
-	searchArticles(source){
-		this.newsapi.getArticlesByID(source).subscribe(data => this.mArticles = data['articles']);
+	searchArticles(subscription:String){
+		this.newsapi.initArticles(subscription).subscribe(data => this.mArticles = data['articles']);
+		this.newsapi.initSources().subscribe(data=> this.mSources = data['sources']);		
 	}
 
+	showHideFilters() {
+		if(this.show == true) {
+			this.show = false;
+		} else {
+			this.show = true;
+		}
+	}
+	
 	getU() {
 		this.userService.getUserToken().subscribe(
 			(result) => {

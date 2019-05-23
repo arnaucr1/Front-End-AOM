@@ -8,9 +8,20 @@
     <a href="/feedback"> <div class="btn btn-round color-1 material-design" ><p> 💛 Valóranos </p></div></a>
     <a *ngIf="userType==1" href="/homepage"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
     <a *ngIf="userType==0" href="/homeadmin"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
-    <a href="/estadisticas"> <div class="btn btn-round color-1 material-design" ><p>💰 Estadísticas </p></div></a>
+    <a href="/estadisticas"> <div class="btn btn-round color-1 material-design" ><p>💰 Estadísticas </p></div></a>   
+    <button class="btn btn-round color-2 material-design" (click)="showHideFilters()">Filtros</button>
   </header>
 
+  <div *ngIf="show" class="container filters">
+      <div class="row">
+        <div class="col-sm-12 subscriptionsF">
+          <span>Filtrar por:</span>
+  <div *ngFor="let mySubscription of mySubscriptions; let i = index">
+      <button class="btn btn-round color-2 material-design subscriptionF {{mySubscription.subscriptionName}}" (click)="searchArticles(mySubscription.subscriptionName)" (click)="showHideFilters()">{{mySubscription.subscriptionName}}</button>
+  </div>
+  </div>
+  </div>
+  </div>
 <div class="tot">
   <div class="card"  *ngFor="let article of mArticles">
     <img class="card-img-top" src="{{article.urlToImage}}" alt="Card image cap">

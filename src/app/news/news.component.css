@@ -297,5 +297,61 @@ margin-top:8px;
 		margin-right:20px;
 	}
 	
+	.filters {
+    margin: 0 auto!important;
+}
 
-	
+.subscriptionF {
+	text-transform: capitalize;
+	width: 25%!important;
+}
+
+.playstationplus {
+	background-color: #0a4595;
+}
+
+.spotify{ 
+	background-color: #1ed760;	
+}
+
+.netflix{ 
+	background-color: #d6312d;
+}
+
+.twitch{
+	background-color: #6441a4;
+}
+
+.evernote{
+	background-color: #46b862;
+}
+
+.icloud{
+	background-color: #ffffff;
+	color:black !important;
+}
+
+.dropbox{
+	background-color: #007ee5;
+}
+.amazonprime{
+	background-color: #1c243b;
+}
+
+.hbo{
+	background-color: #000000;
+}
+
+.applemusic{
+	background-color: #ffffff;
+	color:black!important;
+}
+
+.wuaki{
+	background-color: #ffffff;
+	color:black!important;
+}
+
+.dazn{
+	background-color: #0c1c25;
+}
