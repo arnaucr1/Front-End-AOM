@@ -10,7 +10,6 @@
         <a *ngIf="userType==1" href="/homepage"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
         <a *ngIf="userType==0" href="/homeadmin"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
     </header>
-    <form class="formulario" action="" method="post" >    
         <div class="limitador">
             <div class="todo">
                 <div class="caja">   
@@ -22,21 +21,27 @@
                                 <i class="fa fa-user-circle" aria-hidden="true"></i>
                             </span>
                         </div>
-
+                        <div id="errorsForm">
+                            <span id="firstNameErr" style="text-align:center;"></span>
+                        </div>
                         <div class="input" >
                             <input class="caja-input" type="text" id="lastName" name="lastName" autocomplete="new-password" placeholder="Apellidos" value="{{usuario.lastName}}" [(ngModel)]="usuario.lastName" required>						
                             <span class="icono">
                                 <i class="fas fa-user-circle"></i>
                             </span>
                         </div>
-
+                        <div id="errorsForm">
+                            <span id="lastNameErr"></span>
+                        </div>
                         <div class="input" >
                             <input class="caja-input" type="date" id="birthDate" name="birthDate" autocomplete="new-password" placeholder="Fecha nacimiento" value="{{usuario.birthDate}}" [(ngModel)]="usuario.birthDate" required>
                             <span class="icono">
                                 <i class="fa fa-calendar-alt" aria-hidden="true"></i>
                             </span>
                         </div>
-
+                        <div id="errorsForm">
+                            <span id="birthDateErr"></span>
+                        </div>
                         <div class="input" >
                             <input class="caja-input" type="email" id="email" name="email" autocomplete="new-password" placeholder="Email" value="{{usuario.email}}" [(ngModel)]="usuario.email" readonly>
                             <span class="icono">
@@ -49,16 +54,12 @@
                                 <button type="submit" (click)="modifyUser(1)" class="caja-titulo-btn">
                                     Actualizar
                                 </button>
-                            </div><br>
-                            <div class="text-center">
-                                <a class="txt2" routerLink="/homeadmin" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-    </form>
 </main>
 <notifier-container></notifier-container>
 <footer-color-tag></footer-color-tag>

@@ -15,6 +15,7 @@ import { UserService } from '../user.service';
     providers: [DatePipe]
 })
 export class MostrarEstadisticasComponent implements OnInit{
+    userType = localStorage.getItem("type");
     today = new Date();
     private notifier: NotifierService;
     constructor(private feedbackService:FeedbackService, private http:HttpClient, private router: Router, notifier: NotifierService, private userService:UserService){

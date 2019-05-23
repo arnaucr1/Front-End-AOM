@@ -537,4 +537,16 @@
     margin-bottom: -35px;
     color:red;
   }
-  .text-center {text-align: center;}
+  .text-center {
+    text-align: center;
+  }
+
+  #errorsForm {
+    bottom: 5px;
+    position: relative;
+    text-align: center;
+}
+
+#subscription-title {
+  padding-top: 10px;
+}
