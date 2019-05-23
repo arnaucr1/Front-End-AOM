@@ -1,8 +1,8 @@
 <main class="concord" id="concord-cards" *ngFor="let uData of userData; let i = index">
     <header>
         <time>
-            <h1>Administrador</h1>
             <h5 id="date"> {{today | date:'EEEE' }} {{today | date:'d' }} de  {{today | date:'MMMM' }}</h5>
+            <h1>Administrador</h1>
         </time>
         <button class="btn btn-round color-2 material-design" (click)="cerrarSesion()" >Cerrar Sesión </button>
         <a href="/mostrarestadisticas"> <div class="btn btn-round color-1 material-design" ><p>Ver valoraciones </p></div></a>
@@ -26,7 +26,7 @@
                         <td>{{user.firstName}}</td>
                         <td>{{user.lastName}}</td>
                         <td>{{user.email}}</td>
-                        <td><button (click)="delU(user.userID)" class="concord delete-button">Borrar</button> / <button (click)="editU(user.userID)" class="concord">Editar</button></td>
+                        <td><button (click)="delU(user.userID)" class="concord delete-button">Borrar</button> / <button (click)="editU(user.userID)" class="concord edit-button">Editar</button></td>
                       </tr>
                     </tbody>
                     <tfoot>
