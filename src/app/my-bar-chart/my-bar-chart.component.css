@@ -230,6 +230,7 @@ margin-top:8px;
       width: 100%;  
       min-height: 100px;
       margin-top:50px;
+      margin-bottom: 30px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -563,4 +564,8 @@ margin-top:8px;
 
   #errorsForm {
     text-align: center;
+}
+
+#subscription-title {
+  padding-top: 10px;
 }

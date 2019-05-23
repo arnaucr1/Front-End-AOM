@@ -608,7 +608,8 @@
     .todo {
       width: 100%;  
       min-height: 100px;
-      margin-top:50px;
+      margin-top: 25px;
+      margin-bottom: 80px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -947,5 +948,11 @@
   }
 
   #errorsForm {
+    bottom: 5px;
+    position: relative;
     text-align: center;
+}
+
+#subscription-title {
+  padding-top: 10px;
 }
