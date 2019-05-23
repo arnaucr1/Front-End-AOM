@@ -3,6 +3,9 @@ import { SubscriptionService } from '../subscription.service';
 import { Subscription } from '../subscription';
 import { HttpClient } from '@angular/common/http';
 import { NotifierService } from 'angular-notifier';
+import {Router} from "@angular/router";
+import { UserService } from '../user.service';
+import {User} from '../user';
 
 @Component({
     selector: 'app-registro-subscripcion',
@@ -14,7 +17,7 @@ import { NotifierService } from 'angular-notifier';
   export class RegistroSubscripcionComponent implements OnInit {
     userType = localStorage.getItem("type");
     private notifier: NotifierService;
-    constructor(private subscriptionService:SubscriptionService, notifier: NotifierService) {
+    constructor(private subscriptionService:SubscriptionService, notifier: NotifierService, private router: Router, private userService:UserService) {
       this.notifier = notifier;
     }
     newSubscription:Subscription = new Subscription(0, "", "", 0, null, 0, 0, parseInt(localStorage.getItem("userID")));
@@ -94,6 +97,17 @@ import { NotifierService } from 'angular-notifier';
           }
       )
     }
+  }
+
+  cerrarSesion() {
+    this.userService.cerrarSesion().subscribe(
+      (result) => {
+        localStorage.clear();
+        this.router.navigate(['/']);
+      }, (error) => {
+        this.notifier.notify('error','Error al cerrar sesión');
+      }
+    )
   }
 
 }

@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <main class="concord" *ngIf="userType==1">
     <header>
         <time>
@@ -11,16 +10,11 @@
         <a *ngIf="userType==1" href="/homepage"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
         <a *ngIf="userType==0" href="/homeadmin"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
     </header>
-    <form class="formulario" action="" method="post" >    
         <div class="limitador">
             <div class="todo">
                 <div class="caja">	
                     <form class="formulario" action="" method="post" >
-                     
-            
-                        <span class="sub-titulo"></span>
-
-                        <div class="input" >
+                        <div class="input">
                             <select class="caja-input" id="subscriptionName" name="subscriptionName" [(ngModel)]="newSubscription.subscriptionName" required>
                                 <option value="" disabled selected>Seleccione una subscripción</option>
                                 <option value="netflix">Netflix</option>
@@ -110,17 +104,12 @@
                                 <button type="submit" (click)="addSubscription()" class="caja-titulo-btn">
                                     Registrar
                                 </button>
-                            </div><br>
-                            <div class="text-center">
-                                    <a *ngIf="userType==1" class="txt2" routerLink="/homepage" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
-                                    <a *ngIf="userType==0" class="txt2" routerLink="/homeadmin" routerLinkActive="cssSiLinActiu"> <i class="fas fa-arrow-left"></i> Volver a inicio</a>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-    </form>
 </main>
 <notifier-container></notifier-container>
 <footer-color-tag></footer-color-tag>

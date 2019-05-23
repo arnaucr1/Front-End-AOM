@@ -5,6 +5,7 @@ import { NotifierService } from 'angular-notifier';
 import { UserService } from '../user.service';
 import { DatePipe } from '@angular/common';
 import {User} from '../user';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-feedback',
@@ -17,7 +18,7 @@ export class FeedbackComponent implements OnInit {
   private notifier: NotifierService;
   userType = localStorage.getItem("type");
 
-  constructor(private feedbackService:FeedbackService, notifier: NotifierService, private datePipe: DatePipe, private userService:UserService) {
+  constructor(private feedbackService:FeedbackService, notifier: NotifierService, private datePipe: DatePipe, private userService:UserService, private router: Router) {
     let dataActual = Date.now();
     this.notifier = notifier;
   }
@@ -93,4 +94,16 @@ export class FeedbackComponent implements OnInit {
     )
   }
   }
+
+  cerrarSesion() {
+    this.userService.cerrarSesion().subscribe(
+      (result) => {
+        localStorage.clear();
+        this.router.navigate(['/']);
+      }, (error) => {
+        this.notifier.notify('error','Error al cerrar sesión');
+      }
+    )
+  }
+
 }

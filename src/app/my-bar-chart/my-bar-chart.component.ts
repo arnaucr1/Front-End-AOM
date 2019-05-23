@@ -4,6 +4,7 @@ import {User} from '../user';
 import { SubscriptionService } from '../subscription.service';
 import { Subscription } from '../subscription';
 import { NotifierService } from 'angular-notifier';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-my-bar-chart',
@@ -13,7 +14,7 @@ import { NotifierService } from 'angular-notifier';
 export class MyBarChartComponent implements OnInit {
   userType = localStorage.getItem("type");
   private notifier: NotifierService;
-  constructor(private subscriptionService:SubscriptionService, private userService:UserService, notifier: NotifierService) { 
+  constructor(private subscriptionService:SubscriptionService, private userService:UserService, notifier: NotifierService, private router: Router) { 
     this.notifier = notifier;
   }
 
@@ -106,6 +107,17 @@ export class MyBarChartComponent implements OnInit {
           console.log(error);
         }
     )
+}
+
+cerrarSesion() {
+  this.userService.cerrarSesion().subscribe(
+    (result) => {
+      localStorage.clear();
+      this.router.navigate(['/']);
+    }, (error) => {
+      this.notifier.notify('error','Error al cerrar sesión');
+    }
+  )
 }
 
   public barChartOptions = {

@@ -608,15 +608,14 @@
     .todo {
       width: 100%;  
       min-height: 100px;
-      margin-top:50px;
+      margin-top: 25px;
+      margin-bottom: 80px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
       padding: 15px;
     }
-  
-
   
     .todo-form-btn {
       width: 100%;
@@ -939,13 +938,17 @@
       margin-top:10px;
       margin-right:20px;
     }
-    
-  
-    
+        
   .text-center {
     text-align: center;
   }
 
   #errorsForm {
+    bottom: 5px;
+    position: relative;
     text-align: center;
+}
+
+#subscription-title {
+  padding-top: 10px;
 }
