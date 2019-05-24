@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { DatePipe } from '@angular/common';
 import { Feedback } from '../feedback';
 import { FeedbackService } from '../feedback.service';
@@ -7,6 +7,7 @@ import {Router} from "@angular/router";
 import { NotifierService } from 'angular-notifier';
 import {User} from '../user';
 import { UserService } from '../user.service';
+import { MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
 
 @Component({
     selector: 'mostrar-estadisticas-tag',
@@ -16,6 +17,11 @@ import { UserService } from '../user.service';
 })
 export class MostrarEstadisticasComponent implements OnInit{
     userType = localStorage.getItem("type");
+    displayedColumns = ['Usuario', 'Puntuación', 'Comentarios'];
+    dataSource: MatTableDataSource<Feedback>;
+    @ViewChild(MatPaginator) paginator: MatPaginator;
+    @ViewChild(MatSort) sort: MatSort;
+    
     today = new Date();
     private notifier: NotifierService;
     constructor(private feedbackService:FeedbackService, private http:HttpClient, private router: Router, notifier: NotifierService, private userService:UserService){
@@ -27,6 +33,12 @@ export class MostrarEstadisticasComponent implements OnInit{
     ngOnInit() {
         this.getU();
         this.getFeedbacks();
+    }
+
+    applyFilter(filterValue: string) {
+      filterValue = filterValue.trim();
+      filterValue = filterValue.toLowerCase();
+      this.dataSource.filter = filterValue;
     }
 
     getU() {
@@ -43,6 +55,9 @@ export class MostrarEstadisticasComponent implements OnInit{
         this.feedbackService.getFeedbacks().subscribe(
           (result) => {
               this.myFeedbacks = result["data"];
+              this.dataSource = new MatTableDataSource(this.myFeedbacks);
+              this.dataSource.paginator = this.paginator;
+              this.dataSource.sort = this.sort;
             }, (error) => {
               this.notifier.notify('error','Error al cargar las valoraciones');
             }

@@ -7,41 +7,49 @@
         <a *ngIf="userType==1" href="/homepage"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
         <a *ngIf="userType==0" href="/homeadmin"> <div class="btn btn-round color-1 material-design" ><p>Volver a inicio </p></div></a>
     </header>
+
     <div class="container estadisticas">
-        <div class="row">
-          <div class="col-sm-12">
-    <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-        <thead>
-        <tr>
-            <th class="th-sm">Usuario</th>
-            <th class="th-sm">Puntuación</th>
-            <th class="th-sm">Comentarios</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let feedback of myFeedbacks; let i = index">
-            <td>{{feedback.userID}}</td>
-            <td>
-                {{feedback.vote}} - 
-                <span *ngIf="feedback.vote == 1">Muy mal</span>
-                <span *ngIf="feedback.vote == 2">Mal</span>
-                <span *ngIf="feedback.vote == 3">Regular</span>
-                <span *ngIf="feedback.vote == 4">Satisfecho</span>
-                <span *ngIf="feedback.vote == 5">Muy satisfecho</span>
-            </td>
-            <td>{{feedback.description}}</td>
-        </tr>
-        </tbody>
-        <tfoot>
-        <tr>
-            <th>Usuario</th>
-            <th>Puntuación</th>
-            <th>Comentarios</th>
-        </tr>
-        </tfoot>
-    </table>
-    </div>
-    </div>
-    </div>
+            <div class="col-12">
+        <div class="example-header">
+          <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+          </mat-form-field>
+        </div>
+        
+        <div class="example-container mat-elevation-z8">
+        
+          <mat-table [dataSource]="dataSource" matSort>
+        
+            <ng-container matColumnDef="Usuario">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Usuario</mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.userID}} </mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="Puntuación">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Puntuación</mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.vote}} - 
+                    <span *ngIf="row.vote == 0">No valorado</span>    
+                    <span *ngIf="row.vote == 1">Muy mal</span>
+                    <span *ngIf="row.vote == 2">Mal</span>
+                    <span *ngIf="row.vote == 3">Regular</span>
+                    <span *ngIf="row.vote == 4">Satisfecho</span>
+                    <span *ngIf="row.vote == 5">Muy satisfecho</span> 
+              </mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="Comentarios">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Comentarios</mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.description}} </mat-cell>
+            </ng-container>
+        
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;">
+            </mat-row>
+          </mat-table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+        </div>
+        </div>
+        </div>
 </main>
 <notifier-container></notifier-container>
