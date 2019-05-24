@@ -13,14 +13,14 @@ export class SubscriptionService {
     getSubscriptions(userID:number) {
         let url = "/apiAOM.php/?controller=subscriptionclass&accion=usersubscriptions&id="+userID;
         return this.http.get(url,
-            { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+            { headers:new HttpHeaders({'Content-Type':'application/json', 'Authorization': localStorage.getItem("token")})}
             );
     }
 
     getSubscription(numSubscription:number) {
         let url = "/apiAOM.php/?controller=subscriptionclass&id="+numSubscription;
         return this.http.get(url,
-            { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+            { headers:new HttpHeaders({'Content-Type':'application/json', 'Authorization': localStorage.getItem("token")})}
             );
     }
 
@@ -34,14 +34,14 @@ export class SubscriptionService {
     modifySubscription(numSubscription:number, subscription:Subscription) {
         let url = "/apiAOM.php/?controller=subscriptionclass&id="+numSubscription;
         return this.http.put(url, subscription, 
-            { headers:new HttpHeaders({'Content-Type':'application/json'}) }
+            { headers:new HttpHeaders({'Content-Type':'application/json', 'Authorization': localStorage.getItem("token")})}
             );
     }
 
     delSubscription(numSubscription:number) {
         let url = "/apiAOM.php/?controller=subscriptionclass&id="+numSubscription;
         return this.http.delete(url,
-            { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+            { headers:new HttpHeaders({'Content-Type':'application/json', 'Authorization': localStorage.getItem("token")})}
             );
     }
 }

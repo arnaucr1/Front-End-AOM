@@ -18,7 +18,7 @@ export class FeedbackService {
     getFeedbacks() {
         let url = "/apiAOM.php/?controller=feedbackclass";
         return this.http.get(url,
-            { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+            { headers:new HttpHeaders({'Content-Type':'application/json', 'Authorization': localStorage.getItem("token")})}
             );
     }
 }

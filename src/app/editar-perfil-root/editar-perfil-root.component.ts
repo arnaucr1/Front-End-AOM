@@ -3,6 +3,7 @@ import { UserService } from '../user.service';
 import { User } from '../user';
 import { HttpClient } from '@angular/common/http';
 import { NotifierService } from 'angular-notifier';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-perfil-usuario',
@@ -12,7 +13,7 @@ import { NotifierService } from 'angular-notifier';
 })
 export class EditarPerfilRootComponent implements OnInit {
   private notifier: NotifierService;
-  constructor(private userService:UserService, notifier: NotifierService) {
+  constructor(private userService:UserService, notifier: NotifierService, private router: Router) {
     this.notifier = notifier;
   }
   usuario:User = new User(0, "", "", null, "", "", 0, "");
@@ -94,4 +95,16 @@ export class EditarPerfilRootComponent implements OnInit {
       )
   }
   }
+
+  cerrarSesion() {
+    this.userService.cerrarSesion().subscribe(
+      (result) => {
+        localStorage.clear();
+        this.router.navigate(['/']);
+      }, (error) => {
+        this.notifier.notify('error','Error al cerrar sesión');
+      }
+    )
+  }
+
 }

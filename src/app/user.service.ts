@@ -20,7 +20,7 @@ export class UserService {
     getUsers() {
         let url = "/apiAOM.php/?controller=userclass";
         return this.http.get(url,
-            { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+            { headers:new HttpHeaders({'Content-Type':'application/json', 'Authorization': localStorage.getItem("token")})}
             );
     }
     getUserToken() {
@@ -42,7 +42,7 @@ export class UserService {
     getUser(numUser:number) {
         let url = "/apiAOM.php/?controller=userclass&id="+numUser;
         return this.http.get(url,
-            { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+            { headers:new HttpHeaders({'Content-Type':'application/json', 'Authorization': localStorage.getItem("token")})}
             );
     }
 
@@ -56,14 +56,14 @@ export class UserService {
     modifyUser(numUser:number, user:User) {
         let url = "/apiAOM.php/?controller=userclass&id="+numUser;
         return this.http.put(url, user, 
-            { headers:new HttpHeaders({'Content-Type':'application/json'}) }
+            { headers:new HttpHeaders({'Content-Type':'application/json', 'Authorization': localStorage.getItem("token")})}
             );
     }
 
     delUser(numUser:number) {
         let url = "/apiAOM.php/?controller=userclass&id="+numUser;
         return this.http.delete(url,
-            { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+            { headers:new HttpHeaders({'Content-Type':'application/json', 'Authorization': localStorage.getItem("token")})}
             );
     }
 
