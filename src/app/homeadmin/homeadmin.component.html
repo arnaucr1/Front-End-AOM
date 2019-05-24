@@ -8,39 +8,49 @@
         <a href="/mostrarestadisticas"> <div class="btn btn-round color-1 material-design" ><p>Ver valoraciones </p></div></a>
     </header>
 
-    <div class="container">
-		<div class=""><br><br>
-            <div class="col-12">
-                <h2>Listado de usuarios</h2><br><br>
-                <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-                    <thead>
-                      <tr>
-                        <th class="th-sm">Nombre</th>
-                        <th class="th-sm">Apellidos</th>
-                        <th class="th-sm">Correo electrónico</th>
-                        <th class="th-sm">Acción</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr *ngFor="let user of usersData; let i = index">
-                        <td>{{user.firstName}}</td>
-                        <td>{{user.lastName}}</td>
-                        <td>{{user.email}}</td>
-                        <td><button (click)="delU(user.userID)" class="concord delete-button">Borrar</button> / <button (click)="editU(user.userID)" class="concord edit-button">Editar</button></td>
-                      </tr>
-                    </tbody>
-                    <tfoot>
-                      <tr>
-                        <th>Nombre</th>
-                        <th>Apellidos</th>
-                        <th>Correo electrónico</th>
-                        <th>¿Borrar?</th>
-                      </tr>
-                    </tfoot>
-                  </table>
-            </div>  
-        </div>
+    <div class="container user-table">
+        <div class="col-12">
+    <div class="example-header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
     </div>
+    
+    <div class="example-container mat-elevation-z8">
+    
+      <mat-table [dataSource]="dataSource" matSort>
+    
+        <ng-container matColumnDef="Nombre">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.firstName}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="Apellidos">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Apellidos</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.lastName}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="Correo electrónico">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Correo electrónico</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.email}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="Acción">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Acción</mat-header-cell>
+          <mat-cell *matCellDef="let row"><button (click)="delU(row.userID)" class="concord delete-button">Borrar</button> / <button (click)="editU(row.userID)" class="concord edit-button">Editar</button></mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+      </mat-table>
+    
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+    </div>
+    </div>
+    
+
 <div id="container-floating">
     <div class="nd1 nds" routerLink="/" data-toggle="tooltip" data-placement="left" data-original-title="Modificar contraseña"><img class="reminder">
         <a href="/modifypass"><p class="letter">P</p></a>

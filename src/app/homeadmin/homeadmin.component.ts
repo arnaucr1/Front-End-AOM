@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { DatePipe } from '@angular/common';
 import { Subscription } from '../subscription';
 import { SubscriptionService } from '../subscription.service';
@@ -7,6 +7,7 @@ import {User} from '../user';
 import { UserService } from '../user.service';
 import {Router} from "@angular/router";
 import { NotifierService } from 'angular-notifier';
+import { MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
 
 @Component({
     selector: 'homeadmin-tag',
@@ -14,13 +15,22 @@ import { NotifierService } from 'angular-notifier';
     styleUrls: ['./homeadmin.component.css'],
     providers: [DatePipe]
 })
+
+
 export class HomeAdminComponent implements OnInit{
+  displayedColumns = ['Nombre', 'Apellidos', 'Correo electrónico', 'Acción'];
+  dataSource: MatTableDataSource<User>;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
     today = new Date();
     private notifier: NotifierService;
+
     constructor(private datePipe: DatePipe, private subscriptionService:SubscriptionService, private userService:UserService, private http:HttpClient, private router: Router, notifier: NotifierService){
-        let dataActual = Date.now();
-        this.notifier = notifier;
+      let dataActual = Date.now();
+      this.notifier = notifier;
     }
+
     mySubscriptions:Subscription[] = [];
     userData:User[] = [];
     usersData:User[] = [];
@@ -28,6 +38,12 @@ export class HomeAdminComponent implements OnInit{
     ngOnInit() {
         this.getU();
         this.getUsers();
+    }
+
+    applyFilter(filterValue: string) {
+      filterValue = filterValue.trim();
+      filterValue = filterValue.toLowerCase();
+      this.dataSource.filter = filterValue;
     }
   
     getU() {
@@ -45,6 +61,9 @@ export class HomeAdminComponent implements OnInit{
           (result) => {
               console.log(result);
               this.usersData = result["data"];
+              this.dataSource = new MatTableDataSource(this.usersData);
+              this.dataSource.paginator = this.paginator;
+              this.dataSource.sort = this.sort;
             }, (error) => {
               this.notifier.notify('error','Error al cargar los usuarios');
             }

@@ -812,12 +812,19 @@ main time h1 {
     background-color: #db4437;
     color: white;
     font-weight: 600;
-    border-radius: 20px;
+		border-radius: 20px;
+		margin-right: 10px;
 }
 
 .edit-button {
 	background-color: #4285f4;
     color: white;
     font-weight: 600;
-    border-radius: 20px;
+		border-radius: 20px;
+		margin-left: 10px;
+}
+
+.user-table {
+	padding-top: 100px;
+	padding-bottom: 100px;
 }

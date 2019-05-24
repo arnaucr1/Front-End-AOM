@@ -25,7 +25,15 @@ import { HttpModule } from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {ChartsModule} from 'ng2-charts';
-
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule, MatSortModule } from '@angular/material';
+import {CdkTableModule} from '@angular/cdk/table';
+import {
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatRippleModule
+} from '@angular/material';
 
 import { registerLocaleData } from '@angular/common';
 import localePy from '@angular/common/locales/es-PY';
@@ -118,7 +126,15 @@ const customNotifierOptions: NotifierOptions = {
     SocialLoginModule,
     HttpModule,
     NotifierModule.withConfig(customNotifierOptions),
-    ChartsModule
+    ChartsModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatSortModule,
+    CdkTableModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRippleModule
    // NgbModule,NgbdModalContent
     
   ],
