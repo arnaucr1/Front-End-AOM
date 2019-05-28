@@ -25,6 +25,7 @@
     "@ng-bootstrap/ng-bootstrap": "^4.1.2",
     "@swimlane/ngx-charts": "^10.1.0",
     "@swimlane/ngx-graph": "^6.0.1",
+    "angular-material": "^1.1.18",
     "angular-notifier": "^4.1.1",
     "angular-route": "^1.7.8",
     "angularx-social-login": "^1.2.6",
